@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/code/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/code/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/code/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/code/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/code/css/main.css">
+
+
+<link rel="stylesheet" href="/code/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"keae12315.github.io","root":"/code/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="KEAE的编程笔记">
+<meta property="og:url" content="https://keae12315.github.io/code/index.html">
+<meta property="og:site_name" content="KEAE的编程笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="KEAE">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://keae12315.github.io/code/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>KEAE的编程笔记</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/code/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">KEAE的编程笔记</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/code/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/code/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/code/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/code/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://keae12315.github.io/code/2021/06/23/Hexo%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/code/images/avatar.gif">
+      <meta itemprop="name" content="KEAE">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KEAE的编程笔记">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/code/2021/06/23/Hexo%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">Hexo笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-06-23 15:05:11 / 修改时间：15:05:22" itemprop="dateCreated datePublished" datetime="2021-06-23T15:05:11+08:00">2021-06-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">&quot;My New Post&quot;</span></span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="分类和标签"><a href="#分类和标签" class="headerlink" title="分类和标签"></a>分类和标签</h2><h3 id="新建索引页"><a href="#新建索引页" class="headerlink" title="新建索引页"></a>新建索引页</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new page categories</span><br><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+<p>这一步操作后，工作文件夹下的<code>source</code>里会有新的文件夹<code>categories</code>，<code>tags</code>。</p>
+<h3 id="给文章添加categories-tags属性"><a href="#给文章添加categories-tags属性" class="headerlink" title="给文章添加categories/tags属性"></a>给文章添加<code>categories</code>/<code>tags</code>属性</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">title: jQuery对表单的操作及更多应用</span><br><span class="line">date: 2017-05-26 12:12:57</span><br><span class="line">categories: </span><br><span class="line">- web</span><br><span class="line">- web前端</span><br><span class="line">tags:</span><br><span class="line">- jQuery</span><br><span class="line">- 表格</span><br><span class="line">- 表单验证</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意，categories和tags虽然都可以添加多个关键词。但是categories有上下层级关系，而tags没有</p>
+</blockquote>
+<h2 id="端口配置"><a href="#端口配置" class="headerlink" title="端口配置"></a>端口配置</h2><p>启动服务时指定端口</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s -p 5000</span><br></pre></td></tr></table></figure>
+
+<p>修改默认配置文件_config.yml</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">  port: 5000</span><br><span class="line">  compress: true</span><br><span class="line">  header: true</span><br></pre></td></tr></table></figure>
+
+<h2 id="个性化"><a href="#个性化" class="headerlink" title="个性化"></a>个性化</h2><ul>
+<li><code>scaffolds/</code>是模板目录。</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://keae12315.github.io/code/2021/06/17/docker%E6%95%99%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/code/images/avatar.gif">
+      <meta itemprop="name" content="KEAE">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KEAE的编程笔记">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/code/2021/06/17/docker%E6%95%99%E7%A8%8B/" class="post-title-link" itemprop="url">docker教程</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-17 10:48:12" itemprop="dateCreated datePublished" datetime="2021-06-17T10:48:12+08:00">2021-06-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-08 19:52:19" itemprop="dateModified" datetime="2021-07-08T19:52:19+08:00">2021-07-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>本文默认环境为Linux，打包镜像以Python为例。</p>
+<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><ul>
+<li>查看镜像：<code>docker images</code></li>
+<li>查看所有容器：<code>docker ps -a</code></li>
+<li>查看所有容器ID：<code>docker ps -aq</code></li>
+<li>查看所有正在运行容器：<code>docker ps</code></li>
+</ul>
+<ul>
+<li>停止容器：<code>docker stop &lt;containerID&gt;</code></li>
+<li>停止所有容器：<code>docker stop $(docker ps -aq)</code></li>
+</ul>
+<ul>
+<li>删除容器：<code>docker rm &lt;container ID&gt;</code></li>
+<li>删除镜像：<code>docker rmi &lt;image ID&gt;</code></li>
+<li>删除所有停止的容器：<code>docker container prune -f</code></li>
+<li>删除所有不使用的镜像：<code>docker image prune -f -a</code></li>
+</ul>
+<ul>
+<li>保存镜像：<code>docker save &lt;imageID&gt; &gt; &lt;filename&gt;</code></li>
+<li>加载镜像：<code>docker load &lt; &lt;filename&gt;</code></li>
+</ul>
+<p><em>注意，删除前需要先停止容器。</em></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="官方安装教程"><a href="#官方安装教程" class="headerlink" title="官方安装教程"></a>官方安装教程</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/ubuntu/">Ubuntu</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.docker.com/docker-for-windows/install/">Windows</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.docker.com/docker-for-mac/install/">MacOS</a></li>
+</ul>
+<h3 id="安装后步骤"><a href="#安装后步骤" class="headerlink" title="安装后步骤"></a>安装后步骤</h3><p><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/linux-postinstall/">官方原文</a>过长，摘取了常用的两个步骤。</p>
+<ul>
+<li><p>配置root用户：Docker绑定到Unix socket，但它需要sudo权限。如果不想每次都加sudo命令，创建一个名为Docker的Unix组</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建docker组。</span></span><br><span class="line">sudo groupadd docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将用户添加到docker组。</span></span><br><span class="line">sudo usermod -aG docker <span class="variable">$USER</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 激活对组的更改</span></span><br><span class="line">newgrp docker </span><br></pre></td></tr></table></figure></li>
+<li><p>配置开机启动。<br>注意，在 Debian 和 Ubuntu 上，Docker 服务被配置为默认启动。要在其他发行版的引导中自动启动 Docker 和 Containerd，请使用以下命令:</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> docker.service</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> containerd.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 若要禁用此行为，请使用 disable。</span></span><br><span class="line">sudo systemctl <span class="built_in">disable</span> docker.service</span><br><span class="line">sudo systemctl <span class="built_in">disable</span> containerd.service</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>sudo service docker start</p>
+<p>systemctl stop docker</p>
+<h2 id="Build-your-Python-image"><a href="#Build-your-Python-image" class="headerlink" title="Build your Python image"></a>Build your Python image</h2><ol>
+<li>生成requirements.txt <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 freeze &gt; requirements.txt</span><br></pre></td></tr></table></figure></li>
+<li>创建Dockerfile和.dockerignore（可选） <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># syntax=docker/dockerfile:1</span></span><br><span class="line"></span><br><span class="line">FROM python:3.8-slim-buster</span><br><span class="line"></span><br><span class="line">WORKDIR /app</span><br><span class="line"></span><br><span class="line">COPY requirements.txt requirements.txt</span><br><span class="line">RUN pip3 install -r requirements.txt</span><br><span class="line"></span><br><span class="line">COPY . .</span><br><span class="line"></span><br><span class="line">CMD [ <span class="string">&quot;python3&quot;</span>, <span class="string">&quot;-m&quot;</span> , <span class="string">&quot;flask&quot;</span>, <span class="string">&quot;run&quot;</span>, <span class="string">&quot;--host=0.0.0.0&quot;</span>]</span><br></pre></td></tr></table></figure></li>
+<li>生成镜像 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t &lt;tag name&gt; .</span><br></pre></td></tr></table></figure></li>
+<li>运行镜像 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -v &lt;filepath&gt;:&lt;docker path&gt; -p 127.0.0.1:5001:5000 &lt;image name&gt;</span><br></pre></td></tr></table></figure></li>
+<li>保存镜像 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker save -o &lt;path&gt; &lt;image name&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://keae12315.github.io/code/2021/06/12/%E7%BD%91%E7%AB%99%E8%B5%84%E6%BA%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/code/images/avatar.gif">
+      <meta itemprop="name" content="KEAE">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KEAE的编程笔记">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/code/2021/06/12/%E7%BD%91%E7%AB%99%E8%B5%84%E6%BA%90/" class="post-title-link" itemprop="url">网站资源</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-12 18:00:22" itemprop="dateCreated datePublished" datetime="2021-06-12T18:00:22+08:00">2021-06-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-06-23 15:34:44" itemprop="dateModified" datetime="2021-06-23T15:34:44+08:00">2021-06-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="基本工具"><a href="#基本工具" class="headerlink" title="基本工具"></a>基本工具</h2><p><a target="_blank" rel="noopener" href="https://www.markdown.xyz/basic-syntax/">Markdown</a><br><a target="_blank" rel="noopener" href="https://git-scm.com/book/zh/v2">Git</a></p>
+<h2 id="Neural-Network"><a href="#Neural-Network" class="headerlink" title="Neural Network"></a>Neural Network</h2><p><a target="_blank" rel="noopener" href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/">Understanding LSTM Networks</a></p>
+<h2 id="Tensorflow"><a href="#Tensorflow" class="headerlink" title="Tensorflow"></a>Tensorflow</h2><p><a target="_blank" rel="noopener" href="https://tf.wiki/zh_hans/introduction.html">简单粗暴 TensorFlow 2</a></p>
+<h2 id="Pytorch"><a href="#Pytorch" class="headerlink" title="Pytorch"></a>Pytorch</h2><p><a target="_blank" rel="noopener" href="https://pytorch.org/tutorials/beginner/basics/tensorqs_tutorial.html">Pytorch</a>  </p>
+<h2 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h2><p><a target="_blank" rel="noopener" href="https://support.microsoft.com/en-us/office/linear-format-equations-using-unicodemath-and-latex-in-word-2e00618d-b1fd-49d8-8cb4-8d17f25754f8?ui=en-us&rs=en-us&ad=us">Word中的公式</a><br><a target="_blank" rel="noopener" href="http://www.uefap.com/vocab/vocfram.htm">词汇</a><br><a target="_blank" rel="noopener" href="http://www.bzfxw.com/soft/sort024/">国标文档下载</a>      </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://keae12315.github.io/code/2021/06/12/Vs-code%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/code/images/avatar.gif">
+      <meta itemprop="name" content="KEAE">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KEAE的编程笔记">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/code/2021/06/12/Vs-code%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/" class="post-title-link" itemprop="url">Vs code远程连接</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-12 16:23:47" itemprop="dateCreated datePublished" datetime="2021-06-12T16:23:47+08:00">2021-06-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-06-23 15:01:55" itemprop="dateModified" datetime="2021-06-23T15:01:55+08:00">2021-06-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>微软针对Vs code的远程开发推出了三个插件，包括 ：</p>
+<ul>
+<li><code>Remote-SSH</code>：SSH 连接虚拟/实体Linux主机；</li>
+<li><code>Remote-Container</code>：连接容器；</li>
+<li><code>Remote-WSL</code>：连接WSL（也就是Linux子系统）。</li>
+</ul>
+<p>重点服务使用Windows但具有Linux开发需求的用户。</p>
+<h2 id="使用Remote-SSH连接实验室服务器"><a href="#使用Remote-SSH连接实验室服务器" class="headerlink" title="使用Remote-SSH连接实验室服务器"></a>使用<code>Remote-SSH</code>连接实验室服务器</h2><p>这里是微软关于SSH连接的<a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/remote/ssh#_getting-started">官方文档</a></p>
+<h3 id="安装Remote-SSH插件"><a href="#安装Remote-SSH插件" class="headerlink" title="安装Remote-SSH插件"></a>安装<code>Remote-SSH</code>插件</h3><p>在Extension侧边栏搜索Remote-ssh并安装</p>
+<h3 id="修改ssh配置文件"><a href="#修改ssh配置文件" class="headerlink" title="修改ssh配置文件"></a>修改ssh配置文件</h3><p>文件位置<code>C:\Users\&lt;user&gt;\.ssh\config</code>，如果没有这个文件夹，在管理可选功能里添加 OpenSSH 客户端。</p>
+<p>在config文件中写入以下内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Host Labserve #填写别名</span><br><span class="line">  HostName 1.1.1.1 #填写实验室服务器IP/host</span><br><span class="line">  User user #填写ssh用户名</span><br></pre></td></tr></table></figure>
+
+<h3 id="添加ssh公钥"><a href="#添加ssh公钥" class="headerlink" title="添加ssh公钥"></a>添加ssh公钥</h3><p>远程ssh连接Linux服务器时，需要借助ssh公钥登录</p>
+<ol>
+<li><p>生成ssh公钥<br> 在cmd中输入<code>ssh-keygen</code>，一路回车键，完成后在$HOME/.ssh/目录下可以发现两个文件：id_rsa.pub和id_rsa，分别是客户端的公钥和私钥。</p>
+</li>
+<li><p>上传ssh公钥<br> 登录远程服务器，创建.ssh目录和authorized_keys文件</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/.ssh/</span><br><span class="line"><span class="built_in">cd</span> ~/.ssh/</span><br><span class="line">vim authorized_keys</span><br></pre></td></tr></table></figure>
+<p> 将客户端的id_rsa.pub中的公钥复制到authorized_keys中，保存并退出vim。</p>
+</li>
+<li><p>修改ssh配置</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RSAAuthentication yes</span><br><span class="line">PubkeyAuthentication yes</span><br><span class="line">AuthorizedKeysFile $h/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+<p> 保存并退出vim。</p>
+</li>
+<li><p>重启ssh服务</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service ssh restart</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="通过CONNECTION侧边栏进行连接"><a href="#通过CONNECTION侧边栏进行连接" class="headerlink" title="通过CONNECTION侧边栏进行连接"></a>通过CONNECTION侧边栏进行连接</h3><p>此时，已经可以在CONNECTION侧边栏看见服务器的别名，点击进行连接。<br>特别的，如果没有生成ssh公钥，这一步可能会要求输入服务器密码。</p>
+<h2 id="问题汇总"><a href="#问题汇总" class="headerlink" title="问题汇总"></a>问题汇总</h2><h3 id="阿里云、腾讯云等云服务器连接超时"><a href="#阿里云、腾讯云等云服务器连接超时" class="headerlink" title="阿里云、腾讯云等云服务器连接超时"></a>阿里云、腾讯云等云服务器连接超时</h3><p>目前VSCode的远程连接插件，默认勾选Use Local Server，也就是默认使用本地局域网络进行连接。如果你遇到阿里云等云服务器连接超时，应该取消勾选此项。</p>
+<h3 id="用wget不能解析xxx或者任意远程服务下载失败的"><a href="#用wget不能解析xxx或者任意远程服务下载失败的" class="headerlink" title="用wget不能解析xxx或者任意远程服务下载失败的"></a>用wget不能解析xxx或者任意远程服务下载失败的</h3><p>vscode最近新增了一个超级实用的配置：Allow Local Server Download:</p>
+<p>如果在远程主机下载vscode远程服务失败，改在本地电脑下载此服务并且用scp进行传输。<br>所以，开启这个选项理论上可以解决之前的任意下载问题。</p>
+<h3 id="端口转发"><a href="#端口转发" class="headerlink" title="端口转发"></a>端口转发</h3><p><a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/remote/ssh">vscode官方文档</a>有解决办法：直接在配置文件那里写上。</p>
+<h3 id="ssh使用的端口不是默认的22"><a href="#ssh使用的端口不是默认的22" class="headerlink" title="ssh使用的端口不是默认的22"></a>ssh使用的端口不是默认的22</h3><p>其实这个也是可以在配置文件里修改。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Host LabServer</span><br><span class="line">    HostName 172.31.00.00</span><br><span class="line">    User cai</span><br><span class="line">    Port 3600 #添加你的端口</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>参考资料<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/64849549">VSCode Remote 体验 | 远程Linux环境开发真香</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/124105812">VS Code Remote配置</a></p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://keae12315.github.io/code/2021/06/06/%E4%BD%BF%E7%94%A8%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E7%9A%84%E6%8A%80%E5%B7%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/code/images/avatar.gif">
+      <meta itemprop="name" content="KEAE">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KEAE的编程笔记">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/code/2021/06/06/%E4%BD%BF%E7%94%A8%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E7%9A%84%E6%8A%80%E5%B7%A7/" class="post-title-link" itemprop="url">使用搜索引擎的技巧</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-06 16:30:55" itemprop="dateCreated datePublished" datetime="2021-06-06T16:30:55+08:00">2021-06-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-06-23 15:03:27" itemprop="dateModified" datetime="2021-06-23T15:03:27+08:00">2021-06-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="学会使用搜索运算符"><a href="#学会使用搜索运算符" class="headerlink" title="学会使用搜索运算符"></a>学会使用搜索运算符</h2><p>关于算术运算符的几个小技巧其实并不新鲜，很多是和搜索引擎本身一起诞生的，甚至已经成为了各个搜索引擎的一种通用标准。<br>不过鉴于仍然有许多人不知道这些搜索运算符，或者没有概念它们具体能做什么，所以我们先来讲一讲这些最基本的知识。</p>
+<ul>
+<li>双引号<code>&quot;&quot;</code>：完全匹配。结果中必须出现与搜索文本完全相同的内容。</li>
+<li>短横<code>-</code>：排除。</li>
+<li>加号<code>+</code>：包含搜索。</li>
+<li>~ 进行同义词搜索。</li>
+<li><code>site</code>：在某个网站内搜索。</li>
+<li><code>filetype</code>：搜索对应类型的文件。</li>
+</ul>
+<p>link 搜索网页中含有某链接的结果，比如搜索：link:<a target="_blank" rel="noopener" href="http://baidu.com,则结果为包含百度这个链接的页面./">http://baidu.com，则结果为包含百度这个链接的页面。</a></p>
+<p>intitle 搜索标题内包含关键词的结果。</p>
+<p>inurl 搜索网站地址中包含关键词的结果。</p>
+<p>related 搜索相关网站。</p>
+<p>index of 可以突破网站入口下载。</p>
+<h2 id="如何进行学术搜索"><a href="#如何进行学术搜索" class="headerlink" title="如何进行学术搜索"></a>如何进行学术搜索</h2><h3 id="综述类关键词"><a href="#综述类关键词" class="headerlink" title="综述类关键词"></a>综述类关键词</h3><ul>
+<li>overview</li>
+<li>survey</li>
+<li>review</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://keae12315.github.io/code/2021/06/03/Python%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%97%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/code/images/avatar.gif">
+      <meta itemprop="name" content="KEAE">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KEAE的编程笔记">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/code/2021/06/03/Python%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%97%B6/" class="post-title-link" itemprop="url">Python程序计时</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-03 19:27:50" itemprop="dateCreated datePublished" datetime="2021-06-03T19:27:50+08:00">2021-06-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-06-23 15:06:42" itemprop="dateModified" datetime="2021-06-23T15:06:42+08:00">2021-06-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/code/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>python的time内置模块是一个与时间相关的内置模块，很多人喜欢用time.time()获取当前时间的时间戳，利用程序前后两个时间戳的差值计算程序的运行时间，如下：</p>
+<h2 id="使用time-time"><a href="#使用time-time" class="headerlink" title="使用time.time()"></a>使用time.time()</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">T1 = time.time()</span><br><span class="line"></span><br><span class="line">#______假设下面是程序部分______</span><br><span class="line">for i in range(100*100):</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">T2 = time.time()</span><br><span class="line">print(&#x27;程序运行时间:%s毫秒&#x27; % ((T2 - T1)*1000))</span><br><span class="line"># 程序运行时间:0.0毫秒</span><br></pre></td></tr></table></figure>
+
+<p>不要以为你的处理器很厉害，就忽视了一个问题，一万次遍历，时间为0.0毫秒？</p>
+<p>下面解决上面的质疑，</p>
+<h2 id="使用time-clock"><a href="#使用time-clock" class="headerlink" title="使用time.clock()"></a>使用time.clock()</h2><p>Python time clock() 函数以浮点数计算的秒数返回当前的CPU时间。用来衡量不同程序的耗时，比time.time()更有用。</p>
+<p>这个需要注意，在不同的系统上含义不同。在UNIX系统上，它返回的是”进程时间”，它是用秒表示的浮点数（时间戳）。而在WINDOWS中，第一次调用，返回的是进程运行的实际时间。而第二次之后的调用是自第一次调用以后到现在的运行时间。（实际上是以WIN32上QueryPerformanceCounter()为基础，它比毫秒表示更为精确）</p>
+<p>使用time.clock()更改后的程序查看一下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import platform</span><br><span class="line">print(&#x27;系统:&#x27;,platform.system())</span><br><span class="line"></span><br><span class="line">import time</span><br><span class="line">T1 = time.clock()</span><br><span class="line"></span><br><span class="line">#______假设下面是程序部分______</span><br><span class="line">for i in range(100*100):</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">T2 =time.clock()</span><br><span class="line">print(&#x27;程序运行时间:%s毫秒&#x27; % ((T2 - T1)*1000))</span><br><span class="line"># 程序运行时间:0.27023641716203606毫秒</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用time-perf-counter"><a href="#使用time-perf-counter" class="headerlink" title="使用time.perf_counter()"></a>使用time.perf_counter()</h2><p>返回性能计数器的值（以微秒为单位,1秒=1000毫秒；1毫秒=1000微秒）作为浮点数，即具有最高可用分辨率的时钟，以测量短持续时间。它包括在睡眠期间和系统范围内流逝的时间。返回值的参考点未定义，因此只有连续调用结果之间的差异有效。</p>
+<p>1秒 = 1000毫秒</p>
+<p>1毫秒 = 1000微秒</p>
+<p>1微秒 = 1000纳秒</p>
+<p>1纳秒 = 1000皮秒</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import platform</span><br><span class="line">print(&#x27;系统:&#x27;,platform.system())</span><br><span class="line"></span><br><span class="line">import time</span><br><span class="line">T1 = time.perf_counter()</span><br><span class="line"></span><br><span class="line">#______假设下面是程序部分______</span><br><span class="line">for i in range(100*100):</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">T2 =time.perf_counter()</span><br><span class="line">print(&#x27;程序运行时间:%s毫秒&#x27; % ((T2 - T1)*1000))</span><br><span class="line"># 系统: Windows</span><br><span class="line"># 程序运行时间:0.3007180604248629毫秒</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用time-process-time"><a href="#使用time-process-time" class="headerlink" title="使用time.process_time()"></a>使用time.process_time()</h2><p>返回当前进程的系统和用户CPU时间总和的值（以小数微秒为单位）作为浮点数。</p>
+<p>通常time.process_time()也用在测试代码时间上，根据定义，它在整个过程中。返回值的参考点未定义，因此我们测试代码的时候需要调用两次，做差值。</p>
+<p>注意process_time()不包括sleep()休眠时间期间经过的时间。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import platform</span><br><span class="line">print(&#x27;系统:&#x27;,platform.system())</span><br><span class="line"></span><br><span class="line">import time</span><br><span class="line">T1 = time.process_time()</span><br><span class="line"></span><br><span class="line">#______假设下面是程序部分______</span><br><span class="line">for i in range(100*100):</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">T2 =time.process_time()</span><br><span class="line">print(&#x27;程序运行时间:%s毫秒&#x27; % ((T2 - T1)*1000))</span><br><span class="line"># 系统: Windows</span><br><span class="line"># 程序运行时间:0.0毫秒</span><br></pre></td></tr></table></figure>
+
+<p>写在最后：</p>
+<p>建议PC上使用time.perf_counter() 来计算程序的运算时间，特别是测试算法在相邻两帧的处理时间，如果计算不准确，那可能会对算法的速度过于自信。</p>
+<p>尤其在嵌入式的板子的开发中，性能的测试中，请仔细选择时间模块，比如某些嵌入式板子会封装专门的模块。</p>
+<p>参考资料：<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/110005305">python 利用time模块给程序计时</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://keae12315.github.io/code/2021/06/03/Python%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/code/images/avatar.gif">
+      <meta itemprop="name" content="KEAE">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KEAE的编程笔记">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/code/2021/06/03/Python%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">Python文件处理的常用方法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-03 10:06:45" itemprop="dateCreated datePublished" datetime="2021-06-03T10:06:45+08:00">2021-06-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-06-23 15:07:01" itemprop="dateModified" datetime="2021-06-23T15:07:01+08:00">2021-06-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/code/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="遍历文件或目录"><a href="#遍历文件或目录" class="headerlink" title="遍历文件或目录"></a>遍历文件或目录</h2><p>我们常常需要对数据集文件夹中的数据进行遍历，Python内置的 os 模块有很多有用的方法能被用来列出目录内容和过滤结果。</p>
+<h3 id="常用函数介绍"><a href="#常用函数介绍" class="headerlink" title="常用函数介绍"></a>常用函数介绍</h3><ul>
+<li><p><code>os.listdir(path)</code><br>  返回一个list，其中包含path参数所指目录的文件和子目录的名称</p>
+</li>
+<li><p><code>os.walk(top[, topdown=True[, onerror=None[, followlinks=False]]])</code></p>
+<ul>
+<li>top – 返回值，为一个三元组(root,dirs,files)。<ul>
+<li>root 所指的是当前正在遍历的这个文件夹的本身的地址</li>
+<li>dirs 是一个 list ，内容是该文件夹中所有的目录的名字(不包括子目录)</li>
+<li>files 同样是 list , 内容是该文件夹中所有的文件(不包括子目录)</li>
+</ul>
+</li>
+<li>topdown –可选，控制遍历是从上到下，还是反过来。 为True优先遍历上层目录，否则优先遍历最底层目录(默认为True)。</li>
+<li>onerror – 可选，需要一个 callable 对象，当 walk 需要异常时，会调用。</li>
+<li>followlinks – 可选，如果为 True，则会遍历目录下的快捷方式(linux 下是软连接 symbolic link )实际所指的目录(默认关闭)，如果为 False，则优先遍历 top 的子目录。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> root,dirs,files <span class="keyword">in</span> os.walk(mypath):</span><br><span class="line">  <span class="built_in">print</span>(root)</span><br><span class="line">  <span class="keyword">for</span> dr <span class="keyword">in</span> dirs:</span><br><span class="line">      <span class="built_in">print</span>(dr)</span><br><span class="line">  <span class="keyword">for</span> name <span class="keyword">in</span> files:</span><br><span class="line">      <span class="keyword">if</span> name.endswith(<span class="string">&quot;.txt&quot;</span>):</span><br><span class="line">          <span class="built_in">print</span>(os.path.join(root, name))</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="排序问题"><a href="#排序问题" class="headerlink" title="排序问题"></a>排序问题</h3><p>需要注意的是<code>os.walk</code>使用<code>os.listdir</code>，两者返回的列表都是任意顺序的，如果想要获得排序，考虑使用<code>sort</code>。例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果要按排序顺序递归目录，则就地修改dirs</span></span><br><span class="line"><span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> os.walk(path):</span><br><span class="line">   dirs.sort()</span><br><span class="line">   <span class="keyword">for</span> dirname <span class="keyword">in</span> dirs:</span><br><span class="line">        <span class="built_in">print</span>(os.path.join(root, dirname))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果要按数字顺序列出它们，请使用:</span></span><br><span class="line"><span class="keyword">for</span> dirname <span class="keyword">in</span> <span class="built_in">sorted</span>(dirs, key=<span class="built_in">int</span>):</span><br><span class="line"></span><br><span class="line"><span class="comment"># 要对字母数字字符串进行排序，请使用natural sort。</span></span><br></pre></td></tr></table></figure>
+
+<p>参考资料：<br><a target="_blank" rel="noopener" href="https://realpython.com/working-with-files-in-python/">Working With Files in Python</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/56909212">Python文件操作，看这篇就足够</a><br><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/18282370/in-what-order-does-os-walk-iterates-iterate">In what order does os.walk iterates iterate? 
+</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://keae12315.github.io/code/2021/06/02/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3Python%E4%B8%AD%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/code/images/avatar.gif">
+      <meta itemprop="name" content="KEAE">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KEAE的编程笔记">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/code/2021/06/02/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3Python%E4%B8%AD%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8/" class="post-title-link" itemprop="url">如何理解Python中的装饰器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-02 12:13:49" itemprop="dateCreated datePublished" datetime="2021-06-02T12:13:49+08:00">2021-06-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-06-23 15:03:04" itemprop="dateModified" datetime="2021-06-23T15:03:04+08:00">2021-06-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/code/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>装饰器来自 Decorator 的直译，就是装点、提供一些额外的点缀。<br>在 Python 中的装饰器则是提供了一些额外的功能，可以让你的函数在不改变代码的情况下拥有新的功能。</p>
+<p>首先，Python中的函数也是一个对象，这意味着函数：</p>
+<ul>
+<li>能在函数中定义一个函数</li>
+<li><strong>能作为参数传递</strong></li>
+<li><strong>能作为返回值</strong></li>
+</ul>
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">def decorator(func):</span><br><span class="line">    def wrapper(*args, **kwargs):</span><br><span class="line">        print(&#x27;123&#x27;)</span><br><span class="line">        return func(*args, **kwargs)</span><br><span class="line"></span><br><span class="line">    return wrapper</span><br><span class="line"></span><br><span class="line">def say_hello():</span><br><span class="line">    print(&#x27;同学你好&#x27;)</span><br><span class="line"></span><br><span class="line">say_hello_super = decorator(say_hello)</span><br><span class="line">say_hello_super()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">123</span><br><span class="line">同学你好</span><br></pre></td></tr></table></figure>
+
+<p>在以上这段代码中，我们将一个函数 say_hello 作为参数传入函数 decorator，返回一个 wrapper 函数并赋值到 say_hello_super，此时执行 say_hello_super 相当于执行 wrapper 函数。当我们执行 wrapper 函数时会先打印 123 再执行先前传入的 func 参数也就是 say_hello 函数。</p>
+<p>注意 wrapper 的 *args 与 **kwargs 参数，这是必须的， *args 表示所有的位置参数，**kwargs 表示所有的关键字参数。之后再将其传到 func函数中， 这样保证了能完全传递所有参数。</p>
+<p>在这里，decorator 这个函数就是一个装饰器，功能是在执行被装饰的函数之前打印 123。</p>
+<p>在 python 中， 有一种语法糖可以代替 say_hello_super = decorator(say_hello) 这一步的操作，以上的代码可以改写成。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@decorator</span><br><span class="line">def say_hello():</span><br><span class="line">    print(&#x27;同学你好&#x27;)</span><br><span class="line"></span><br><span class="line">say_hello()</span><br></pre></td></tr></table></figure>
+
+<p>这里在函数前加上 @decorator 相当于在定义函数后执行了一条语句， say_hello = decorator(say_hello) 。</p>
+<h2 id="带参数的装饰器"><a href="#带参数的装饰器" class="headerlink" title="带参数的装饰器"></a>带参数的装饰器</h2><p>之前的装饰器是在每次执行函数前打印 123， 如果我们想指定打印的值，那该怎么办？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">def info(value):</span><br><span class="line">    def decorator(func):</span><br><span class="line">        def wrapper(*args, **kwargs):</span><br><span class="line">            print(value)</span><br><span class="line">            return func(*args, **kwargs)</span><br><span class="line"></span><br><span class="line">        return wrapper</span><br><span class="line"></span><br><span class="line">    return decorator</span><br><span class="line"></span><br><span class="line">@info(&#x27;456&#x27;)</span><br><span class="line">def say_hello():</span><br><span class="line">    print(&#x27;同学你好&#x27;)</span><br><span class="line"></span><br><span class="line">say_hello()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">456</span><br><span class="line">同学你好</span><br></pre></td></tr></table></figure>
+
+<p>我们可以在装饰器外部再套上一层函数，用该函数的参数接收我们想要打印的数据，并将先前的 decorator 函数作为返回值。这就是之前学到的闭包的一种功能，就是用闭包来生成一个命名空间，在命名空间中保存我们要打印的值 value。</p>
+<h2 id="wraps-装饰器"><a href="#wraps-装饰器" class="headerlink" title="wraps 装饰器"></a>wraps 装饰器</h2><p>一个函数不止有他的执行语句，还有着 <strong>name__（函数名），__doc</strong> （说明文档）等属性，我们之前的例子会导致这些属性改变。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">def decorator(func):</span><br><span class="line">    def wrapper(*args, **kwargs):</span><br><span class="line">        &quot;&quot;&quot;doc of wrapper&quot;&quot;&quot;</span><br><span class="line">        print(&#x27;123&#x27;)</span><br><span class="line">        return func(*args, **kwargs)</span><br><span class="line"></span><br><span class="line">    return wrapper</span><br><span class="line"></span><br><span class="line">@decorator</span><br><span class="line">def say_hello():</span><br><span class="line">    &quot;&quot;&quot;doc of say hello&quot;&quot;&quot;</span><br><span class="line">    print(&#x27;同学你好&#x27;)</span><br><span class="line"></span><br><span class="line">print(say_hello.__name__)</span><br><span class="line">print(say_hello.__doc__)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wrapper</span><br><span class="line">doc of wrapper</span><br></pre></td></tr></table></figure>
+
+<p>由于装饰器返回了 wrapper 函数替换掉了之前的 say_hello 函数，导致函数名，帮助文档变成了 wrapper 函数的了。</p>
+<p>解决这一问题的办法是通过 functools 模块下的 wraps 装饰器。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">from functools import wraps</span><br><span class="line"></span><br><span class="line">def decorator(func):</span><br><span class="line">    @wraps(func)</span><br><span class="line">    def wrapper(*args, **kwargs):</span><br><span class="line">        &quot;&quot;&quot;doc of wrapper&quot;&quot;&quot;</span><br><span class="line">        print(&#x27;123&#x27;)</span><br><span class="line">        return func(*args, **kwargs)</span><br><span class="line"></span><br><span class="line">    return wrapper</span><br><span class="line"></span><br><span class="line">@decorator</span><br><span class="line">def say_hello():</span><br><span class="line">    &quot;&quot;&quot;doc of say hello&quot;&quot;&quot;</span><br><span class="line">    print(&#x27;同学你好&#x27;)</span><br><span class="line"></span><br><span class="line">print(say_hello.__name__)</span><br><span class="line">print(say_hello.__doc__)</span><br><span class="line">say_hello</span><br><span class="line">doc of say hello</span><br></pre></td></tr></table></figure>
+
+<p>参考资料</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/26930016/answer/1904166977">如何理解Python装饰器？ - 三眼鸭的编程教室的回答</a></li>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000007837364">Python 装饰器执行顺序迷思</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://keae12315.github.io/code/2021/06/01/%E5%9C%B0%E9%81%93%E7%9A%84Python%E5%BE%AA%E7%8E%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/code/images/avatar.gif">
+      <meta itemprop="name" content="KEAE">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KEAE的编程笔记">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/code/2021/06/01/%E5%9C%B0%E9%81%93%E7%9A%84Python%E5%BE%AA%E7%8E%AF/" class="post-title-link" itemprop="url">地道的Python循环</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-01 14:44:01" itemprop="dateCreated datePublished" datetime="2021-06-01T14:44:01+08:00">2021-06-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-06-23 15:02:42" itemprop="dateModified" datetime="2021-06-23T15:02:42+08:00">2021-06-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/code/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在循环语法方面，Python 选择了 for 和 while 这两个经典的关键字来表达循环。绝大多数情况下，我们的循环需求都可以用 <code>for &lt;item&gt; in &lt;iterable&gt;</code> 来满足，<code>while &lt;condition&gt;</code> 相比之下则用的更少些。</p>
+<p>Python 的 <code>for</code> 循环只有 <code>for &lt;item&gt; in &lt;iterable&gt;</code> 这一种结构，而结构里的前半部分 - 赋值给 item - 没有太多花样可玩。所以后半部分的 可迭代对象 是我们唯一能够大做文章的东西。而以 enumerate() 函数为代表的<em>“修饰函数”</em>，刚好提供了一种思路：通过修饰可迭代对象来优化循环本身。</p>
+<h2 id="使用函数修饰被迭代对象来优化循环"><a href="#使用函数修饰被迭代对象来优化循环" class="headerlink" title="使用函数修饰被迭代对象来优化循环"></a>使用函数修饰被迭代对象来优化循环</h2><p>内置模块 <code>itertools</code> 是一个包含很多面向可迭代对象的工具函数集。 <a target="_blank" rel="noopener" href="https://docs.python.org/3.6/library/itertools.html">Python 官方文档</a>是学习的首选，里面有非常详细的模块相关资料。下面给出一些常用的函数。</p>
+<ul>
+<li><code>enumerate(iterable)</code>：返回元素和下标</li>
+<li><code>product(A, B)</code>：返回A, B的笛卡儿积  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">for item in itertools.product([1,2,3],[100,200]):</span><br><span class="line">    print(item)</span><br><span class="line"></span><br><span class="line">(1, 100)</span><br><span class="line">(1, 200)</span><br><span class="line">(2, 100)</span><br><span class="line">(2, 200)</span><br><span class="line">(3, 100)</span><br><span class="line">(3, 200)</span><br></pre></td></tr></table></figure></li>
+<li><code>islice(seq, start, end, step)</code>：循环内隔行处理</li>
+<li><code>takewhile(predicate, iterable)</code>：替代 break 语句</li>
+<li><code>zip(A, B)</code>：按顺序同时迭代A，B</li>
+</ul>
+<h2 id="按职责拆解循环体内复杂代码块"><a href="#按职责拆解循环体内复杂代码块" class="headerlink" title="按职责拆解循环体内复杂代码块"></a>按职责拆解循环体内复杂代码块</h2><p>写循环时，我们很容易往循环体塞入越来越多的代码，包括过滤掉无效元素、预处理数据、打印日志等等，甚至一些原本不属于同一抽象的内容，导致各部分功能耦合。</p>
+<p>这样一个复杂循环体在面对新需求时难以解耦复用。考虑使用<strong>生成器函数</strong>解耦循环体。</p>
+<p>参考资料：<br><a target="_blank" rel="noopener" href="https://github.com/piglei/one-python-craftsman/blob/master/zh_CN/7-two-tips-on-loop-writing.md">Python 工匠：编写地道循环的两个建议</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://keae12315.github.io/code/2021/05/01/Linux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/code/images/avatar.gif">
+      <meta itemprop="name" content="KEAE">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KEAE的编程笔记">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/code/2021/05/01/Linux/" class="post-title-link" itemprop="url">Linux</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-01 10:45:14" itemprop="dateCreated datePublished" datetime="2021-05-01T10:45:14+08:00">2021-05-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-06-23 15:02:05" itemprop="dateModified" datetime="2021-06-23T15:02:05+08:00">2021-06-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h2><p>编辑<code>/etc/apt/sources.list</code><br>(建议操作前备份或者采用注释的方式)</p>
+<p>备份源列表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/apt/sources.list /etc/apt/sources.list_backup</span><br></pre></td></tr></table></figure>
+
+<p>在source.list的内容修改为以下内容：阿里云源</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure>
+
+<p>更新软件列表：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update  </span><br></pre></td></tr></table></figure>
+
+<p>更新软件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
+
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>rm<br>-i 删除前逐一询问确认。<br>-f 即使原档案属性设为唯读，亦直接删除，无需逐一确认。<br>-r 将目录及以下之档案亦逐一删除,递归所有的子目录,逐一询问。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/code/page/2/">2</a><a class="extend next" rel="next" href="/code/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KEAE</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/code/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KEAE</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/code/lib/anime.min.js"></script>
+  <script src="/code/lib/velocity/velocity.min.js"></script>
+  <script src="/code/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/code/js/utils.js"></script>
+
+<script src="/code/js/motion.js"></script>
+
+
+<script src="/code/js/schemes/pisces.js"></script>
+
+
+<script src="/code/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/code/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

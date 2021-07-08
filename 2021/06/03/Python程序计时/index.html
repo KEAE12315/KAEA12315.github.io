@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/code/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/code/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/code/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/code/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/code/css/main.css">
+
+
+<link rel="stylesheet" href="/code/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"keae12315.github.io","root":"/code/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="python的time内置模块是一个与时间相关的内置模块，很多人喜欢用time.time()获取当前时间的时间戳，利用程序前后两个时间戳的差值计算程序的运行时间，如下： 使用time.time()12345678910import timeT1 &#x3D; time.time()#______假设下面是程序部分______for i in range(100*100):    passT2 &#x3D; time.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python程序计时">
+<meta property="og:url" content="https://keae12315.github.io/code/2021/06/03/Python%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%97%B6/index.html">
+<meta property="og:site_name" content="KEAE的编程笔记">
+<meta property="og:description" content="python的time内置模块是一个与时间相关的内置模块，很多人喜欢用time.time()获取当前时间的时间戳，利用程序前后两个时间戳的差值计算程序的运行时间，如下： 使用time.time()12345678910import timeT1 &#x3D; time.time()#______假设下面是程序部分______for i in range(100*100):    passT2 &#x3D; time.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-06-03T11:27:50.000Z">
+<meta property="article:modified_time" content="2021-06-23T07:06:42.909Z">
+<meta property="article:author" content="KEAE">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://keae12315.github.io/code/2021/06/03/Python%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%97%B6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Python程序计时 | KEAE的编程笔记</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/code/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">KEAE的编程笔记</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/code/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/code/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/code/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/code/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://keae12315.github.io/code/2021/06/03/Python%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%97%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/code/images/avatar.gif">
+      <meta itemprop="name" content="KEAE">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KEAE的编程笔记">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python程序计时
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-03 19:27:50" itemprop="dateCreated datePublished" datetime="2021-06-03T19:27:50+08:00">2021-06-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-06-23 15:06:42" itemprop="dateModified" datetime="2021-06-23T15:06:42+08:00">2021-06-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/code/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>python的time内置模块是一个与时间相关的内置模块，很多人喜欢用time.time()获取当前时间的时间戳，利用程序前后两个时间戳的差值计算程序的运行时间，如下：</p>
+<h2 id="使用time-time"><a href="#使用time-time" class="headerlink" title="使用time.time()"></a>使用time.time()</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">T1 = time.time()</span><br><span class="line"></span><br><span class="line">#______假设下面是程序部分______</span><br><span class="line">for i in range(100*100):</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">T2 = time.time()</span><br><span class="line">print(&#x27;程序运行时间:%s毫秒&#x27; % ((T2 - T1)*1000))</span><br><span class="line"># 程序运行时间:0.0毫秒</span><br></pre></td></tr></table></figure>
+
+<p>不要以为你的处理器很厉害，就忽视了一个问题，一万次遍历，时间为0.0毫秒？</p>
+<p>下面解决上面的质疑，</p>
+<h2 id="使用time-clock"><a href="#使用time-clock" class="headerlink" title="使用time.clock()"></a>使用time.clock()</h2><p>Python time clock() 函数以浮点数计算的秒数返回当前的CPU时间。用来衡量不同程序的耗时，比time.time()更有用。</p>
+<p>这个需要注意，在不同的系统上含义不同。在UNIX系统上，它返回的是”进程时间”，它是用秒表示的浮点数（时间戳）。而在WINDOWS中，第一次调用，返回的是进程运行的实际时间。而第二次之后的调用是自第一次调用以后到现在的运行时间。（实际上是以WIN32上QueryPerformanceCounter()为基础，它比毫秒表示更为精确）</p>
+<p>使用time.clock()更改后的程序查看一下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import platform</span><br><span class="line">print(&#x27;系统:&#x27;,platform.system())</span><br><span class="line"></span><br><span class="line">import time</span><br><span class="line">T1 = time.clock()</span><br><span class="line"></span><br><span class="line">#______假设下面是程序部分______</span><br><span class="line">for i in range(100*100):</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">T2 =time.clock()</span><br><span class="line">print(&#x27;程序运行时间:%s毫秒&#x27; % ((T2 - T1)*1000))</span><br><span class="line"># 程序运行时间:0.27023641716203606毫秒</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用time-perf-counter"><a href="#使用time-perf-counter" class="headerlink" title="使用time.perf_counter()"></a>使用time.perf_counter()</h2><p>返回性能计数器的值（以微秒为单位,1秒=1000毫秒；1毫秒=1000微秒）作为浮点数，即具有最高可用分辨率的时钟，以测量短持续时间。它包括在睡眠期间和系统范围内流逝的时间。返回值的参考点未定义，因此只有连续调用结果之间的差异有效。</p>
+<p>1秒 = 1000毫秒</p>
+<p>1毫秒 = 1000微秒</p>
+<p>1微秒 = 1000纳秒</p>
+<p>1纳秒 = 1000皮秒</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import platform</span><br><span class="line">print(&#x27;系统:&#x27;,platform.system())</span><br><span class="line"></span><br><span class="line">import time</span><br><span class="line">T1 = time.perf_counter()</span><br><span class="line"></span><br><span class="line">#______假设下面是程序部分______</span><br><span class="line">for i in range(100*100):</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">T2 =time.perf_counter()</span><br><span class="line">print(&#x27;程序运行时间:%s毫秒&#x27; % ((T2 - T1)*1000))</span><br><span class="line"># 系统: Windows</span><br><span class="line"># 程序运行时间:0.3007180604248629毫秒</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用time-process-time"><a href="#使用time-process-time" class="headerlink" title="使用time.process_time()"></a>使用time.process_time()</h2><p>返回当前进程的系统和用户CPU时间总和的值（以小数微秒为单位）作为浮点数。</p>
+<p>通常time.process_time()也用在测试代码时间上，根据定义，它在整个过程中。返回值的参考点未定义，因此我们测试代码的时候需要调用两次，做差值。</p>
+<p>注意process_time()不包括sleep()休眠时间期间经过的时间。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import platform</span><br><span class="line">print(&#x27;系统:&#x27;,platform.system())</span><br><span class="line"></span><br><span class="line">import time</span><br><span class="line">T1 = time.process_time()</span><br><span class="line"></span><br><span class="line">#______假设下面是程序部分______</span><br><span class="line">for i in range(100*100):</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">T2 =time.process_time()</span><br><span class="line">print(&#x27;程序运行时间:%s毫秒&#x27; % ((T2 - T1)*1000))</span><br><span class="line"># 系统: Windows</span><br><span class="line"># 程序运行时间:0.0毫秒</span><br></pre></td></tr></table></figure>
+
+<p>写在最后：</p>
+<p>建议PC上使用time.perf_counter() 来计算程序的运算时间，特别是测试算法在相邻两帧的处理时间，如果计算不准确，那可能会对算法的速度过于自信。</p>
+<p>尤其在嵌入式的板子的开发中，性能的测试中，请仔细选择时间模块，比如某些嵌入式板子会封装专门的模块。</p>
+<p>参考资料：<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/110005305">python 利用time模块给程序计时</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/code/2021/06/03/Python%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" rel="prev" title="Python文件处理的常用方法">
+      <i class="fa fa-chevron-left"></i> Python文件处理的常用方法
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/code/2021/06/06/%E4%BD%BF%E7%94%A8%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E7%9A%84%E6%8A%80%E5%B7%A7/" rel="next" title="使用搜索引擎的技巧">
+      使用搜索引擎的技巧 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8time-time"><span class="nav-number">1.</span> <span class="nav-text">使用time.time()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8time-clock"><span class="nav-number">2.</span> <span class="nav-text">使用time.clock()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8time-perf-counter"><span class="nav-number">3.</span> <span class="nav-text">使用time.perf_counter()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8time-process-time"><span class="nav-number">4.</span> <span class="nav-text">使用time.process_time()</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KEAE</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/code/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KEAE</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/code/lib/anime.min.js"></script>
+  <script src="/code/lib/velocity/velocity.min.js"></script>
+  <script src="/code/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/code/js/utils.js"></script>
+
+<script src="/code/js/motion.js"></script>
+
+
+<script src="/code/js/schemes/pisces.js"></script>
+
+
+<script src="/code/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/code/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
