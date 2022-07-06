@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>基本概念 | KEAE的编程笔记</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="一个技术宅的自用地">
+    
+    <link rel="preload" href="/code/assets/css/0.styles.e6f607d0.css" as="style"><link rel="preload" href="/code/assets/js/app.52292b80.js" as="script"><link rel="preload" href="/code/assets/js/2.f5f720f3.js" as="script"><link rel="preload" href="/code/assets/js/18.195a0cd9.js" as="script"><link rel="prefetch" href="/code/assets/js/10.1cd551db.js"><link rel="prefetch" href="/code/assets/js/11.a0238dbd.js"><link rel="prefetch" href="/code/assets/js/12.f7aba09d.js"><link rel="prefetch" href="/code/assets/js/13.a8f0878f.js"><link rel="prefetch" href="/code/assets/js/14.081733ca.js"><link rel="prefetch" href="/code/assets/js/15.ad2ff038.js"><link rel="prefetch" href="/code/assets/js/16.530499b2.js"><link rel="prefetch" href="/code/assets/js/17.dd30e381.js"><link rel="prefetch" href="/code/assets/js/19.f235132d.js"><link rel="prefetch" href="/code/assets/js/20.1cc3b5e3.js"><link rel="prefetch" href="/code/assets/js/21.f67f5232.js"><link rel="prefetch" href="/code/assets/js/22.15aa69e0.js"><link rel="prefetch" href="/code/assets/js/23.5e15e1da.js"><link rel="prefetch" href="/code/assets/js/24.829d33f6.js"><link rel="prefetch" href="/code/assets/js/25.e0ad6b1e.js"><link rel="prefetch" href="/code/assets/js/26.003de6f3.js"><link rel="prefetch" href="/code/assets/js/27.d766081a.js"><link rel="prefetch" href="/code/assets/js/28.6ca4d4ef.js"><link rel="prefetch" href="/code/assets/js/29.f36b0856.js"><link rel="prefetch" href="/code/assets/js/3.db467800.js"><link rel="prefetch" href="/code/assets/js/30.5e325b78.js"><link rel="prefetch" href="/code/assets/js/4.2699a4d5.js"><link rel="prefetch" href="/code/assets/js/5.e4f95c24.js"><link rel="prefetch" href="/code/assets/js/6.387520d9.js"><link rel="prefetch" href="/code/assets/js/7.67ad4847.js"><link rel="prefetch" href="/code/assets/js/8.82ac6f22.js"><link rel="prefetch" href="/code/assets/js/9.283c78b1.js">
+    <link rel="stylesheet" href="/code/assets/css/0.styles.e6f607d0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/code/" class="home-link router-link-active"><!----> <span class="site-name">KEAE的编程笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/code/" class="nav-link">
+    主页
+  </a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="编程语言" class="dropdown-title"><span class="title">编程语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="编程语言" class="mobile-dropdown-title"><span class="title">编程语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/code/java/" class="nav-link">
+    Java
+  </a></li><li class="dropdown-item"><!----> <a href="/code/python/" class="nav-link">
+    Python
+  </a></li><li class="dropdown-item"><!----> <a href="/code/mysql/" class="nav-link">
+    MySQL
+  </a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="计算机基础" class="dropdown-title"><span class="title">计算机基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="计算机基础" class="mobile-dropdown-title"><span class="title">计算机基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/code/计算机系统/" class="nav-link">
+    计算机系统
+  </a></li><li class="dropdown-item"><!----> <a href="/code/计算机网络/" class="nav-link">
+    计算机网络
+  </a></li></ul></div></div><div class="nav-item"><a href="/code/about/" class="nav-link">
+    关于
+  </a></div><div class="nav-item"><a href="https://github.com/KEAE12315" target="_blank" rel="noopener noreferrer" class="nav-link external">
+    Github
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/code/" class="nav-link">
+    主页
+  </a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="编程语言" class="dropdown-title"><span class="title">编程语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="编程语言" class="mobile-dropdown-title"><span class="title">编程语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/code/java/" class="nav-link">
+    Java
+  </a></li><li class="dropdown-item"><!----> <a href="/code/python/" class="nav-link">
+    Python
+  </a></li><li class="dropdown-item"><!----> <a href="/code/mysql/" class="nav-link">
+    MySQL
+  </a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="计算机基础" class="dropdown-title"><span class="title">计算机基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="计算机基础" class="mobile-dropdown-title"><span class="title">计算机基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/code/计算机系统/" class="nav-link">
+    计算机系统
+  </a></li><li class="dropdown-item"><!----> <a href="/code/计算机网络/" class="nav-link">
+    计算机网络
+  </a></li></ul></div></div><div class="nav-item"><a href="/code/about/" class="nav-link">
+    关于
+  </a></div><div class="nav-item"><a href="https://github.com/KEAE12315" target="_blank" rel="noopener noreferrer" class="nav-link external">
+    Github
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/code/MySQL/" aria-current="page" class="sidebar-link">/MySQL/</a></li><li><a href="/code/MySQL/mysql.html" aria-current="page" class="active sidebar-link">基本概念</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/code/MySQL/mysql.html#基本概念" class="sidebar-link">基本概念</a></li><li class="sidebar-sub-header"><a href="/code/MySQL/mysql.html#创建" class="sidebar-link">创建</a></li><li class="sidebar-sub-header"><a href="/code/MySQL/mysql.html#查询与选择" class="sidebar-link">查询与选择</a></li><li class="sidebar-sub-header"><a href="/code/MySQL/mysql.html#修改" class="sidebar-link">修改</a></li><li class="sidebar-sub-header"><a href="/code/MySQL/mysql.html#删除" class="sidebar-link">删除</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="基本概念"><a href="#基本概念" class="header-anchor">#</a> 基本概念</h2> <ul><li>数据库(Database, DB): 将大量数据保存起来, 通过计算机加工而成的可以进行高效访问的数据集合.</li> <li>数据库管理系统(Database Management System, DBMS): 管理数据库的计算机系统.</li> <li>表(Table): 包含数据库中所有数据的数据库对象, 定义为列的集合. 与电子表格相似, 数据在表中式按行和列的格式组织排列的.</li> <li>列(Column): 又称字段(Field), 存储某种类型的信息. 每列只能指定一种数据类型.</li> <li>行: 又称记录或元组, 一组相关的数据.</li> <li>主键: 记录的唯一标识, 通常指定一个字段担任, 但也可以通过复合不同字段构成唯一标识, 此时称为复合键.</li> <li>外键:</li></ul> <h2 id="创建"><a href="#创建" class="header-anchor">#</a> 创建</h2> <ul><li>数据库: CREATE DATABASE dbname;</li> <li>表: CREATE TABLE table_name;</li> <li>字段: 创建/新增字段时, 也要对数据类型和值的限制进行设置.
+<ul><li>数据类型
+<ul><li>数值
+<ul><li>TINYINT</li> <li>SMALLINT</li> <li>MEDIUMINT</li> <li>INT / INTEGER</li> <li>BIGINT</li> <li>FLOAT</li> <li>DOUBLE</li> <li>DECIMAL</li></ul></li> <li>日期
+<ul><li>DATE</li> <li>TIME</li> <li>YEAR</li> <li>DATETIME</li> <li>TIMESTAMP</li></ul></li> <li>字符
+<ul><li>CHAR</li> <li>VARCHAR</li> <li>TINYBLOB</li> <li>TINYTEXT</li> <li>BLOB</li> <li>TEXT</li> <li>MEDIUMBLOB</li> <li>MEDIUMTEXT</li> <li>LONGBLOB</li> <li>LONGTEXT</li></ul></li> <li>特殊值
+<ul><li>NULL<br>
+注意: 无法比较 NULL和0, 它们是不等价的. 判断NULL需要用到IS (NOT) NULL</li></ul></li></ul></li> <li>值的限制
+<ul><li>NOT NULL</li> <li>UNIQUE</li> <li>PRIMARY KEY:  NOT NULL 和 UNIQUE 的结合.</li> <li>FOREIGN KEY</li> <li>CHECK</li> <li>DEFAULT</li> <li>AUTO_INCREMENT(=100)</li></ul></li> <li>在创建表时即指定字段<br>
+CREATE TABLE table_name ( column_name data_type(size) constraint_name, ...);</li> <li>对已存在表插入新字段<br>
+ALTER TABLE testalter_tbl ADD i INT;</li></ul></li> <li>记录: INSERT INTO table_name (field, ...) VALUES (value, ...), (value, ...), ...;</li></ul> <h2 id="查询与选择"><a href="#查询与选择" class="header-anchor">#</a> 查询与选择</h2> <ul><li>通用语法
+SELECT column_name, ...
+FROM table_name
+[WHERE Clause]
+[LIMIT N][ OFFSET M]</li> <li>字段选取
+<ul><li>指定字段: 打出字段名, 逗号分隔.</li> <li>全选: 星号(*).</li></ul></li> <li>筛选条件WHERE<br>
+在初始表中筛选查询。它是一个约束声明，用于约束数据，在返回结果集之前起作用。
+<ul><li>比较操作符: =, &lt;&gt; 或 !=, &gt;, &lt;, &gt;=, &lt;=<br>
+特别地, MySQL 的 WHERE 子句的字符串比较是不区分大小写的. 你可以使用 BINARY 关键字来设定 WHERE 子句的字符串比较是区分大小写的.</li> <li>字符串匹配LIKE
+<ul><li>%: 任意数量字符. 中文请使用两个百分号(%%)表示.</li> <li>_: 任意单个字符.</li> <li>[]: 括号内所列字符中的一个. 或指定一个字符、字符串或范围，要求所匹配对象为它们中的任一个.</li> <li>[^]: 表示不在括号所列之内的单个字符.</li> <li>特别地, 如要查询以上转义字符, 需要[]括起.</li> <li>正则模式REGEXP</li></ul></li></ul></li> <li>SELECT结果集组合: UNION [ALL | DISTINCT]<br>
+备注: 默认为DISTINCT
+请注意, UNION 内部的每个 SELECT 语句必须拥有相同数量的列. 列也必须拥有相似的数据类型。同时，每个 SELECT 语句中的列的顺序必须相同.</li> <li>SELECT结果集分组: GROUP BY column_name (WITH ROLLUP)</li> <li>多表查询JOIN<br>
+JOIN 子句用于把来自两个或多个表的行结合起来, 基于这些表之间的共同字段.</li></ul> <h2 id="修改"><a href="#修改" class="header-anchor">#</a> 修改</h2> <ul><li>记录: UPDATE table_name SET field=new-value, ... [WHERE Clause]</li> <li>字段
+<ul><li>类型及名称
+<ul><li>ALTER TABLE testalter_tbl MODIFY c CHAR(10);</li> <li>ALTER TABLE testalter_tbl CHANGE old_name new_name BIGINT;</li></ul></li> <li>默认值
+<ul><li>ALTER TABLE testalter_tbl ALTER i SET DEFAULT 1000;</li></ul></li></ul></li> <li>表名: ALTER TABLE testalter_tbl RENAME TO alter_tbl;</li> <li>存储引擎: alter table tableName engine=myisam;</li></ul> <h2 id="删除"><a href="#删除" class="header-anchor">#</a> 删除</h2> <ul><li>数据库: DROP DATABASE database_name;</li> <li>表: DROP TABLE table_name;</li> <li>索引: DROP INDEX table_name.index_name;</li> <li>表内数据: TRUNCATE TABLE table_name;</li> <li>记录: DELETE FROM table_name [WHERE Clause]</li> <li>字段: ALTER TABLE testalter_tbl DROP i;</li> <li>如果数据表中只剩余一个字段则无法使用DROP来删除字段.</li> <li>外键约束: alter table tableName drop foreign key keyName;</li></ul> <p>delete，drop，truncate 都有删除表的作用，区别在于：<br>
+1、delete 和 truncate 仅仅删除表数据，drop 连表数据和表结构一起删除，打个比方，delete 是单杀，truncate 是团灭，drop 是把电脑摔了。<br>
+2、delete 是 DML 语句，操作完以后如果没有不想提交事务还可以回滚，truncate 和 drop 是 DDL 语句，操作完马上生效，不能回滚，打个比方，delete 是发微信说分手，后悔还可以撤回，truncate 和 drop 是直接扇耳光说滚，不能反悔。<br>
+3、执行的速度上，drop&gt;truncate&gt;delete，打个比方，drop 是神舟火箭，truncate 是和谐号动车，delete 是自行车。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/code/MySQL/" class="prev router-link-active">
+          /MySQL/
+        </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/code/assets/js/app.52292b80.js" defer></script><script src="/code/assets/js/2.f5f720f3.js" defer></script><script src="/code/assets/js/18.195a0cd9.js" defer></script>
+  </body>
+</html>
