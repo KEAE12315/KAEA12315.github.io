@@ -3,9 +3,9 @@
 git submodule add git@github.com:adityatelange/hugo-PaperMod.git themes/hugo-PaperMod 使用主题: 在配置文件config.yaml中使用如下配置项
 theme: hugo-PaperMod 基本操作 生成新文章
 hugo new post/&lt;filename>.md 为了简化操作, 在.bashrc文件里设置h函数
-h(){ hugo new post/$1.md } 部署到GitHub Page 参考资料
-https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-first-deployment-with-github_token
-https://tomial.github.io/posts/hugo%E4%BD%BF%E7%94%A8github-action%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E5%88%B0github-pages/</p></div><footer class=entry-footer><span title="2022-08-04 00:58:00 +0800 +0800">August 4, 2022</span></footer><a class=entry-link aria-label="post link to Hugo入门" href=https://keae12315.github.io/blog/post/hugo%E5%85%A5%E9%97%A8/></a></article></main><footer class=footer><span>&copy; 2022 <a href=https://keae12315.github.io/blog/>KEAE的编程笔记</a></span>
+h(){ hugo new post/$1.md } 部署到GitHub Page 生成token 我自己笔记的源码和github.io的仓库分开, 为了能够获取仓库的读写权限, 需要生成personal token. 并在源码仓库里设置(token的名字要与workflow配置文件里一致).
+设置workflow文件 生成.github/workflows/gh-pages.yml文件, 内容如下.
+name: GitHub Pages on: push: branches: - main # Set a branch to deploy pull_request: jobs: deploy: runs-on: ubuntu-20.04 concurrency: group: ${{ github.workflow }}-${{ github.ref }} steps: - uses: actions/checkout@v3 with: submodules: true # Fetch Hugo themes (true OR recursive) fetch-depth: 0 # Fetch all history for ....</p></div><footer class=entry-footer><span title="2022-08-04 00:58:00 +0800 +0800">August 4, 2022</span></footer><a class=entry-link aria-label="post link to Hugo入门" href=https://keae12315.github.io/blog/post/hugo%E5%85%A5%E9%97%A8/></a></article></main><footer class=footer><span>&copy; 2022 <a href=https://keae12315.github.io/blog/>KEAE的编程笔记</a></span>
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
         <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z" /></svg></a><script>let menu=document.getElementById('menu')
