@@ -6,7 +6,24 @@ type(): 当只有一个参数的时候, 返回对象的类型. 当有三个参�
 ==: 值比较.
 is: 比较两个对象的物理id, 相当于 id(a)==id(b).
 其它需要注意的 Python出于对性能的考虑, 但凡是不可变对象, 在同一个代码块中的对象, 只要是值相同的对象, 就不会重复创建, 而是直接引用已经存在的对象.
-Integer object pool: This pool holds numbers of PyIntObjects which has been allocated already but not initialized (no valid value or type). Even though there is only one integer object pool....</p></div><footer class=entry-footer><span title="2022-08-06 11:50:16 +0800 +0800">August 6, 2022</span>&nbsp;·&nbsp;keae</footer><a class=entry-link aria-label="post link to 可变与不可变究竟在说什么" href=https://keae12315.github.io/blog/post/%E5%8F%AF%E5%8F%98%E4%B8%8E%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%A9%B6%E7%AB%9F%E5%9C%A8%E8%AF%B4%E4%BB%80%E4%B9%88/></a></article></main><footer class=footer><span>&copy; 2022 <a href=https://keae12315.github.io/blog/>KEAE的编程笔记</a></span>
+Integer object pool: This pool holds numbers of PyIntObjects which has been allocated already but not initialized (no valid value or type). Even though there is only one integer object pool....</p></div><footer class=entry-footer><span title="2022-08-06 11:50:16 +0800 +0800">August 6, 2022</span>&nbsp;·&nbsp;keae</footer><a class=entry-link aria-label="post link to 可变与不可变究竟在说什么" href=https://keae12315.github.io/blog/post/%E5%8F%AF%E5%8F%98%E4%B8%8E%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%A9%B6%E7%AB%9F%E5%9C%A8%E8%AF%B4%E4%BB%80%E4%B9%88/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>地道的Python循环</h2></header><div class=entry-content><p>在循环语法方面，Python 选择了 for 和 while 这两个经典的关键字来表达循环。绝大多数情况下，我们的循环需求都可以用 for in 来满足，while 相比之下则用的更少些。
+Python 的 for 循环只有 for in 这一种结构，而结构里的前半部分 - 赋值给 item - 没有太多花样可玩。所以后半部分的 可迭代对象 是我们唯一能够大做文章的东西。而以 enumerate() 函数为代表的“修饰函数”，刚好提供了一种思路：通过修饰可迭代对象来优化循环本身。
+使用函数修饰被迭代对象来优化循环 内置模块 itertools 是一个包含很多面向可迭代对象的工具函数集。 Python 官方文档是学习的首选，里面有非常详细的模块相关资料。下面给出一些常用的函数。
+enumerate(iterable)：返回元素和下标 product(A, B)：返回A, B的笛卡儿积 islice(seq, start, end, step)：循环内隔行处理 takewhile(predicate, iterable)：替代 break 语句 zip(A, B)：按顺序同时迭代A，B 按职责拆解循环体内复杂代码块 写循环时，我们很容易往循环体塞入越来越多的代码，包括过滤掉无效元素、预处理数据、打印日志等等，甚至一些原本不属于同一抽象的内容，导致各部分功能耦合。
+这样一个复杂循环体在面对新需求时难以解耦复用。考虑使用生成器函数解耦循环体。
+参考资料:
+Python工匠：编写地道循环的两个建议</p></div><footer class=entry-footer><span title="2022-08-08 01:05:13 +0800 +0800">August 8, 2022</span>&nbsp;·&nbsp;keae</footer><a class=entry-link aria-label="post link to 地道的Python循环" href=https://keae12315.github.io/blog/post/%E5%9C%B0%E9%81%93%E7%9A%84python%E5%BE%AA%E7%8E%AF/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>Python程序计时</h2></header><div class=entry-content><p>python的time内置模块是一个与时间相关的内置模块，存在不同的模块可以用于程序计时.
+使用time.time() 很多人喜欢用time.time()获取当前时间的时间戳，利用程序前后两个时间戳的差值计算程序的运行时间，如下：
+import time T1 = time.time() #______假设下面是程序部分______ for i in range(100*100): pass T2 = time.time() print('程序运行时间:%s毫秒' % ((T2 - T1)*1000)) # 程序运行时间:0.0毫秒 不要以为你的处理器很厉害，就忽视了一个问题，一万次遍历，时间为0.0毫秒？
+下面解决上面的质疑，
+使用time.clock() Python time clock() 函数以浮点数计算的秒数返回当前的CPU时间。用来衡量不同程序的耗时，比time.time()更有用。
+这个需要注意，在不同的系统上含义不同。在UNIX系统上，它返回的是”进程时间”，它是用秒表示的浮点数（时间戳）。而在WINDOWS中，第一次调用，返回的是进程运行的实际时间。而第二次之后的调用是自第一次调用以后到现在的运行时间。（实际上是以WIN32上QueryPerformanceCounter()为基础，它比毫秒表示更为精确）
+使用time.clock()更改后的程序查看一下：
+import platform print('系统:',platform.system()) import time T1 = time.clock() #______假设下面是程序部分______ for i in range(100*100): pass T2 =time.clock() print('程序运行时间:%s毫秒' % ((T2 - T1)*1000)) # 程序运行时间:0.27023641716203606毫秒 使用time.perf_counter() 返回性能计数器的值（以微秒为单位,1秒=1000毫秒；1毫秒=1000微秒）作为浮点数，即具有最高可用分辨率的时钟，以测量短持续时间。它包括在睡眠期间和系统范围内流逝的时间。返回值的参考点未定义，因此只有连续调用结果之间的差异有效。
+1秒 = 1000毫秒
+1毫秒 = 1000微秒
+1微秒 = 1000纳秒
+1纳秒 = 1000皮秒...</p></div><footer class=entry-footer><span title="2022-08-08 00:51:32 +0800 +0800">August 8, 2022</span>&nbsp;·&nbsp;keae</footer><a class=entry-link aria-label="post link to Python程序计时" href=https://keae12315.github.io/blog/post/python%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%97%B6/></a></article></main><footer class=footer><span>&copy; 2022 <a href=https://keae12315.github.io/blog/>KEAE的编程笔记</a></span>
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
         <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z" /></svg></a><script>let menu=document.getElementById('menu')
