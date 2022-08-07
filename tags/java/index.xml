@@ -1,11 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Java on KEAE的编程笔记</title><link>https://keae12315.github.io/blog/tags/java/</link><description>Recent content in Java on KEAE的编程笔记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 06 Aug 2022 11:48:28 +0800</lastBuildDate><atom:link href="https://keae12315.github.io/blog/tags/java/index.xml" rel="self" type="application/rss+xml"/><item><title>多线程漫谈</title><link>https://keae12315.github.io/blog/post/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%BC%AB%E8%B0%88/</link><pubDate>Sat, 06 Aug 2022 11:48:28 +0800</pubDate><guid>https://keae12315.github.io/blog/post/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%BC%AB%E8%B0%88/</guid><description>Process Thread
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Java on KEAE的编程笔记</title>
+    <link>https://keae12315.github.io/blog/tags/java/</link>
+    <description>Recent content in Java on KEAE的编程笔记</description>
+    <image>
+      <url>https://keae12315.github.io/blog/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://keae12315.github.io/blog/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 06 Aug 2022 11:48:28 +0800</lastBuildDate><atom:link href="https://keae12315.github.io/blog/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>多线程漫谈</title>
+      <link>https://keae12315.github.io/blog/post/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%BC%AB%E8%B0%88/</link>
+      <pubDate>Sat, 06 Aug 2022 11:48:28 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/post/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%BC%AB%E8%B0%88/</guid>
+      <description>Process Thread
 多任务 多进程 Multithreading
 The state of the thread
-New：新创建的线程，尚未执行； Runnable：运行中的线程，正在执行run()方法的Java代码； Blocked：运行中的线程，因为某些操作被阻塞而挂起； Waiting：运行中的线程，因为某些操作在等待中； Timed Waiting：运行中的线程，因为执行sleep()方法正在计时等待； Terminated：线程已终止，因为run()方法执行完毕. 线程操作
-run join interrupt: isInterrupted setDaemon synchronized: 多线程竞争 wait和notify(All): 多线程协调(当条件不满足时，线程进入等待状态；当条件满足时，线程被唤醒，继续执行任务。) 线程同步 保证一段代码的原子性就是通过加锁和解锁实现的. Java程序使用synchronized关键字对一个对象进行加锁.
+ New：新创建的线程，尚未执行； Runnable：运行中的线程，正在执行run()方法的Java代码； Blocked：运行中的线程，因为某些操作被阻塞而挂起； Waiting：运行中的线程，因为某些操作在等待中； Timed Waiting：运行中的线程，因为执行sleep()方法正在计时等待； Terminated：线程已终止，因为run()方法执行完毕.  线程操作
+ run join interrupt: isInterrupted setDaemon synchronized: 多线程竞争 wait和notify(All): 多线程协调(当条件不满足时，线程进入等待状态；当条件满足时，线程被唤醒，继续执行任务。)  线程同步 保证一段代码的原子性就是通过加锁和解锁实现的. Java程序使用synchronized关键字对一个对象进行加锁.
 注意加锁对象必须是同一个实例
 JVM规范定义了几种原子操作：
-基本类型（long和double除外）赋值，例如：int n = m； 引用类型赋值，例如：Listlist = anotherList。 如果一个类被设计为允许多线程正确访问，我们就说这个类就是“线程安全”的（thread-safe）
+ 基本类型（long和double除外）赋值，例如：int n = m； 引用类型赋值，例如：Listlist = anotherList。  如果一个类被设计为允许多线程正确访问，我们就说这个类就是“线程安全”的（thread-safe）
 线程死锁 形成死锁必须同时满足互斥、请求保持、不可抢占、循环等待。死锁发生后，没有任何机制能解除死锁，只能强制结束JVM进程。
 线程顺序访问资源，是破坏了循环等待条件，属于死锁预防的策略。
-线程间通信 线程控制：挂起、停止和恢复</description></item></channel></rss>
+线程间通信 线程控制：挂起、停止和恢复</description>
+    </item>
+    
+  </channel>
+</rss>

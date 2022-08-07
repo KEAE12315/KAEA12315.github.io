@@ -1,6 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Docker on KEAE的编程笔记</title><link>https://keae12315.github.io/blog/tags/docker/</link><description>Recent content in Docker on KEAE的编程笔记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 08 Aug 2022 00:29:27 +0800</lastBuildDate><atom:link href="https://keae12315.github.io/blog/tags/docker/index.xml" rel="self" type="application/rss+xml"/><item><title>Docker教程</title><link>https://keae12315.github.io/blog/post/docker%E6%95%99%E7%A8%8B/</link><pubDate>Mon, 08 Aug 2022 00:29:27 +0800</pubDate><guid>https://keae12315.github.io/blog/post/docker%E6%95%99%E7%A8%8B/</guid><description>本文默认环境为Linux，打包镜像以Python为例。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Docker on KEAE的编程笔记</title>
+    <link>https://keae12315.github.io/blog/tags/docker/</link>
+    <description>Recent content in Docker on KEAE的编程笔记</description>
+    <image>
+      <url>https://keae12315.github.io/blog/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://keae12315.github.io/blog/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 08 Aug 2022 00:29:27 +0800</lastBuildDate><atom:link href="https://keae12315.github.io/blog/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker教程</title>
+      <link>https://keae12315.github.io/blog/post/docker%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Mon, 08 Aug 2022 00:29:27 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/post/docker%E6%95%99%E7%A8%8B/</guid>
+      <description>本文默认环境为Linux，打包镜像以Python为例。
 常用操作 查看镜像：docker images 查看所有容器：docker ps -a 查看所有容器ID：docker ps -aq 查看所有正在运行容器：docker ps 停止容器：docker stop 停止所有容器：docker stop $(docker ps -aq) 删除容器：docker rm 删除镜像：docker rmi 删除所有停止的容器：docker container prune -f 删除所有不使用的镜像：docker image prune -f -a 保存镜像：docker save &amp;gt; 加载镜像：docker load &amp;lt; 注意，删除前需要先停止容器。
 安装 官方安装教程
-Ubuntu Windows MacOS 配置 官方原文过长，摘取了常用的两个步骤。
+ Ubuntu Windows MacOS  配置 官方原文过长，摘取了常用的两个步骤。
 配置root用户 Docker绑定到Unix socket，但它需要sudo权限。如果不想每次都加sudo命令，创建一个名为Docker的Unix组.
-# 创建docker组。 sudo groupadd docker # 将用户添加到docker组。 sudo usermod -aG docker $USER # 激活对组的更改 newgrp docker 配置开机启动 注意，在 Debian 和 Ubuntu 上，Docker 服务被配置为默认启动。要在其他发行版的引导中自动启动 Docker 和 Containerd，请使用以下命令:</description></item></channel></rss>
+# 创建docker组。 sudo groupadd docker # 将用户添加到docker组。 sudo usermod -aG docker $USER # 激活对组的更改 newgrp docker 配置开机启动 注意，在 Debian 和 Ubuntu 上，Docker 服务被配置为默认启动。要在其他发行版的引导中自动启动 Docker 和 Containerd，请使用以下命令:</description>
+    </item>
+    
+  </channel>
+</rss>

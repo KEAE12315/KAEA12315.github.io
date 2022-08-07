@@ -1,4 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>KEAE的编程笔记</title><link>https://keae12315.github.io/blog/</link><description>Recent content on KEAE的编程笔记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 08 Aug 2022 01:05:13 +0800</lastBuildDate><atom:link href="https://keae12315.github.io/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>可变与不可变究竟在说什么</title><link>https://keae12315.github.io/blog/post/%E5%8F%AF%E5%8F%98%E4%B8%8E%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%A9%B6%E7%AB%9F%E5%9C%A8%E8%AF%B4%E4%BB%80%E4%B9%88/</link><pubDate>Sat, 06 Aug 2022 11:50:16 +0800</pubDate><guid>https://keae12315.github.io/blog/post/%E5%8F%AF%E5%8F%98%E4%B8%8E%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%A9%B6%E7%AB%9F%E5%9C%A8%E8%AF%B4%E4%BB%80%E4%B9%88/</guid><description>Python中的数据类型 Numbers String List Tuple Set Dictionary python中不可变数据类型的定义为: 当该数据类型的对应变量的值发生了改变, 那么它对应的内存地址也会发生改变. 也就是说, 直接修改内存中的值, 并没有开辟新的内存. 反之就为可变类型.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>KEAE的编程笔记</title>
+    <link>https://keae12315.github.io/blog/</link>
+    <description>Recent content on KEAE的编程笔记</description>
+    <image>
+      <url>https://keae12315.github.io/blog/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://keae12315.github.io/blog/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 08 Aug 2022 01:05:13 +0800</lastBuildDate><atom:link href="https://keae12315.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>可变与不可变究竟在说什么</title>
+      <link>https://keae12315.github.io/blog/post/%E5%8F%AF%E5%8F%98%E4%B8%8E%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%A9%B6%E7%AB%9F%E5%9C%A8%E8%AF%B4%E4%BB%80%E4%B9%88/</link>
+      <pubDate>Sat, 06 Aug 2022 11:50:16 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/post/%E5%8F%AF%E5%8F%98%E4%B8%8E%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%A9%B6%E7%AB%9F%E5%9C%A8%E8%AF%B4%E4%BB%80%E4%B9%88/</guid>
+      <description>Python中的数据类型  Numbers String List Tuple Set Dictionary  python中不可变数据类型的定义为: 当该数据类型的对应变量的值发生了改变, 那么它对应的内存地址也会发生改变. 也就是说, 直接修改内存中的值, 并没有开辟新的内存. 反之就为可变类型.
 不可变数据类型: numbers, string, tuple
 可变数据类型: list, set, dictionary
 对变量进行分析 id(): 获取对象的内存地址.
@@ -6,114 +24,314 @@ type(): 当只有一个参数的时候, 返回对象的类型. 当有三个参�
 ==: 值比较.
 is: 比较两个对象的物理id, 相当于 id(a)==id(b).
 其它需要注意的 Python出于对性能的考虑, 但凡是不可变对象, 在同一个代码块中的对象, 只要是值相同的对象, 就不会重复创建, 而是直接引用已经存在的对象.
-Integer object pool: This pool holds numbers of PyIntObjects which has been allocated already but not initialized (no valid value or type). Even though there is only one integer object pool.</description></item><item><title>地道的Python循环</title><link>https://keae12315.github.io/blog/post/%E5%9C%B0%E9%81%93%E7%9A%84python%E5%BE%AA%E7%8E%AF/</link><pubDate>Mon, 08 Aug 2022 01:05:13 +0800</pubDate><guid>https://keae12315.github.io/blog/post/%E5%9C%B0%E9%81%93%E7%9A%84python%E5%BE%AA%E7%8E%AF/</guid><description>在循环语法方面，Python 选择了 for 和 while 这两个经典的关键字来表达循环。绝大多数情况下，我们的循环需求都可以用 for in 来满足，while 相比之下则用的更少些。
+Integer object pool: This pool holds numbers of PyIntObjects which has been allocated already but not initialized (no valid value or type). Even though there is only one integer object pool.</description>
+    </item>
+    
+    <item>
+      <title>地道的Python循环</title>
+      <link>https://keae12315.github.io/blog/post/%E5%9C%B0%E9%81%93%E7%9A%84python%E5%BE%AA%E7%8E%AF/</link>
+      <pubDate>Mon, 08 Aug 2022 01:05:13 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/post/%E5%9C%B0%E9%81%93%E7%9A%84python%E5%BE%AA%E7%8E%AF/</guid>
+      <description>在循环语法方面，Python 选择了 for 和 while 这两个经典的关键字来表达循环。绝大多数情况下，我们的循环需求都可以用 for in 来满足，while 相比之下则用的更少些。
 Python 的 for 循环只有 for in 这一种结构，而结构里的前半部分 - 赋值给 item - 没有太多花样可玩。所以后半部分的 可迭代对象 是我们唯一能够大做文章的东西。而以 enumerate() 函数为代表的“修饰函数”，刚好提供了一种思路：通过修饰可迭代对象来优化循环本身。
 使用函数修饰被迭代对象来优化循环 内置模块 itertools 是一个包含很多面向可迭代对象的工具函数集。 Python 官方文档是学习的首选，里面有非常详细的模块相关资料。下面给出一些常用的函数。
-enumerate(iterable)：返回元素和下标 product(A, B)：返回A, B的笛卡儿积 islice(seq, start, end, step)：循环内隔行处理 takewhile(predicate, iterable)：替代 break 语句 zip(A, B)：按顺序同时迭代A，B 按职责拆解循环体内复杂代码块 写循环时，我们很容易往循环体塞入越来越多的代码，包括过滤掉无效元素、预处理数据、打印日志等等，甚至一些原本不属于同一抽象的内容，导致各部分功能耦合。
+ enumerate(iterable)：返回元素和下标 product(A, B)：返回A, B的笛卡儿积 islice(seq, start, end, step)：循环内隔行处理 takewhile(predicate, iterable)：替代 break 语句 zip(A, B)：按顺序同时迭代A，B  按职责拆解循环体内复杂代码块 写循环时，我们很容易往循环体塞入越来越多的代码，包括过滤掉无效元素、预处理数据、打印日志等等，甚至一些原本不属于同一抽象的内容，导致各部分功能耦合。
 这样一个复杂循环体在面对新需求时难以解耦复用。考虑使用生成器函数解耦循环体。
-参考资料:
-Python工匠：编写地道循环的两个建议</description></item><item><title>如何理解Python中的装饰器</title><link>https://keae12315.github.io/blog/post/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3python%E4%B8%AD%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8/</link><pubDate>Mon, 08 Aug 2022 01:01:02 +0800</pubDate><guid>https://keae12315.github.io/blog/post/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3python%E4%B8%AD%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8/</guid><description/></item><item><title>Python文件处理的常用方法</title><link>https://keae12315.github.io/blog/post/python%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/</link><pubDate>Mon, 08 Aug 2022 00:56:36 +0800</pubDate><guid>https://keae12315.github.io/blog/post/python%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/</guid><description/></item><item><title>Python程序计时</title><link>https://keae12315.github.io/blog/post/python%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%97%B6/</link><pubDate>Mon, 08 Aug 2022 00:51:32 +0800</pubDate><guid>https://keae12315.github.io/blog/post/python%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%97%B6/</guid><description>python的time内置模块是一个与时间相关的内置模块，存在不同的模块可以用于程序计时.
+ 参考资料:
+Python工匠：编写地道循环的两个建议
+ </description>
+    </item>
+    
+    <item>
+      <title>如何理解Python中的装饰器</title>
+      <link>https://keae12315.github.io/blog/post/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3python%E4%B8%AD%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8/</link>
+      <pubDate>Mon, 08 Aug 2022 01:01:02 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/post/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3python%E4%B8%AD%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8/</guid>
+      <description>装饰器来自 Decorator 的直译，就是装点、提供一些额外的点缀。 在 Python 中的装饰器则是提供了一些额外的功能，可以让你的函数在不改变代码的情况下拥有新的功能。
+首先，Python中的函数也是一个对象，这意味着函数：
+ 能在函数中定义一个函数 能作为参数传递 能作为返回值  def decorator(func): def wrapper(*args, **kwargs): print(&#39;123&#39;) return func(*args, **kwargs) return wrapper def say_hello(): print(&#39;同学你好&#39;) say_hello_super = decorator(say_hello) say_hello_super() 123 同学你好 在以上这段代码中，我们将一个函数 say_hello 作为参数传入函数 decorator，返回一个 wrapper 函数并赋值到 say_hello_super，此时执行 say_hello_super 相当于执行 wrapper 函数。当我们执行 wrapper 函数时会先打印 123 再执行先前传入的 func 参数也就是 say_hello 函数。
+注意 wrapper 的 *args 与 **kwargs 参数，这是必须的， *args 表示所有的位置参数，**kwargs 表示所有的关键字参数。之后再将其传到 func函数中， 这样保证了能完全传递所有参数。
+在这里，decorator 这个函数就是一个装饰器，功能是在执行被装饰的函数之前打印 123。
+在 python 中， 有一种语法糖可以代替 say_hello_super = decorator(say_hello) 这一步的操作，以上的代码可以改写成。</description>
+    </item>
+    
+    <item>
+      <title>Python文件处理的常用方法</title>
+      <link>https://keae12315.github.io/blog/post/python%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Mon, 08 Aug 2022 00:56:36 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/post/python%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
+      <description>遍历文件或目录 我们常常需要对数据集文件夹中的数据进行遍历，Python内置的 os 模块有很多有用的方法能被用来列出目录内容和过滤结果。
+常用函数介绍 os.listdir(path) 返回一个list，其中包含path参数所指目录的文件和子目录的名称
+os.walk(top[, topdown=True[, onerror=None[, followlinks=False]]])  top – 返回值，为一个三元组(root,dirs,files)。 root 所指的是当前正在遍历的这个文件夹的本身的地址 dirs 是一个 list ，内容是该文件夹中所有的目录的名字(不包括子目录) files 同样是 list , 内容是该文件夹中所有的文件(不包括子目录) topdown –可选，控制遍历是从上到下，还是反过来。 为True优先遍历上层目录，否则优先遍历最底层目录(默认为True)。 onerror – 可选，需要一个 callable 对象，当 walk 需要异常时，会调用。 followlinks – 可选，如果为 True，则会遍历目录下的快捷方式(linux 下是软连接 symbolic link )实际所指的目录(默认关闭)，如果为 False，则优先遍历 top 的子目录。  示例代码:
+for root,dirs,files in os.walk(mypath): print(root) for dr in dirs: print(dr) for name in files: if name.endswith(&amp;quot;.txt&amp;quot;): print(os.path.join(root, name)) 排序问题
+需要注意的是os.walk使用os.listdir，两者返回的列表都是任意顺序的，如果想要获得排序，考虑使用sort。例如：
+# 如果要按排序顺序递归目录，则就地修改dirs for root, dirs, files in os.</description>
+    </item>
+    
+    <item>
+      <title>Python程序计时</title>
+      <link>https://keae12315.github.io/blog/post/python%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%97%B6/</link>
+      <pubDate>Mon, 08 Aug 2022 00:51:32 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/post/python%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%97%B6/</guid>
+      <description>python的time内置模块是一个与时间相关的内置模块，存在不同的模块可以用于程序计时.
 使用time.time() 很多人喜欢用time.time()获取当前时间的时间戳，利用程序前后两个时间戳的差值计算程序的运行时间，如下：
-import time T1 = time.time() #______假设下面是程序部分______ for i in range(100*100): pass T2 = time.time() print('程序运行时间:%s毫秒' % ((T2 - T1)*1000)) # 程序运行时间:0.0毫秒 不要以为你的处理器很厉害，就忽视了一个问题，一万次遍历，时间为0.0毫秒？
+import time T1 = time.time() #______假设下面是程序部分______ for i in range(100*100): pass T2 = time.time() print(&#39;程序运行时间:%s毫秒&#39; % ((T2 - T1)*1000)) # 程序运行时间:0.0毫秒 不要以为你的处理器很厉害，就忽视了一个问题，一万次遍历，时间为0.0毫秒？
 下面解决上面的质疑，
 使用time.clock() Python time clock() 函数以浮点数计算的秒数返回当前的CPU时间。用来衡量不同程序的耗时，比time.time()更有用。
 这个需要注意，在不同的系统上含义不同。在UNIX系统上，它返回的是”进程时间”，它是用秒表示的浮点数（时间戳）。而在WINDOWS中，第一次调用，返回的是进程运行的实际时间。而第二次之后的调用是自第一次调用以后到现在的运行时间。（实际上是以WIN32上QueryPerformanceCounter()为基础，它比毫秒表示更为精确）
 使用time.clock()更改后的程序查看一下：
-import platform print('系统:',platform.system()) import time T1 = time.clock() #______假设下面是程序部分______ for i in range(100*100): pass T2 =time.clock() print('程序运行时间:%s毫秒' % ((T2 - T1)*1000)) # 程序运行时间:0.27023641716203606毫秒 使用time.perf_counter() 返回性能计数器的值（以微秒为单位,1秒=1000毫秒；1毫秒=1000微秒）作为浮点数，即具有最高可用分辨率的时钟，以测量短持续时间。它包括在睡眠期间和系统范围内流逝的时间。返回值的参考点未定义，因此只有连续调用结果之间的差异有效。
+import platform print(&#39;系统:&#39;,platform.system()) import time T1 = time.clock() #______假设下面是程序部分______ for i in range(100*100): pass T2 =time.clock() print(&#39;程序运行时间:%s毫秒&#39; % ((T2 - T1)*1000)) # 程序运行时间:0.27023641716203606毫秒 使用time.perf_counter() 返回性能计数器的值（以微秒为单位,1秒=1000毫秒；1毫秒=1000微秒）作为浮点数，即具有最高可用分辨率的时钟，以测量短持续时间。它包括在睡眠期间和系统范围内流逝的时间。返回值的参考点未定义，因此只有连续调用结果之间的差异有效。
 1秒 = 1000毫秒
 1毫秒 = 1000微秒
 1微秒 = 1000纳秒
-1纳秒 = 1000皮秒</description></item><item><title>使用搜索引擎的技巧</title><link>https://keae12315.github.io/blog/post/%E4%BD%BF%E7%94%A8%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E7%9A%84%E6%8A%80%E5%B7%A7/</link><pubDate>Mon, 08 Aug 2022 00:50:01 +0800</pubDate><guid>https://keae12315.github.io/blog/post/%E4%BD%BF%E7%94%A8%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E7%9A%84%E6%8A%80%E5%B7%A7/</guid><description>学会使用搜索运算符 关于算术运算符的几个小技巧其实并不新鲜，很多是和搜索引擎本身一起诞生的，甚至已经成为了各个搜索引擎的一种通用标准。 不过鉴于仍然有许多人不知道这些搜索运算符，或者没有概念它们具体能做什么，所以我们先来讲一讲这些最基本的知识。
-双引号&amp;rdquo;&amp;quot;：完全匹配。结果中必须出现与搜索文本完全相同的内容。 短横-：排除。 加号+：包含搜索。 ~ 进行同义词搜索。 site：在某个网站内搜索。 filetype：搜索对应类型的文件。 link 搜索网页中含有某链接的结果，比如搜索：link:http://baidu.com，则结果为包含百度这个链接的页面。
+1纳秒 = 1000皮秒</description>
+    </item>
+    
+    <item>
+      <title>使用搜索引擎的技巧</title>
+      <link>https://keae12315.github.io/blog/post/%E4%BD%BF%E7%94%A8%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E7%9A%84%E6%8A%80%E5%B7%A7/</link>
+      <pubDate>Mon, 08 Aug 2022 00:50:01 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/post/%E4%BD%BF%E7%94%A8%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E7%9A%84%E6%8A%80%E5%B7%A7/</guid>
+      <description>学会使用搜索运算符 关于算术运算符的几个小技巧其实并不新鲜，很多是和搜索引擎本身一起诞生的，甚至已经成为了各个搜索引擎的一种通用标准。 不过鉴于仍然有许多人不知道这些搜索运算符，或者没有概念它们具体能做什么，所以我们先来讲一讲这些最基本的知识。
+ 双引号&amp;quot;&amp;quot;：完全匹配。结果中必须出现与搜索文本完全相同的内容。 短横-：排除。 加号+：包含搜索。 ~ 进行同义词搜索。 site：在某个网站内搜索。 filetype：搜索对应类型的文件。  link 搜索网页中含有某链接的结果，比如搜索：link:http://baidu.com，则结果为包含百度这个链接的页面。
 intitle 搜索标题内包含关键词的结果。
 inurl 搜索网站地址中包含关键词的结果。
 related 搜索相关网站。
 index of 可以突破网站入口下载。
-如何进行学术搜索 综述类关键词 overview survey review</description></item><item><title>VS Code远程连接</title><link>https://keae12315.github.io/blog/post/vscode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/</link><pubDate>Mon, 08 Aug 2022 00:39:12 +0800</pubDate><guid>https://keae12315.github.io/blog/post/vscode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/</guid><description>微软针对Vs code的远程开发推出了三个插件，包括 ：
-Remote-SSH：SSH 连接虚拟/实体Linux主机； Remote-Container：连接容器； Remote-WSL：连接WSL（也就是Linux子系统）。 重点服务使用Windows但具有Linux开发需求的用户。 使用Remote-SSH连接实验室服务器 这里是微软关于SSH连接的官方文档
+如何进行学术搜索 综述类关键词  overview survey review  </description>
+    </item>
+    
+    <item>
+      <title>VS Code远程连接</title>
+      <link>https://keae12315.github.io/blog/post/vscode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/</link>
+      <pubDate>Mon, 08 Aug 2022 00:39:12 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/post/vscode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/</guid>
+      <description>微软针对Vs code的远程开发推出了三个插件，包括 ：
+ Remote-SSH：SSH 连接虚拟/实体Linux主机； Remote-Container：连接容器； Remote-WSL：连接WSL（也就是Linux子系统）。 重点服务使用Windows但具有Linux开发需求的用户。  使用Remote-SSH连接实验室服务器 这里是微软关于SSH连接的官方文档
 安装Remote-SSH插件 在Extension侧边栏搜索Remote-ssh并安装
 修改ssh配置文件 文件位置C:\Users\&amp;lt;user&amp;gt;\.ssh\config，如果没有这个文件夹，在管理可选功能里添加 OpenSSH 客户端。
 在config文件中写入以下内容
 Host Labserve #填写别名 HostName 1.1.1.1 #填写实验室服务器IP/host User user #填写ssh用户名 添加ssh公钥 远程ssh连接Linux服务器时，需要借助ssh公钥登录.
-生成ssh公钥
+  生成ssh公钥
 在cmd中输入ssh-keygen，一路回车键，完成后在$HOME/.ssh/目录下可以发现两个文件：id_rsa.pub和id_rsa，分别是客户端的公钥和私钥。
-上传ssh公钥
+  上传ssh公钥
 登录远程服务器，创建.ssh目录和authorized_keys文件
-mkdir ~/.ssh/ cd ~/.ssh/ vim authorized_keys 修改ssh配置
-vim /etc/ssh/sshd_config RSAAuthentication yes PubkeyAuthentication yes AuthorizedKeysFile $h/.ssh/authorized_keys 保存并退出vim。
-重启ssh服务 service ssh restart 通过CONNECTION侧边栏进行连接 此时，已经可以在CONNECTION侧边栏看见服务器的别名，点击进行连接。 特别的，如果没有生成ssh公钥，这一步可能会要求输入服务器密码。
-问题汇总 阿里云、腾讯云等云服务器连接超时 目前VSCode的远程连接插件，默认勾选Use Local Server，也就是默认使用本地局域网络进行连接。如果你遇到阿里云等云服务器连接超时，应该取消勾选此项。</description></item><item><title>Docker教程</title><link>https://keae12315.github.io/blog/post/docker%E6%95%99%E7%A8%8B/</link><pubDate>Mon, 08 Aug 2022 00:29:27 +0800</pubDate><guid>https://keae12315.github.io/blog/post/docker%E6%95%99%E7%A8%8B/</guid><description>本文默认环境为Linux，打包镜像以Python为例。
+mkdir ~/.ssh/ cd ~/.ssh/ vim authorized_keys   修改ssh配置
+vim /etc/ssh/sshd_config RSAAuthentication yes PubkeyAuthentication yes AuthorizedKeysFile $h/.ssh/authorized_keys   保存并退出vim。
+重启ssh服务 service ssh restart   通过CONNECTION侧边栏进行连接 此时，已经可以在CONNECTION侧边栏看见服务器的别名，点击进行连接。 特别的，如果没有生成ssh公钥，这一步可能会要求输入服务器密码。
+问题汇总 阿里云、腾讯云等云服务器连接超时 目前VSCode的远程连接插件，默认勾选Use Local Server，也就是默认使用本地局域网络进行连接。如果你遇到阿里云等云服务器连接超时，应该取消勾选此项。</description>
+    </item>
+    
+    <item>
+      <title>Docker教程</title>
+      <link>https://keae12315.github.io/blog/post/docker%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Mon, 08 Aug 2022 00:29:27 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/post/docker%E6%95%99%E7%A8%8B/</guid>
+      <description>本文默认环境为Linux，打包镜像以Python为例。
 常用操作 查看镜像：docker images 查看所有容器：docker ps -a 查看所有容器ID：docker ps -aq 查看所有正在运行容器：docker ps 停止容器：docker stop 停止所有容器：docker stop $(docker ps -aq) 删除容器：docker rm 删除镜像：docker rmi 删除所有停止的容器：docker container prune -f 删除所有不使用的镜像：docker image prune -f -a 保存镜像：docker save &amp;gt; 加载镜像：docker load &amp;lt; 注意，删除前需要先停止容器。
 安装 官方安装教程
-Ubuntu Windows MacOS 配置 官方原文过长，摘取了常用的两个步骤。
+ Ubuntu Windows MacOS  配置 官方原文过长，摘取了常用的两个步骤。
 配置root用户 Docker绑定到Unix socket，但它需要sudo权限。如果不想每次都加sudo命令，创建一个名为Docker的Unix组.
-# 创建docker组。 sudo groupadd docker # 将用户添加到docker组。 sudo usermod -aG docker $USER # 激活对组的更改 newgrp docker 配置开机启动 注意，在 Debian 和 Ubuntu 上，Docker 服务被配置为默认启动。要在其他发行版的引导中自动启动 Docker 和 Containerd，请使用以下命令:</description></item><item><title>网络模型简述</title><link>https://keae12315.github.io/blog/post/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E7%AE%80%E8%BF%B0/</link><pubDate>Sun, 07 Aug 2022 03:12:48 +0800</pubDate><guid>https://keae12315.github.io/blog/post/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E7%AE%80%E8%BF%B0/</guid><description>OSI七层网络模型
-应用层 与其它计算机进行通讯的一个应用，它是对应应用程序的通信服务的。例如，一个没有通信功能的字处理程序就不能执行通信的代码，从事字处理工作的程序员也不关心OSI的第7层。但是，如果添加了一个传输文件的选项，那么字处理器的程序就需要实现OSI的第7层。示例：TELNET，HTTP，FTP，NFS，SMTP等。 表示层 这一层的主要功能是定义数据格式及加密。例如，FTP允许你选择以二进制或ASCII格式传输。如果选择二进制，那么发送方和接收方不改变文件的内容。如果选择ASCII格式，发送方将把文本从发送方的字符集转换成标准的ASCII后发送数据。在接收方将标准的ASCII转换成接收方计算机的字符集。示例：加密，ASCII等。 会话层 它定义了如何开始、控制和结束一个会话，包括对多个双向消息的控制和管理，以便在只完成连续消息的一部分时可以通知应用，从而使表示层看到的数据是连续的，在某些情况下，如果表示层收到了所有的数据，则用数据代表表示层。示例：RPC，SQL等。 传输层 这层的功能包括是选择差错恢复协议还是无差错恢复协议，及在同一主机上对不同应用的数据流的输入进行复用，还包括对收到的顺序不对的数据包的重新排序功能。示例：TCP，UDP，SPX。 网络层 这层对端到端的包传输进行定义，它定义了能够标识所有结点的逻辑地址，还定义了路由实现的方式和学习的方式。为了适应最大传输单元长度小于包长度的传输介质，网络层还定义了如何将一个包分解成更小的包的分段方法。示例：IP，IPX等。 数据链路层 它定义了在单个链路上如何传输数据。这些协议与被讨论的各种介质有关。示例：ATM，FDDI等。 物理层 OSI的物理层规范是有关传输介质的特性，这些规范通常也参考了其他组织制定的标准。连接头、帧、帧的使用、电流、编码及光调制等都属于各种物理层规范中的内容。物理层常用多个规范完成对所有细节的定义。示例：Rj45，802.3等。 协议、TCP 和 UDP 在了解 TCP(Transmission Control Protocol 即传输控制协议) 和 UDP(User Datagram Protocol 即用户数据包协议) 之前，我们先要知道一个名词，即协议。它到底是什么？它其实就是一套约定成俗的规则。就像开会的时候，我们达成了一些共识，先开发那个接口，项目什么时候上线等等。
+# 创建docker组。 sudo groupadd docker # 将用户添加到docker组。 sudo usermod -aG docker $USER # 激活对组的更改 newgrp docker 配置开机启动 注意，在 Debian 和 Ubuntu 上，Docker 服务被配置为默认启动。要在其他发行版的引导中自动启动 Docker 和 Containerd，请使用以下命令:</description>
+    </item>
+    
+    <item>
+      <title>网络模型简述</title>
+      <link>https://keae12315.github.io/blog/post/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E7%AE%80%E8%BF%B0/</link>
+      <pubDate>Sun, 07 Aug 2022 03:12:48 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/post/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E7%AE%80%E8%BF%B0/</guid>
+      <description>OSI七层网络模型
+ 应用层 与其它计算机进行通讯的一个应用，它是对应应用程序的通信服务的。例如，一个没有通信功能的字处理程序就不能执行通信的代码，从事字处理工作的程序员也不关心OSI的第7层。但是，如果添加了一个传输文件的选项，那么字处理器的程序就需要实现OSI的第7层。示例：TELNET，HTTP，FTP，NFS，SMTP等。 表示层 这一层的主要功能是定义数据格式及加密。例如，FTP允许你选择以二进制或ASCII格式传输。如果选择二进制，那么发送方和接收方不改变文件的内容。如果选择ASCII格式，发送方将把文本从发送方的字符集转换成标准的ASCII后发送数据。在接收方将标准的ASCII转换成接收方计算机的字符集。示例：加密，ASCII等。 会话层 它定义了如何开始、控制和结束一个会话，包括对多个双向消息的控制和管理，以便在只完成连续消息的一部分时可以通知应用，从而使表示层看到的数据是连续的，在某些情况下，如果表示层收到了所有的数据，则用数据代表表示层。示例：RPC，SQL等。 传输层 这层的功能包括是选择差错恢复协议还是无差错恢复协议，及在同一主机上对不同应用的数据流的输入进行复用，还包括对收到的顺序不对的数据包的重新排序功能。示例：TCP，UDP，SPX。 网络层 这层对端到端的包传输进行定义，它定义了能够标识所有结点的逻辑地址，还定义了路由实现的方式和学习的方式。为了适应最大传输单元长度小于包长度的传输介质，网络层还定义了如何将一个包分解成更小的包的分段方法。示例：IP，IPX等。 数据链路层 它定义了在单个链路上如何传输数据。这些协议与被讨论的各种介质有关。示例：ATM，FDDI等。 物理层 OSI的物理层规范是有关传输介质的特性，这些规范通常也参考了其他组织制定的标准。连接头、帧、帧的使用、电流、编码及光调制等都属于各种物理层规范中的内容。物理层常用多个规范完成对所有细节的定义。示例：Rj45，802.3等。  协议、TCP 和 UDP 在了解 TCP(Transmission Control Protocol 即传输控制协议) 和 UDP(User Datagram Protocol 即用户数据包协议) 之前，我们先要知道一个名词，即协议。它到底是什么？它其实就是一套约定成俗的规则。就像开会的时候，我们达成了一些共识，先开发那个接口，项目什么时候上线等等。
 可以毫不夸张地说计算机网络的构建与发展，奠基石就是各种网络协议。它们定义了信息通讯的方式，以及如何收发信息等，比如：
-IP 协议负责将多个包交换网络连接起来，并管理通讯 IP 源地址和目标地址的协议 TCP 和 UDP 协议则是位于应用层和 IP 层之间，负责它们之间信息传输的重要协议</description></item><item><title>内存分配算法</title><link>https://keae12315.github.io/blog/post/%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E7%AE%97%E6%B3%95/</link><pubDate>Sun, 07 Aug 2022 03:12:22 +0800</pubDate><guid>https://keae12315.github.io/blog/post/%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E7%AE%97%E6%B3%95/</guid><description>First Fit 该算法从空闲分区链首开始查找，直至找到一个能满足其大小要求的空闲分区为止。然后再按照作业的大小，从该分区中划出一块内存分配给请求者，余下的空闲分区仍留在空闲分区链中。
-特点: 该算法倾向于使用内存中低地址部分的空闲区，在高地址部分的空闲区很少被利用，从而保留了高地址部分的大空闲区。显然为以后到达的大作业分配大的内存空间创造了条件。 缺点: 低地址部分不断被划分，留下许多难以利用、很小的空闲区，而每次查找又都从低地址部分开始，会增加查找的开销。 Next Fit 该算法是由首次适应算法演变而成的。在为进程分配内存空间时，不再每次从链首开始查找，直至找到一个能满足要求的空闲分区，并从中划出一块来分给作业。
-特点: 使内存中的空闲分区分布的更为均匀，减少了查找时的系统开销。 缺点: 缺乏大的空闲分区，从而导致不能装入大型作业。 Best Fit 该算法总是把既能满足要求，又是最小的空闲分区分配给作业。为了加速查找，该算法要求将所有的空闲区按其大小排序后，以递增顺序形成一个空白链。这样每次找到的第一个满足要求的空闲区，必然是最优的。孤立地看，该算法似乎是最优的，但事实上并不一定。因为每次分配后剩余的空间一定是最小的，在存储器中将留下许多难以利用的小空闲区。同时每次分配后必须重新排序，这也带来了一定的开销。
-特点: 每次分配给文件的都是最合适该文件大小的分区。 缺点: 内存中留下许多难以利用的小的空闲区。 Worst Fit 该算法按大小递减的顺序形成空闲区链，分配时直接从空闲区链的第一个空闲区中分配（不能满足需要则不分配）。很显然，如果第一个空闲分区不能满足，那么再没有空闲分区能满足需要。这种分配方法初看起来不太合理，但它也有很强的直观吸引力: 在大空闲区中放入程序后，剩下的空闲区常常也很大，于是还能装下一个较大的新程序。
+IP 协议负责将多个包交换网络连接起来，并管理通讯 IP 源地址和目标地址的协议 TCP 和 UDP 协议则是位于应用层和 IP 层之间，负责它们之间信息传输的重要协议</description>
+    </item>
+    
+    <item>
+      <title>内存分配算法</title>
+      <link>https://keae12315.github.io/blog/post/%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Sun, 07 Aug 2022 03:12:22 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/post/%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E7%AE%97%E6%B3%95/</guid>
+      <description>First Fit 该算法从空闲分区链首开始查找，直至找到一个能满足其大小要求的空闲分区为止。然后再按照作业的大小，从该分区中划出一块内存分配给请求者，余下的空闲分区仍留在空闲分区链中。
+ 特点: 该算法倾向于使用内存中低地址部分的空闲区，在高地址部分的空闲区很少被利用，从而保留了高地址部分的大空闲区。显然为以后到达的大作业分配大的内存空间创造了条件。 缺点: 低地址部分不断被划分，留下许多难以利用、很小的空闲区，而每次查找又都从低地址部分开始，会增加查找的开销。  Next Fit 该算法是由首次适应算法演变而成的。在为进程分配内存空间时，不再每次从链首开始查找，直至找到一个能满足要求的空闲分区，并从中划出一块来分给作业。
+ 特点: 使内存中的空闲分区分布的更为均匀，减少了查找时的系统开销。 缺点: 缺乏大的空闲分区，从而导致不能装入大型作业。  Best Fit 该算法总是把既能满足要求，又是最小的空闲分区分配给作业。为了加速查找，该算法要求将所有的空闲区按其大小排序后，以递增顺序形成一个空白链。这样每次找到的第一个满足要求的空闲区，必然是最优的。孤立地看，该算法似乎是最优的，但事实上并不一定。因为每次分配后剩余的空间一定是最小的，在存储器中将留下许多难以利用的小空闲区。同时每次分配后必须重新排序，这也带来了一定的开销。
+ 特点: 每次分配给文件的都是最合适该文件大小的分区。 缺点: 内存中留下许多难以利用的小的空闲区。  Worst Fit 该算法按大小递减的顺序形成空闲区链，分配时直接从空闲区链的第一个空闲区中分配（不能满足需要则不分配）。很显然，如果第一个空闲分区不能满足，那么再没有空闲分区能满足需要。这种分配方法初看起来不太合理，但它也有很强的直观吸引力: 在大空闲区中放入程序后，剩下的空闲区常常也很大，于是还能装下一个较大的新程序。
 最坏适应算法与最佳适应算法的排序正好相反，它的队列指针总是指向最大的空闲区，在进行分配时，总是从最大的空闲 区开始查寻。 该算法克服了最佳适应算法留下的许多小的碎片的不足，但保留大的空闲区的可能性减小了，而且空闲区回收也和最佳适 应算法一样复杂。
-特点: 给文件分配分区后剩下的空闲区不至于太小，产生碎片的几率最小，对中小型文件分配分区操作有利。 缺点: 使存储器中缺乏大的空闲区，对大型文件的分区分配不利。 buddy system 伙伴分配算法将总内存设为2的n次幂，并将内存按照2的n次幂的格式进行分发。
+ 特点: 给文件分配分区后剩下的空闲区不至于太小，产生碎片的几率最小，对中小型文件分配分区操作有利。 缺点: 使存储器中缺乏大的空闲区，对大型文件的分区分配不利。  buddy system 伙伴分配算法将总内存设为2的n次幂，并将内存按照2的n次幂的格式进行分发。
 需要分配内存的时：核心就是分配出不小于所需的最小2次幂大小的内存(如果需要25，就分配32；如果需要63，就分配64)，具体分配时，如果有符合的内存块，直接分配即可；如果当前的空闲块没有满足要求的，就将大块进行二等分，继续重复分配过程
 需要释放内存时：首先将该内存块释放，然后看其相邻的块(可以进行合并的相邻块，即在分配时由一个内存块分成的两个等大内存块)是否释放，如果相邻块没有释放，则结束即可；如果相邻块释放，则将两个块合并，重复释放过程，对合并后的块进行释放。对相邻块做一个更容易实现的解释：相邻块不仅地址相邻，且二者中的低地址块的地址必须为2的整数幂。
-优点是快速搜索合并（O(logN)时间复杂度）以及低外部碎片（最佳适配best-fit） 缺点是内部碎片，因为按2的幂划分块，如果碰上65单位大小，那么必须划分128单位大小的块。实际上存储结点信息也会占用一小部分内存，但该算法总体上来看性能还是比较优越的。 Slab lab以内存池为思想，解决内部碎片问题，专门解决小内存问题。提供一种可分配任意大小的内存分配机制。
+ 优点是快速搜索合并（O(logN)时间复杂度）以及低外部碎片（最佳适配best-fit） 缺点是内部碎片，因为按2的幂划分块，如果碰上65单位大小，那么必须划分128单位大小的块。实际上存储结点信息也会占用一小部分内存，但该算法总体上来看性能还是比较优越的。  Slab lab以内存池为思想，解决内部碎片问题，专门解决小内存问题。提供一种可分配任意大小的内存分配机制。
 slab分配器是基于对象进行管理，将相同类型的对象归为一类，每当要申请这样一个对象时，slab分配器就从一个slab列表中分配一个这样大小的单元出去，而当要释放时，将其重新保存在该列表中，而不是直接返回给伙伴系统，从而避免内部碎片。slab分配器并不丢弃已经分配的对象，而是释放并把它们保存在内存中。slab分配对象时，会使用最近释放的对象的内存块，因此其驻留在cpu高速缓存中的概率会大大提高。
 slab算法在buddy-system分配大内存的基础上，对小内存区域进行了有效的管理。可以解决内部碎片问题，提供一种可分配任意大小的内存分配机制，slab 分配器还支持通用对象的初始化，从而避免了为同一目的而对一个对象重复进行初始化。slab算法最大的缺点就是复杂，包括队列管理较为复杂、缓冲区管理较为复杂，以及实现起来非常复杂。
-参考文献
+ 参考文献
 https://blog.csdn.net/liying_1234/article/details/52053183#:~:text=%E5%9B%9B%E3%80%81%E6%9C%80%E5%9D%8F%E9%80%82%E5%BA%94%E7%AE%97%E6%B3%95,%E7%A9%BA%E9%97%B2%E5%88%86%E5%8C%BA%E8%83%BD%E6%BB%A1%E8%B6%B3%E9%9C%80%E8%A6%81%E3%80%82
-https://blog.csdn.net/dingdingdodo/article/details/100624125</description></item><item><title>IDEA常用</title><link>https://keae12315.github.io/blog/post/idea%E5%B8%B8%E7%94%A8/</link><pubDate>Sun, 07 Aug 2022 03:11:42 +0800</pubDate><guid>https://keae12315.github.io/blog/post/idea%E5%B8%B8%E7%94%A8/</guid><description>格式化代码: Ctrl+Alt+L 去除无用包: Ctrl+Alt+O
+https://blog.csdn.net/dingdingdodo/article/details/100624125
+ </description>
+    </item>
+    
+    <item>
+      <title>IDEA常用</title>
+      <link>https://keae12315.github.io/blog/post/idea%E5%B8%B8%E7%94%A8/</link>
+      <pubDate>Sun, 07 Aug 2022 03:11:42 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/post/idea%E5%B8%B8%E7%94%A8/</guid>
+      <description>格式化代码: Ctrl+Alt+L 去除无用包: Ctrl+Alt+O
 选中下一个相同内容: Alt + J 选中所有相同内容: Ctrl + Shift + Alt + J
-自动补全左边：Ctrl+Alt+V</description></item><item><title>MySQL入门</title><link>https://keae12315.github.io/blog/post/mysql%E5%85%A5%E9%97%A8/</link><pubDate>Sat, 06 Aug 2022 11:49:50 +0800</pubDate><guid>https://keae12315.github.io/blog/post/mysql%E5%85%A5%E9%97%A8/</guid><description>基本概念 数据库(Database, DB): 将大量数据保存起来, 通过计算机加工而成的可以进行高效访问的数据集合. 数据库管理系统(Database Management System, DBMS): 管理数据库的计算机系统. 表(Table): 包含数据库中所有数据的数据库对象, 定义为列的集合. 与电子表格相似, 数据在表中式按行和列的格式组织排列的. 列(Column): 又称字段(Field), 存储某种类型的信息. 每列只能指定一种数据类型. 行: 又称记录或元组, 一组相关的数据. 主键: 记录的唯一标识, 通常指定一个字段担任, 但也可以通过复合不同字段构成唯一标识, 此时称为复合键. 外键: 创建 数据库: CREATE DATABASE dbname; 表: CREATE TABLE table_name; 字段: 创建/新增字段时, 也要对数据类型和值的限制进行设置. 数据类型 数值 TINYINT SMALLINT MEDIUMINT INT / INTEGER BIGINT FLOAT DOUBLE DECIMAL 日期 DATE TIME YEAR DATETIME TIMESTAMP 字符 CHAR VARCHAR TINYBLOB TINYTEXT BLOB TEXT MEDIUMBLOB MEDIUMTEXT LONGBLOB LONGTEXT 特殊值 NULL</description></item><item><title>继承，重载，多态，泛型与封装</title><link>https://keae12315.github.io/blog/post/%E7%BB%A7%E6%89%BF%E9%87%8D%E8%BD%BD%E5%A4%9A%E6%80%81%E6%B3%9B%E5%9E%8B%E4%B8%8E%E5%B0%81%E8%A3%85/</link><pubDate>Sat, 06 Aug 2022 11:48:44 +0800</pubDate><guid>https://keae12315.github.io/blog/post/%E7%BB%A7%E6%89%BF%E9%87%8D%E8%BD%BD%E5%A4%9A%E6%80%81%E6%B3%9B%E5%9E%8B%E4%B8%8E%E5%B0%81%E8%A3%85/</guid><description>Encapsulation
-可见性private Inheritance Polymorphism 类, 抽象类/方法, Interface
-Inheritance 单继承 多继承 多子类继承 多(父类)继承, Java不支持, 容易造成致命方块. 提高了类之间的耦合性（继承的缺点，耦合度高就会造成代码之间的联系越紧密，代码独立性越差）。
+自动补全左边：Ctrl+Alt+V</description>
+    </item>
+    
+    <item>
+      <title>MySQL入门</title>
+      <link>https://keae12315.github.io/blog/post/mysql%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Sat, 06 Aug 2022 11:49:50 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/post/mysql%E5%85%A5%E9%97%A8/</guid>
+      <description>基本概念  数据库(Database, DB): 将大量数据保存起来, 通过计算机加工而成的可以进行高效访问的数据集合. 数据库管理系统(Database Management System, DBMS): 管理数据库的计算机系统. 表(Table): 包含数据库中所有数据的数据库对象, 定义为列的集合. 与电子表格相似, 数据在表中式按行和列的格式组织排列的. 列(Column): 又称字段(Field), 存储某种类型的信息. 每列只能指定一种数据类型. 行: 又称记录或元组, 一组相关的数据. 主键: 记录的唯一标识, 通常指定一个字段担任, 但也可以通过复合不同字段构成唯一标识, 此时称为复合键. 外键:  创建  数据库: CREATE DATABASE dbname; 表: CREATE TABLE table_name; 字段: 创建/新增字段时, 也要对数据类型和值的限制进行设置.  数据类型  数值  TINYINT SMALLINT MEDIUMINT INT / INTEGER BIGINT FLOAT DOUBLE DECIMAL   日期  DATE TIME YEAR DATETIME TIMESTAMP   字符  CHAR VARCHAR TINYBLOB TINYTEXT BLOB TEXT MEDIUMBLOB MEDIUMTEXT LONGBLOB LONGTEXT   特殊值  NULL</description>
+    </item>
+    
+    <item>
+      <title>继承，重载，多态，泛型与封装</title>
+      <link>https://keae12315.github.io/blog/post/%E7%BB%A7%E6%89%BF%E9%87%8D%E8%BD%BD%E5%A4%9A%E6%80%81%E6%B3%9B%E5%9E%8B%E4%B8%8E%E5%B0%81%E8%A3%85/</link>
+      <pubDate>Sat, 06 Aug 2022 11:48:44 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/post/%E7%BB%A7%E6%89%BF%E9%87%8D%E8%BD%BD%E5%A4%9A%E6%80%81%E6%B3%9B%E5%9E%8B%E4%B8%8E%E5%B0%81%E8%A3%85/</guid>
+      <description>Encapsulation
+可见性private Inheritance Polymorphism  类, 抽象类/方法, Interface
+Inheritance  单继承 多继承 多子类继承 多(父类)继承, Java不支持, 容易造成致命方块.  提高了类之间的耦合性（继承的缺点，耦合度高就会造成代码之间的联系越紧密，代码独立性越差）。
 实际上, 在保证无歧义的情况下, 继承是树状结构. 但现实生活中存在网状结构, Java用接口的方式实现了多父类继承的概念, 但是要求你一定要单独给出实现, 避免了歧义.
 如何取得子类和父类:
-super关键字：我们可以通过super关键字来实现对父类成员的访问，用来引用当前对象的父类。 this关键字：指向自己的引用。 Override 外壳不变，核心重写
+ super关键字：我们可以通过super关键字来实现对父类成员的访问，用来引用当前对象的父类。 this关键字：指向自己的引用。  Override 外壳不变，核心重写
 Overload 就是函数或者方法有相同的名称，但是参数列表不相同的情形
 Generics 泛型的本质是为了参数化类型（在不创建新的类型的情况下，通过泛型指定的不同类型来控制形参具体限制的类型）。也就是说在泛型使用过程中，操作的数据类型被指定为一个参数，这种参数类型可以用在类、接口和方法中，分别被称为泛型类、泛型接口、泛型方法。
 泛型只在编译阶段有效。在编译之后程序会采取去泛型化的措施。也就是说Java中的泛型，只在编译阶段有效。在编译过程中，正确检验泛型结果后，会将泛型的相关信息擦出，并且在对象进入和离开方法的边界处添加类型检查和类型转换的方法。也就是说，泛型信息不会进入到运行时阶段。
 泛型类型在逻辑上看以看成是多个不同的类型，实际上都是相同的基本类型。
 注：JDK 1.8 以后，接口里可以有静态方法和方法体了。
-注：JDK 1.8 以后，接口允许包含具体实现的方法，该方法称为&amp;quot;默认方法&amp;rdquo;，默认方法使用 default 关键字修饰。更多内容可参考 Java 8 默认方法。
-注：JDK 1.9 以后，允许将方法定义为 private，使得某些复用的代码不会把方法暴露出去。更多内容可参考 Java 9 私有接口方法。</description></item><item><title>多线程漫谈</title><link>https://keae12315.github.io/blog/post/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%BC%AB%E8%B0%88/</link><pubDate>Sat, 06 Aug 2022 11:48:28 +0800</pubDate><guid>https://keae12315.github.io/blog/post/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%BC%AB%E8%B0%88/</guid><description>Process Thread
+注：JDK 1.8 以后，接口允许包含具体实现的方法，该方法称为&amp;quot;默认方法&amp;quot;，默认方法使用 default 关键字修饰。更多内容可参考 Java 8 默认方法。
+注：JDK 1.9 以后，允许将方法定义为 private，使得某些复用的代码不会把方法暴露出去。更多内容可参考 Java 9 私有接口方法。</description>
+    </item>
+    
+    <item>
+      <title>多线程漫谈</title>
+      <link>https://keae12315.github.io/blog/post/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%BC%AB%E8%B0%88/</link>
+      <pubDate>Sat, 06 Aug 2022 11:48:28 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/post/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%BC%AB%E8%B0%88/</guid>
+      <description>Process Thread
 多任务 多进程 Multithreading
 The state of the thread
-New：新创建的线程，尚未执行； Runnable：运行中的线程，正在执行run()方法的Java代码； Blocked：运行中的线程，因为某些操作被阻塞而挂起； Waiting：运行中的线程，因为某些操作在等待中； Timed Waiting：运行中的线程，因为执行sleep()方法正在计时等待； Terminated：线程已终止，因为run()方法执行完毕. 线程操作
-run join interrupt: isInterrupted setDaemon synchronized: 多线程竞争 wait和notify(All): 多线程协调(当条件不满足时，线程进入等待状态；当条件满足时，线程被唤醒，继续执行任务。) 线程同步 保证一段代码的原子性就是通过加锁和解锁实现的. Java程序使用synchronized关键字对一个对象进行加锁.
+ New：新创建的线程，尚未执行； Runnable：运行中的线程，正在执行run()方法的Java代码； Blocked：运行中的线程，因为某些操作被阻塞而挂起； Waiting：运行中的线程，因为某些操作在等待中； Timed Waiting：运行中的线程，因为执行sleep()方法正在计时等待； Terminated：线程已终止，因为run()方法执行完毕.  线程操作
+ run join interrupt: isInterrupted setDaemon synchronized: 多线程竞争 wait和notify(All): 多线程协调(当条件不满足时，线程进入等待状态；当条件满足时，线程被唤醒，继续执行任务。)  线程同步 保证一段代码的原子性就是通过加锁和解锁实现的. Java程序使用synchronized关键字对一个对象进行加锁.
 注意加锁对象必须是同一个实例
 JVM规范定义了几种原子操作：
-基本类型（long和double除外）赋值，例如：int n = m； 引用类型赋值，例如：Listlist = anotherList。 如果一个类被设计为允许多线程正确访问，我们就说这个类就是“线程安全”的（thread-safe）
+ 基本类型（long和double除外）赋值，例如：int n = m； 引用类型赋值，例如：Listlist = anotherList。  如果一个类被设计为允许多线程正确访问，我们就说这个类就是“线程安全”的（thread-safe）
 线程死锁 形成死锁必须同时满足互斥、请求保持、不可抢占、循环等待。死锁发生后，没有任何机制能解除死锁，只能强制结束JVM进程。
 线程顺序访问资源，是破坏了循环等待条件，属于死锁预防的策略。
-线程间通信 线程控制：挂起、停止和恢复</description></item><item><title>设计模式</title><link>https://keae12315.github.io/blog/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link><pubDate>Sat, 06 Aug 2022 11:48:04 +0800</pubDate><guid>https://keae12315.github.io/blog/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid><description>创建模式 工厂方法：Factory Method 抽象工厂：Abstract Factory 建造者：Builder 原型：Prototype 单例：Singleton 结构型模式 适配器 桥接 组合 装饰器 外观 享元 代理 行为模式 责任链 命令 解释器 迭代器 中介 备忘录 观察者 状态 策略 模板方法 访问者 参考资料
+线程间通信 线程控制：挂起、停止和恢复</description>
+    </item>
+    
+    <item>
+      <title>设计模式</title>
+      <link>https://keae12315.github.io/blog/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Sat, 06 Aug 2022 11:48:04 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
+      <description>创建模式  工厂方法：Factory Method 抽象工厂：Abstract Factory 建造者：Builder 原型：Prototype 单例：Singleton  结构型模式  适配器 桥接 组合 装饰器 外观 享元 代理  行为模式  责任链 命令 解释器 迭代器 中介 备忘录 观察者 状态 策略 模板方法 访问者   参考资料
 https://refactoringguru.cn/design-patterns/catalog
-https://www.liaoxuefeng.com/wiki/1252599548343744/1281319090782242</description></item><item><title>数据结构漫谈</title><link>https://keae12315.github.io/blog/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%BC%AB%E8%B0%88/</link><pubDate>Sat, 06 Aug 2022 11:47:19 +0800</pubDate><guid>https://keae12315.github.io/blog/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%BC%AB%E8%B0%88/</guid><description>一个苹果的表示 别误会，这并不是牛顿的苹果；而是从一开始，人们如何表示苹果的数量为1个。对物品的数量描述，催生了数字的出现。一个苹果的概念天然不可分割，尽管我们可以把它劈成两半，但是也许用劈开的苹果来说更合适，因为它离一个苹果中苹果所表示的概念&amp;ndash;那个圆圆的，皮红叶绿的苹果&amp;ndash;已经有所区别。对于这种不可分割的概念，数量的表示只有整数。但很快，对一堆苹果来说，它就可以被分成几分了（先假设能整分好了）。这种概念催生了
+https://www.liaoxuefeng.com/wiki/1252599548343744/1281319090782242
+ </description>
+    </item>
+    
+    <item>
+      <title>数据结构漫谈</title>
+      <link>https://keae12315.github.io/blog/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%BC%AB%E8%B0%88/</link>
+      <pubDate>Sat, 06 Aug 2022 11:47:19 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%BC%AB%E8%B0%88/</guid>
+      <description>一个苹果的表示 别误会，这并不是牛顿的苹果；而是从一开始，人们如何表示苹果的数量为1个。对物品的数量描述，催生了数字的出现。一个苹果的概念天然不可分割，尽管我们可以把它劈成两半，但是也许用劈开的苹果来说更合适，因为它离一个苹果中苹果所表示的概念&amp;ndash;那个圆圆的，皮红叶绿的苹果&amp;ndash;已经有所区别。对于这种不可分割的概念，数量的表示只有整数。但很快，对一堆苹果来说，它就可以被分成几分了（先假设能整分好了）。这种概念催生了
 基本数据 整数
 浮点数
 有点特殊的字符与字符串
 Data Structures Arrays Linked Lists Stacks Queues Hash Tables 新的问题, 假设我们需要存一下学生的身份证号和名字, 该怎么用数组来做呢? 身份证是唯一的, 每个人都不一样, 但名字有可能相同. 当然可以用一个二维数组, 但问题是, 唯一的下标索引对应唯一的身份证号, 如果能用身份证号做索引就好了. 但数组在内存中是连续的, 身份证号却不一定连续, 做下标会让空间浪费, 而且我们也很难确定该要多少内存空间.
 现在再回忆一下, 因为身份证号唯一, 我们希望能直接通过身份证号代替下标索引找到内存地址存取姓名, 但数组本身的设计却很难完成这一点. 抽象一下就是, 一组数据, 有唯一的关键词key, 对应相应的value. 那么, 如何有效地存取一组key-vaule键值对?
 注意, 这里有四个关键词:
-key-value键值对 一组 存 取 现在, 我们有一个key, 有一个对应的value. 我们想通过key直接定位到存储位置. 如果能有一个函数f(), 对唯一的key有唯一的f(k)值, 那么我们把这个唯一的f(k)值作为存储地址, 那么下次无论是查询还是存储, 只要知道k, 再通过f(k)计算出存储地址, 不就可以了吗. 确实如此, 我们已经基本搞清了原理, 但还有一些小问题需要解决.
-如果f(k)的值域是无穷 在有限域上, 基本概念
-key value Hash function 散列表 Collision Java中的Hash Table 在Java中, 用Map表示键值对的数据结构, 但Map并不指定用什么方式存储键值对.</description></item><item><title>排序算法</title><link>https://keae12315.github.io/blog/post/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</link><pubDate>Sat, 06 Aug 2022 11:45:28 +0800</pubDate><guid>https://keae12315.github.io/blog/post/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</guid><description>排序算法是《数据结构与算法》中最基本的算法之一.
+ key-value键值对 一组 存 取  现在, 我们有一个key, 有一个对应的value. 我们想通过key直接定位到存储位置. 如果能有一个函数f(), 对唯一的key有唯一的f(k)值, 那么我们把这个唯一的f(k)值作为存储地址, 那么下次无论是查询还是存储, 只要知道k, 再通过f(k)计算出存储地址, 不就可以了吗. 确实如此, 我们已经基本搞清了原理, 但还有一些小问题需要解决.
+ 如果f(k)的值域是无穷 在有限域上,  基本概念
+ key value Hash function 散列表 Collision  Java中的Hash Table 在Java中, 用Map表示键值对的数据结构, 但Map并不指定用什么方式存储键值对.</description>
+    </item>
+    
+    <item>
+      <title>排序算法</title>
+      <link>https://keae12315.github.io/blog/post/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Sat, 06 Aug 2022 11:45:28 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/post/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</guid>
+      <description>排序算法是《数据结构与算法》中最基本的算法之一.
 排序算法可以分为内部排序和外部排序，内部排序是数据记录在内存中进行排序，而外部排序是因排序的数据很大，一次不能容纳全部的排序记录，在排序过程中需要访问外存. 常见的内部排序算法有：插入排序、希尔排序、选择排序、冒泡排序、归并排序、快速排序、堆排序、基数排序等. 用一张图概括：
-排序算法 平均时间复杂度 最好情况 最坏情况 空间复杂度 排序方式 稳定性 冒泡 O(n^2) O(n) O(n^2) O(1) In-place 稳定 选择 O(n^2) O(n^2) O(n^2) O(1) In-place 不稳定 插入 O(n^2) O(n) O(n^2) O(1) In-place 稳定 希尔 O(n log n) O(n log2 n) O(n log2 n) O(1) In-place 不稳定 归并 O(n log n) O(n log n) O(n log n) O(n) Out-place 稳定 快速 O(n log n) O(n log n) O(n^2) O(log n) In-place 不稳定 堆 O(n log n) O(n log n) O(n log n) O(1) In-place 不稳定 计数 O(n+k) O(n+k) O(n+k) O(k) Out-place 稳定 桶 O(n+k) O(n+k) O(n^2) O(n+k) Out-place 稳定 基数 O(n*k) O(n*k) O(n*k) O(n+k) Out-place 稳定 名词解释：</description></item><item><title>Git常用</title><link>https://keae12315.github.io/blog/post/git%E5%B8%B8%E7%94%A8/</link><pubDate>Fri, 05 Aug 2022 16:50:39 +0800</pubDate><guid>https://keae12315.github.io/blog/post/git%E5%B8%B8%E7%94%A8/</guid><description>git checkout &amp;lt;branch&amp;gt;</description></item><item><title>Ubuntu22.04安装后配置</title><link>https://keae12315.github.io/blog/post/ubuntu%E5%AE%89%E8%A3%85%E5%90%8E%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/</link><pubDate>Fri, 05 Aug 2022 03:19:27 +0800</pubDate><guid>https://keae12315.github.io/blog/post/ubuntu%E5%AE%89%E8%A3%85%E5%90%8E%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/</guid><description>查看系统版本 # 操作系统内核信息 uname －a # 操作系统版本信息 cat /proc/version # 操作系统发行版信息 cat /etc/issue # cpu相关信息 cat /proc/cpuinfo # 版本多少位 getconf LONG_BIT lsb_release -a 设置Git 本地Git用户邮箱设置 # 查看git配置信息 git config --list # 查看用户名 git config user.name # 查看邮箱 git config user.email # 设置全局用户名 git config --global user.name &amp;quot;&amp;quot; # 设置全局邮箱 git config --global user.email &amp;quot;&amp;quot; 生成SSH key ssh-keygen -t ed25519 -C &amp;quot;&amp;quot; 一路回车, 默认生成到~/.ssh目录下.
+   排序算法 平均时间复杂度 最好情况 最坏情况 空间复杂度 排序方式 稳定性     冒泡 O(n^2) O(n) O(n^2) O(1) In-place 稳定   选择 O(n^2) O(n^2) O(n^2) O(1) In-place 不稳定   插入 O(n^2) O(n) O(n^2) O(1) In-place 稳定   希尔 O(n log n) O(n log2 n) O(n log2 n) O(1) In-place 不稳定   归并 O(n log n) O(n log n) O(n log n) O(n) Out-place 稳定   快速 O(n log n) O(n log n) O(n^2) O(log n) In-place 不稳定   堆 O(n log n) O(n log n) O(n log n) O(1) In-place 不稳定   计数 O(n+k) O(n+k) O(n+k) O(k) Out-place 稳定   桶 O(n+k) O(n+k) O(n^2) O(n+k) Out-place 稳定   基数 O(n*k) O(n*k) O(n*k) O(n+k) Out-place 稳定    名词解释：</description>
+    </item>
+    
+    <item>
+      <title>Git常用</title>
+      <link>https://keae12315.github.io/blog/post/git%E5%B8%B8%E7%94%A8/</link>
+      <pubDate>Fri, 05 Aug 2022 16:50:39 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/post/git%E5%B8%B8%E7%94%A8/</guid>
+      <description>git checkout &amp;lt;branch&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu22.04安装后配置</title>
+      <link>https://keae12315.github.io/blog/post/ubuntu%E5%AE%89%E8%A3%85%E5%90%8E%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Fri, 05 Aug 2022 03:19:27 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/post/ubuntu%E5%AE%89%E8%A3%85%E5%90%8E%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/</guid>
+      <description>查看系统版本 # 操作系统内核信息 uname －a # 操作系统版本信息 cat /proc/version # 操作系统发行版信息 cat /etc/issue # cpu相关信息 cat /proc/cpuinfo # 版本多少位 getconf LONG_BIT lsb_release -a 设置Git 本地Git用户邮箱设置 # 查看git配置信息 git config --list # 查看用户名 git config user.name # 查看邮箱 git config user.email # 设置全局用户名 git config --global user.name &amp;quot;&amp;quot; # 设置全局邮箱 git config --global user.email &amp;quot;&amp;quot; 生成SSH key ssh-keygen -t ed25519 -C &amp;quot;&amp;quot; 一路回车, 默认生成到~/.ssh目录下.
 将后缀为.pub文件的内容添加到GitHub账户里.
 换源 Ubuntu 的软件源配置文件是 /etc/apt/sources.list
 备份配置文件
-sudo cp /etc/apt/sources.</description></item><item><title>WSL2使用v2ray代理</title><link>https://keae12315.github.io/blog/post/wsl2%E4%BD%BF%E7%94%A8v2ray%E4%BB%A3%E7%90%86/</link><pubDate>Thu, 04 Aug 2022 12:25:49 +0800</pubDate><guid>https://keae12315.github.io/blog/post/wsl2%E4%BD%BF%E7%94%A8v2ray%E4%BB%A3%E7%90%86/</guid><description>主机V2Ray设置 允许局域网连接 获取监听端口 对我而言, 有用的端口是局域网socks:10810
+sudo cp /etc/apt/sources.</description>
+    </item>
+    
+    <item>
+      <title>WSL2使用v2ray代理</title>
+      <link>https://keae12315.github.io/blog/post/wsl2%E4%BD%BF%E7%94%A8v2ray%E4%BB%A3%E7%90%86/</link>
+      <pubDate>Thu, 04 Aug 2022 12:25:49 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/post/wsl2%E4%BD%BF%E7%94%A8v2ray%E4%BB%A3%E7%90%86/</guid>
+      <description>主机V2Ray设置 允许局域网连接 获取监听端口 对我而言, 有用的端口是局域网socks:10810
 WSL2设置 配置环境变量 修改.bashrc文件, 添加以下内容(记得source .bashrc)
-# v2ray proxy export windows_host=`cat /etc/resolv.conf|grep nameserver|awk '{print $2}'` export ALL_PROXY=socks5://$windows_host:10810 export HTTP_PROXY=$ALL_PROXY export http_proxy=$ALL_PROXY export HTTPS_PROXY=$ALL_PROXY export https_proxy=$ALL_PROXY 测试连接情况 curl -vv google.com 参考资料
+# v2ray proxy export windows_host=`cat /etc/resolv.conf|grep nameserver|awk &#39;{print $2}&#39;` export ALL_PROXY=socks5://$windows_host:10810 export HTTP_PROXY=$ALL_PROXY export http_proxy=$ALL_PROXY export HTTPS_PROXY=$ALL_PROXY export https_proxy=$ALL_PROXY 测试连接情况 curl -vv google.com  参考资料
 WSL2中使用windows的代理
-记录一次WSL2的网络代理配置</description></item><item><title>Hugo入门</title><link>https://keae12315.github.io/blog/post/hugo%E5%85%A5%E9%97%A8/</link><pubDate>Thu, 04 Aug 2022 00:58:00 +0800</pubDate><guid>https://keae12315.github.io/blog/post/hugo%E5%85%A5%E9%97%A8/</guid><description>安装 以Ubuntu20.04为例
+记录一次WSL2的网络代理配置
+ </description>
+    </item>
+    
+    <item>
+      <title>Hugo入门</title>
+      <link>https://keae12315.github.io/blog/post/hugo%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Thu, 04 Aug 2022 00:58:00 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/post/hugo%E5%85%A5%E9%97%A8/</guid>
+      <description>安装 以Ubuntu20.04为例
 sudo apt-get install hugo 但是apt仓库版本一般不是最新的. 如果想安装最新版本, 可以从hugo的GitHub发行仓库上获取deb包并安装. 例如:
 # 进入用户目录, 随意. cd ~ # 获取deb文件, 自行选择合适的版本. wget https://github.com/spf13/hugo/releases/download/v0.14/hugo_0.14_amd64.deb # 安装 sudo dpkg -i hugo*.deb # 查看hugo版本 hugo version 配置 主题 安装主题 git submodule add git@github.com:adityatelange/hugo-PaperMod.git themes/hugo-PaperMod git submodule命令详解
 使用主题 在配置文件config.yaml中使用如下配置项
-theme: hugo-PaperMod 注意:
+theme: hugo-PaperMod  注意:
 如果重新git clone项目, 通过git submodule安装的主题, 并不会第一时间安装. 需要执行以下两条命令以安装主题.
-git submodule init git submodule update 基本操作 生成新文章
+git submodule init git submodule update  基本操作 生成新文章
 hugo new post/&amp;lt;filename&amp;gt;.md 为了简化操作, 在.bashrc文件里设置h函数
-h(){ hugo new post/$1.md } 部署到GitHub Page 生成token 我自己笔记的源码和github.</description></item></channel></rss>
+h(){ hugo new post/$1.md } 部署到GitHub Page 生成token 我自己笔记的源码和github.</description>
+    </item>
+    
+    
+    
+  </channel>
+</rss>
