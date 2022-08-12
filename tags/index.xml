@@ -118,5 +118,23 @@
       <description></description>
     </item>
     
+    <item>
+      <title>Configuration</title>
+      <link>https://keae12315.github.io/blog/tags/configuration/</link>
+      <pubDate>Thu, 04 Aug 2022 12:25:49 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/tags/configuration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WSL</title>
+      <link>https://keae12315.github.io/blog/tags/wsl/</link>
+      <pubDate>Thu, 04 Aug 2022 12:25:49 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/tags/wsl/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
