@@ -16,15 +16,15 @@
       <pubDate>Sat, 06 Aug 2022 11:50:16 +0800</pubDate>
       
       <guid>https://keae12315.github.io/blog/post/%E5%8F%AF%E5%8F%98%E4%B8%8E%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%A9%B6%E7%AB%9F%E5%9C%A8%E8%AF%B4%E4%BB%80%E4%B9%88/</guid>
-      <description>Python中的数据类型  Numbers String List Tuple Set Dictionary  python中不可变数据类型的定义为: 当该数据类型的对应变量的值发生了改变, 那么它对应的内存地址也会发生改变. 也就是说, 直接修改内存中的值, 并没有开辟新的内存. 反之就为可变类型.
+      <description>Python中的数据类型  Numbers String List Tuple Set Dictionary  首先必须明确在python中所有的变量都是一个引用, 引用保存的是对象的地址.
+所谓可变对象是指, 对象的内容是可变的.
+而不可变对象, 由于无法改变对象的内容, 当修改值时, 会开辟新的内存空间储存新值, 并将变量的对象引用改过去.
 不可变数据类型: numbers, string, tuple
 可变数据类型: list, set, dictionary
-对变量进行分析 id(): 获取对象的内存地址.
-type(): 当只有一个参数的时候, 返回对象的类型. 当有三个参数的时候返回一个类对象.
-==: 值比较.
-is: 比较两个对象的物理id, 相当于 id(a)==id(b).
-其它需要注意的 Python出于对性能的考虑, 但凡是不可变对象, 在同一个代码块中的对象, 只要是值相同的对象, 就不会重复创建, 而是直接引用已经存在的对象.
-Integer object pool: This pool holds numbers of PyIntObjects which has been allocated already but not initialized (no valid value or type). Even though there is only one integer object pool.</description>
+如何判断可变还是不可变 当改变变量值时, 对象内存地址改变的就为不可变类型. 以下是一些工具:
+ id(): 获取对象的内存地址. type(): 当只有一个参数的时候, 返回对象的类型. 当有三个参数的时候返回一个类对象. ==: 值比较. is: 比较两个对象的物理id, 相当于 id(a)==id(b).  作为函数和类的参数 python中向函数传递参数只能是引用传递, 表示把它的地址都传进去了. 所以向函数中传递可变对象时, 会影响全局中的这个变量值. 同样的, 向类传递可变对象也是如此.
+其实这个特性也不能说是一个弊端, 利用这一点可以进行一些很方便的操作, 比如两个线程同时操作一个队列, 我们不用设置一个global队列, 只要将队列这个可变对象传入类之中, 修改就会自动同步.
+&amp;gt;&amp;gt;&amp;gt; def myfunc(l): ... l.append(1) ... print(l) ... &amp;gt;&amp;gt;&amp;gt; l = [1, 2, 3] &amp;gt;&amp;gt;&amp;gt; myfunc(l) [1, 2, 3, 1] &amp;gt;&amp;gt;&amp;gt; l [1, 2, 3, 1] &amp;gt;&amp;gt;&amp;gt; def myfunc(a): .</description>
     </item>
     
     <item>
