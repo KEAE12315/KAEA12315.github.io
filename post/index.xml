@@ -9,7 +9,29 @@
       <link>https://keae12315.github.io/blog/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 08 Aug 2022 01:05:13 +0800</lastBuildDate><atom:link href="https://keae12315.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Aug 2022 01:06:18 +0800</lastBuildDate><atom:link href="https://keae12315.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>一文讲懂函数中的参数问题</title>
+      <link>https://keae12315.github.io/blog/post/%E5%87%BD%E6%95%B0%E4%B8%AD%E7%9A%84%E5%8F%82%E6%95%B0/</link>
+      <pubDate>Wed, 17 Aug 2022 01:06:18 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/post/%E5%87%BD%E6%95%B0%E4%B8%AD%E7%9A%84%E5%8F%82%E6%95%B0/</guid>
+      <description>语言之外 对于频繁使用的代码块, 我们一般将其封装成函数. 函数有时需要参数, 例如简单的两数求和函数, 总是需要给出相加的两数.
+为了表示函数需要参数, 我们在函数定义时即定义了形参. 在实际调用时, 再传入具体的参数, 称为实参.
+但是这里还有几个问题需要解决:
+ 实参如何与形参对应? 如果需要默认值呢? 为了防止乱传参数导致崩溃, 如何做一些限制?  下面, 我们一一讲解参数有关的问题.
+参数限制 函数调用时, 如果传入不合法的参数, 程序也许能运行, 但可能无法得到结果. 例如, 两数相加函数如果传入了字符&#39;5&amp;rsquo;和&#39;6&#39;, 由于+运算符重载, 会返回字符串&#39;56&#39;. 跟我们想要的结果11大相径庭. 当然, 更多的时候是直接报错.
+类型限制 对于静态语言如Java, 由于编译时即进行数据类型检查, 因此一般在定义函数时, 就必须指定参数的类型.
+对于动态语言如Python, 需要自己手动加入判断部分. 不过自Python3.5开始，PEP484引入了类型注解.
+注意, Python的类型注解仅仅提供了编辑器进行类型检测的机会, 但是对程序的运行不会产生任何影响!
+其它限制 有些时候, 尽管类型正确, 但参数只在指定范围内有效, 又或者有别的限制条件. 这时, 需要在函数内部书写对应的参数检查代码. 如果不符合要求就执行对应的操作, 如抛出异常. 这里通常是判断语句如if, switch等.
+断言是一种在许多语言中常见的关键词, 它判断后面语句的布尔值, true则继续运行, false则抛出异常. 也可以用于参数检查.
+位置参数 默认参数 Python中默认参数的坑
+可变参数 关键词参数 参数的组合使用 模块运行的参数  参考资料
+动态语言和静态语言的区别
+函数的参数</description>
+    </item>
+    
     <item>
       <title>可变与不可变究竟在说什么</title>
       <link>https://keae12315.github.io/blog/post/%E5%8F%AF%E5%8F%98%E4%B8%8E%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%A9%B6%E7%AB%9F%E5%9C%A8%E8%AF%B4%E4%BB%80%E4%B9%88/</link>
@@ -39,7 +61,7 @@ Python 的 for 循环只有 for in 这一种结构，而结构里的前半部分
  enumerate(iterable)：返回元素和下标 product(A, B)：返回A, B的笛卡儿积 islice(seq, start, end, step)：循环内隔行处理 takewhile(predicate, iterable)：替代 break 语句 zip(A, B)：按顺序同时迭代A，B  按职责拆解循环体内复杂代码块 写循环时，我们很容易往循环体塞入越来越多的代码，包括过滤掉无效元素、预处理数据、打印日志等等，甚至一些原本不属于同一抽象的内容，导致各部分功能耦合。
 这样一个复杂循环体在面对新需求时难以解耦复用。考虑使用生成器函数解耦循环体。
  参考资料:
-Python工匠：编写地道循环的两个建议
+Python 工匠：编写地道循环的两个建议
  </description>
     </item>
     
