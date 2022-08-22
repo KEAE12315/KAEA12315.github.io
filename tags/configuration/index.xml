@@ -47,7 +47,7 @@ vim /etc/ssh/sshd_config RSAAuthentication yes PubkeyAuthentication yes Authoriz
     </item>
     
     <item>
-      <title>Ubuntu22.04安装后配置</title>
+      <title>Ubuntu安装后配置</title>
       <link>https://keae12315.github.io/blog/post/ubuntu%E5%AE%89%E8%A3%85%E5%90%8E%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Fri, 05 Aug 2022 03:19:27 +0800</pubDate>
       
