@@ -16,7 +16,9 @@
       <pubDate>Fri, 26 Aug 2022 11:32:25 +0800</pubDate>
       
       <guid>https://keae12315.github.io/blog/post/%E6%80%8E%E6%A0%B7%E6%89%8D%E7%AE%97%E7%9B%B8%E7%AD%89/</guid>
-      <description>计算机如何存储数据 不同维度上的相等 地址相等 值相等 </description>
+      <description>计算机如何存储数据 不同维度上的相等 地址相等 值相等 不同语言中的相等比较 Java ==: 地址相等
+equals():
+hashcode():</description>
     </item>
     
     <item>

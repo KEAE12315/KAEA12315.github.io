@@ -9,7 +9,7 @@
       <link>https://keae12315.github.io/blog/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 26 Aug 2022 12:04:49 +0800</lastBuildDate><atom:link href="https://keae12315.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Aug 2022 16:34:19 +0800</lastBuildDate><atom:link href="https://keae12315.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>一文讲懂函数中的参数问题(更新中</title>
       <link>https://keae12315.github.io/blog/post/%E5%87%BD%E6%95%B0%E4%B8%AD%E7%9A%84%E5%8F%82%E6%95%B0/</link>
@@ -50,6 +50,20 @@
     </item>
     
     <item>
+      <title>单例模式的五种实现方式及优缺点</title>
+      <link>https://keae12315.github.io/blog/post/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Fri, 26 Aug 2022 16:34:19 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/post/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</guid>
+      <description>转载
+当我们需要使得某个类只能有一个实例时，可以使用单例模式。
+单例模式（Singleton Design Pattern）保证一个类只能有一个实例，并提供一个全局访问点。
+单例模式的实现需要三个必要的条件：
+ 单例类的构造函数必须是私有的，这样才能将类的创建权控制在类的内部，从而使得类的外部不能创建类的实例。 单例类通过一个私有的静态变量来存储其唯一实例。 单例类通过提供一个公开的静态方法，使得外部使用者可以访问类的唯一实例。 注意： 因为单例类的构造函数是私有的，所以单例类不能被继承。  另外，实现单例类时，还需要考虑三个问题：
+ 创建单例对象时，是否线程安全。 单例对象的创建，是否延时加载。 获取单例对象时，是否需要加锁（锁会导致低性能）。 下面介绍五种实现单例模式的方式。  饿汉式 public class Singleton { private static final Singleton instance = new Singleton(); private Singleton () {} public static Singleton getInstance() { return instance; } } 懒汉式 public class Singleton { private static final Singleton instance; private Singleton () {} public static synchronized Singleton getInstance() { if (instance == null) { instance = new Singleton(); } return instance; } } 双重检测 public class Singleton { private static Singleton instance; private Singleton () {} public static Singleton getInstance() { if (instance == null) { synchronized(Singleton.</description>
+    </item>
+    
+    <item>
       <title>Java中的final</title>
       <link>https://keae12315.github.io/blog/post/java%E4%B8%AD%E7%9A%84final/</link>
       <pubDate>Fri, 26 Aug 2022 12:04:49 +0800</pubDate>
@@ -59,7 +73,8 @@
 修饰方法 不可被覆盖
 特别地, 对于private修饰的父类方法, 由于子类接触不到, 可以写同名同参的方法. 此时相当于在子类中重新定义了新的方法.
 private方法会被隐式地指定为final
-修饰变量 </description>
+修饰变量 final修饰变量时, 变量内容只能被赋值一次, 赋值后不再改变.
+ 对基本数据类型: 值在初始化后不再改变. 对引用类型: 值即地址, 所以只能引用该对象. 但仅限地址不改变, 所以对象的内容可以发生变化.  final变量的编译器优化 public class Test { public static void main(String[] args) { String a = &amp;quot;helloworld&amp;quot;; final String b = &amp;quot;hello&amp;quot;; String c = &amp;quot;hello&amp;quot;; String x = b + &amp;quot;world&amp;quot;; String y = c + &amp;quot;world&amp;quot;; System.out.println(a == x); System.out.println(a == y); } } &amp;gt;&amp;gt;&amp;gt; true &amp;gt;&amp;gt;&amp;gt; false 修饰参数时的情况  参考文献</description>
     </item>
     
     <item>
@@ -68,7 +83,9 @@ private方法会被隐式地指定为final
       <pubDate>Fri, 26 Aug 2022 11:32:25 +0800</pubDate>
       
       <guid>https://keae12315.github.io/blog/post/%E6%80%8E%E6%A0%B7%E6%89%8D%E7%AE%97%E7%9B%B8%E7%AD%89/</guid>
-      <description>计算机如何存储数据 不同维度上的相等 地址相等 值相等 </description>
+      <description>计算机如何存储数据 不同维度上的相等 地址相等 值相等 不同语言中的相等比较 Java ==: 地址相等
+equals():
+hashcode():</description>
     </item>
     
     <item>
