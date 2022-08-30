@@ -55,8 +55,7 @@ vim /etc/ssh/sshd_config RSAAuthentication yes PubkeyAuthentication yes Authoriz
       <description>查看系统版本 # 操作系统内核信息 uname －a # 操作系统版本信息 cat /proc/version # 操作系统发行版信息 cat /etc/issue # cpu相关信息 cat /proc/cpuinfo # 版本多少位 getconf LONG_BIT lsb_release -a 设置Git 本地Git用户邮箱设置 # 查看git配置信息 git config --list # 查看用户名 git config user.name # 查看邮箱 git config user.email # 设置全局用户名 git config --global user.name &amp;quot;&amp;quot; # 设置全局邮箱 git config --global user.email &amp;quot;&amp;quot; 生成SSH key ssh-keygen -t ed25519 -C &amp;quot;&amp;quot; 一路回车, 默认生成到~/.ssh目录下.
 将后缀为.pub文件的内容添加到GitHub账户里.
 换源 Ubuntu 的软件源配置文件是 /etc/apt/sources.list
-备份配置文件
-sudo cp /etc/apt/sources.</description>
+命令替换(清华源) sudo sed -i &amp;quot;s@http://.</description>
     </item>
     
     <item>
