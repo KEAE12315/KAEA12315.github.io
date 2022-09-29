@@ -9,7 +9,7 @@
       <link>https://keae12315.github.io/blog/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 26 Aug 2022 16:34:19 +0800</lastBuildDate><atom:link href="https://keae12315.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Sep 2022 13:54:09 +0800</lastBuildDate><atom:link href="https://keae12315.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>一文讲懂函数中的参数问题(更新中</title>
       <link>https://keae12315.github.io/blog/post/%E5%87%BD%E6%95%B0%E4%B8%AD%E7%9A%84%E5%8F%82%E6%95%B0/</link>
@@ -47,6 +47,21 @@
  id(): 获取对象的内存地址. type(): 当只有一个参数的时候, 返回对象的类型. 当有三个参数的时候返回一个类对象. ==: 值比较. is: 比较两个对象的物理id, 相当于 id(a)==id(b).  作为函数和类的参数 python中向函数传递参数只能是引用传递, 表示把它的地址都传进去了. 所以向函数中传递可变对象时, 会影响全局中的这个变量值. 同样的, 向类传递可变对象也是如此.
 其实这个特性也不能说是一个弊端, 利用这一点可以进行一些很方便的操作, 比如两个线程同时操作一个队列, 我们不用设置一个global队列, 只要将队列这个可变对象传入类之中, 修改就会自动同步.
 &amp;gt;&amp;gt;&amp;gt; def myfunc(l): ... l.append(1) ... print(l) ... &amp;gt;&amp;gt;&amp;gt; l = [1, 2, 3] &amp;gt;&amp;gt;&amp;gt; myfunc(l) [1, 2, 3, 1] &amp;gt;&amp;gt;&amp;gt; l [1, 2, 3, 1] &amp;gt;&amp;gt;&amp;gt; def myfunc(a): .</description>
+    </item>
+    
+    <item>
+      <title>Python用前需知</title>
+      <link>https://keae12315.github.io/blog/post/python%E7%94%A8%E5%89%8D%E9%9C%80%E7%9F%A5/</link>
+      <pubDate>Thu, 29 Sep 2022 13:54:09 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/post/python%E7%94%A8%E5%89%8D%E9%9C%80%E7%9F%A5/</guid>
+      <description>pip换源 临时使用 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
+-i 命令指定下载源
+命令行全局切换 升级 pip 到最新的版本 (&amp;gt;=10.0.0) 后进行配置：
+python -m pip install --upgrade pip pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple 如果到 pip 默认源的网络连接较差，利用-i临时指定下载源
+python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade pip 虚拟环境   参考资料:
+PyPI 镜像使用帮助
+ </description>
     </item>
     
     <item>
@@ -370,14 +385,15 @@ Data Structures Arrays Linked Lists Stacks Queues Hash Tables 新的问题, 假�
     
     <item>
       <title>Ubuntu安装后配置</title>
-      <link>https://keae12315.github.io/blog/post/ubuntuconfig/</link>
+      <link>https://keae12315.github.io/blog/post/ubuntu%E5%AE%89%E8%A3%85%E5%90%8E%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Fri, 05 Aug 2022 03:19:27 +0800</pubDate>
       
-      <guid>https://keae12315.github.io/blog/post/ubuntuconfig/</guid>
+      <guid>https://keae12315.github.io/blog/post/ubuntu%E5%AE%89%E8%A3%85%E5%90%8E%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/</guid>
       <description>查看系统版本 # 操作系统内核信息 uname －a # 操作系统版本信息 cat /proc/version # 操作系统发行版信息 cat /etc/issue # cpu相关信息 cat /proc/cpuinfo # 版本多少位 getconf LONG_BIT lsb_release -a 设置Git 本地Git用户邮箱设置 # 查看git配置信息 git config --list # 查看用户名 git config user.name # 查看邮箱 git config user.email # 设置全局用户名 git config --global user.name &amp;quot;&amp;quot; # 设置全局邮箱 git config --global user.email &amp;quot;&amp;quot; 生成SSH key ssh-keygen -t ed25519 -C &amp;quot;&amp;quot; 一路回车, 默认生成到~/.ssh目录下.
 将后缀为.pub文件的内容添加到GitHub账户里.
 换源 Ubuntu 的软件源配置文件是 /etc/apt/sources.list
-命令替换(清华源) sudo sed -i &amp;quot;s@http://.</description>
+备份配置文件
+sudo cp /etc/apt/sources.</description>
     </item>
     
     <item>

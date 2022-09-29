@@ -121,10 +121,11 @@ Ubuntu Windows MacOS 配置 官方原文过长，摘取了常用的两个步骤�
 <p>查看系统版本 # 操作系统内核信息 uname －a # 操作系统版本信息 cat /proc/version # 操作系统发行版信息 cat /etc/issue # cpu相关信息 cat /proc/cpuinfo # 版本多少位 getconf LONG_BIT lsb_release -a 设置Git 本地Git用户邮箱设置 # 查看git配置信息 git config --list # 查看用户名 git config user.name # 查看邮箱 git config user.email # 设置全局用户名 git config --global user.name "" # 设置全局邮箱 git config --global user.email "" 生成SSH key ssh-keygen -t ed25519 -C "" 一路回车, 默认生成到~/.ssh目录下.
 将后缀为.pub文件的内容添加到GitHub账户里.
 换源 Ubuntu 的软件源配置文件是 /etc/apt/sources.list
-命令替换(清华源) sudo sed -i "s@http://....</p>
+备份配置文件
+sudo cp /etc/apt/sources....</p>
 </div>
-<footer class=entry-footer><span title="2022-08-05 03:19:27 +0800 +0800">August 5, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;257 words&nbsp;·&nbsp;plw</footer>
-<a class=entry-link aria-label="post link to Ubuntu安装后配置" href=https://keae12315.github.io/blog/post/ubuntuconfig/></a>
+<footer class=entry-footer><span title="2022-08-05 03:19:27 +0800 +0800">August 5, 2022</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;457 words&nbsp;·&nbsp;plw</footer>
+<a class=entry-link aria-label="post link to Ubuntu安装后配置" href=https://keae12315.github.io/blog/post/ubuntu%E5%AE%89%E8%A3%85%E5%90%8E%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
