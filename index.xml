@@ -55,7 +55,7 @@
       <pubDate>Thu, 29 Sep 2022 13:54:09 +0800</pubDate>
       
       <guid>https://keae12315.github.io/blog/post/python%E7%94%A8%E5%89%8D%E9%9C%80%E7%9F%A5/</guid>
-      <description>pip换源 临时使用 -i 命令指定下载源
+      <description>pip pip常用命令 pip换源 临时使用 -i 命令指定下载源
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package 命令行全局切换 升级 pip 到最新的版本 (&amp;gt;=10.0.0) 后进行配置：
 python -m pip install --upgrade pip pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple 如果到 pip 默认源的网络连接较差，利用-i临时指定下载源
 python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade pip 国内镜像库列表 https://pypi.tuna.tsinghua.edu.cn/simple https://mirrors.aliyun.com/pypi/simple/ https://pypi.mirrors.ustc.edu.cn/simple http://pypi.douban.com/simple/ http://mirrors.aliyun.com/pypi/simple/ 虚拟环境   参考资料:
