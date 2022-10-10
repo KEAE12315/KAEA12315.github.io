@@ -55,9 +55,9 @@
       <pubDate>Thu, 29 Sep 2022 13:54:09 +0800</pubDate>
       
       <guid>https://keae12315.github.io/blog/post/python%E7%94%A8%E5%89%8D%E9%9C%80%E7%9F%A5/</guid>
-      <description>pip pip常用命令 pip换源 临时使用 -i 命令指定下载源
-pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package 命令行全局切换 升级 pip 到最新的版本 (&amp;gt;=10.0.0) 后进行配置：
-python -m pip install --upgrade pip pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple 如果到 pip 默认源的网络连接较差，利用-i临时指定下载源
+      <description>pip pip常用命令 pip install pip list pip换源 临时使用 -i 命令指定下载源
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package 命令行全局切换 要求pip版本&amp;gt;=10.0.0
+python -m pip install --upgrade pip pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple 如果升级pip时默认源的网络连接较差，可以利用刚才的-i临时指定下载源
 python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade pip 国内镜像库列表 https://pypi.tuna.tsinghua.edu.cn/simple https://mirrors.aliyun.com/pypi/simple/ https://pypi.mirrors.ustc.edu.cn/simple http://pypi.douban.com/simple/ http://mirrors.aliyun.com/pypi/simple/ 虚拟环境   参考资料:
 PyPI 镜像使用帮助
  </description>
@@ -207,20 +207,17 @@ index of 可以突破网站入口下载。
       <pubDate>Mon, 08 Aug 2022 00:39:12 +0800</pubDate>
       
       <guid>https://keae12315.github.io/blog/post/vscode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/</guid>
-      <description>微软针对Vs code的远程开发推出了三个插件，包括 ：
- Remote-SSH：SSH 连接虚拟/实体Linux主机； Remote-Container：连接容器； Remote-WSL：连接WSL（也就是Linux子系统）。 重点服务使用Windows但具有Linux开发需求的用户。  使用Remote-SSH连接实验室服务器 这里是微软关于SSH连接的官方文档
+      <description>微软针对VS Code的远程开发推出了三个插件，包括:
+ Remote-SSH: SSH 连接虚拟/实体Linux主机; Remote-Container: 连接容器; Remote-WSL: 连接WSL(也就是Linux子系统). 重点服务使用Windows但具有Linux开发需求的用户.  使用Remote-SSH连接实验室服务器 这里是微软关于SSH连接的官方文档
 安装Remote-SSH插件 在Extension侧边栏搜索Remote-ssh并安装
-修改ssh配置文件 文件位置C:\Users\&amp;lt;user&amp;gt;\.ssh\config，如果没有这个文件夹，在管理可选功能里添加 OpenSSH 客户端。
+修改ssh配置文件 在VS Code里crtl+shift+p，打开命令行输入open ssh, 选择第一个选项Remote-SSH: Open SSH Configuration File..., 可直接打开C:\Users\&amp;lt;user&amp;gt;\.ssh\config文件. 也可以直接编辑该文件. 如果没有这个文件夹，在管理可选功能里添加 OpenSSH 客户端.
 在config文件中写入以下内容
-Host Labserve #填写别名 HostName 1.1.1.1 #填写实验室服务器IP/host User user #填写ssh用户名 添加ssh公钥 远程ssh连接Linux服务器时，需要借助ssh公钥登录.
-  生成ssh公钥
-在cmd中输入ssh-keygen，一路回车键，完成后在$HOME/.ssh/目录下可以发现两个文件：id_rsa.pub和id_rsa，分别是客户端的公钥和私钥。
-  上传ssh公钥
+Host Labserve #填写别名 HostName 1.1.1.1 #填写实验室服务器IP/host User user #填写ssh用户名 Port port #填写端口号. 可缺省该配置, 默认为22. 添加ssh公钥 远程ssh连接Linux服务器时，需要借助ssh公钥登录.
+ 客户端生成ssh公钥  在cmd中输入ssh-keygen，一路回车键，完成后在$HOME/.ssh/目录下可以发现两个文件: id_rsa.pub和id_rsa，分别是客户端的公钥和私钥.
+ 上传ssh公钥
 登录远程服务器，创建.ssh目录和authorized_keys文件
-mkdir ~/.ssh/ cd ~/.ssh/ vim authorized_keys   修改ssh配置
-vim /etc/ssh/sshd_config RSAAuthentication yes PubkeyAuthentication yes AuthorizedKeysFile $h/.ssh/authorized_keys   保存并退出vim。
-重启ssh服务 service ssh restart   通过CONNECTION侧边栏进行连接 此时，已经可以在CONNECTION侧边栏看见服务器的别名，点击进行连接。 特别的，如果没有生成ssh公钥，这一步可能会要求输入服务器密码。
-问题汇总 阿里云、腾讯云等云服务器连接超时 目前VSCode的远程连接插件，默认勾选Use Local Server，也就是默认使用本地局域网络进行连接。如果你遇到阿里云等云服务器连接超时，应该取消勾选此项。</description>
+mkdir ~/.ssh/ cd ~/.ssh/ vim authorized_keys   修改服务器端ssh配置
+vim /etc/ssh/sshd_config RSAAuthentication yes PubkeyAuthentication yes AuthorizedKeysFile $h/.</description>
     </item>
     
     <item>
@@ -417,7 +414,7 @@ WSL2中使用windows的代理
       <guid>https://keae12315.github.io/blog/post/hugo%E5%85%A5%E9%97%A8/</guid>
       <description>安装 以Ubuntu20.04为例
 sudo apt-get install hugo 但是apt仓库版本一般不是最新的. 如果想安装最新版本, 可以从hugo的GitHub发行仓库上获取deb包并安装. 例如:
-# 进入用户目录, 随意. cd ~ # 获取deb文件, 自行选择合适的版本. wget https://github.com/spf13/hugo/releases/download/v0.14/hugo_0.14_amd64.deb # 安装 sudo dpkg -i hugo*.deb # 查看hugo版本 hugo version 配置 主题 安装主题 git submodule add git@github.com:adityatelange/hugo-PaperMod.git themes/hugo-PaperMod git submodule命令详解
+# 进入用户目录, 随意. cd ~ # 获取deb文件, 自行选择合适的版本. wget https://github.com/gohugoio/hugo/releases/download/v0.92.2/hugo_0.92.2_Linux-64bit.deb # 安装 sudo dpkg -i hugo*.deb # 查看hugo版本 hugo version 配置 主题 安装主题 git submodule add git@github.com:adityatelange/hugo-PaperMod.git themes/hugo-PaperMod git submodule命令详解
 使用主题 在配置文件config.yaml中使用如下配置项
 theme: hugo-PaperMod  注意:
 如果重新git clone项目, 通过git submodule安装的主题, 并不会第一时间安装. 需要执行以下两条命令以安装主题.
