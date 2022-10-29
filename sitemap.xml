@@ -8,10 +8,7 @@
     <loc>https://keae12315.github.io/blog/post/%E5%8F%AF%E5%8F%98%E4%B8%8E%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%A9%B6%E7%AB%9F%E5%9C%A8%E8%AF%B4%E4%BB%80%E4%B9%88/</loc>
     <lastmod>2022-08-06T11:50:16+08:00</lastmod>
   </url><url>
-    <loc>https://keae12315.github.io/blog/categories/</loc>
-    <lastmod>2022-09-29T13:54:09+08:00</lastmod>
-  </url><url>
-    <loc>https://keae12315.github.io/blog/categories/configuration/</loc>
+    <loc>https://keae12315.github.io/blog/tags/configuration/</loc>
     <lastmod>2022-09-29T13:54:09+08:00</lastmod>
   </url><url>
     <loc>https://keae12315.github.io/blog/</loc>
@@ -23,6 +20,9 @@
     <loc>https://keae12315.github.io/blog/post/python%E7%94%A8%E5%89%8D%E9%9C%80%E7%9F%A5/</loc>
     <lastmod>2022-09-29T13:54:09+08:00</lastmod>
   </url><url>
+    <loc>https://keae12315.github.io/blog/tags/</loc>
+    <lastmod>2022-09-29T13:54:09+08:00</lastmod>
+  </url><url>
     <loc>https://keae12315.github.io/blog/post/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2022-08-26T16:34:19+08:00</lastmod>
   </url><url>
@@ -32,8 +32,8 @@
     <loc>https://keae12315.github.io/blog/post/java%E4%B8%AD%E7%9A%84final/</loc>
     <lastmod>2022-08-26T12:04:49+08:00</lastmod>
   </url><url>
-    <loc>https://keae12315.github.io/blog/tags/</loc>
-    <lastmod>2022-08-26T12:04:49+08:00</lastmod>
+    <loc>https://keae12315.github.io/blog/categories/</loc>
+    <lastmod>2022-08-26T11:32:25+08:00</lastmod>
   </url><url>
     <loc>https://keae12315.github.io/blog/categories/programming-language/</loc>
     <lastmod>2022-08-26T11:32:25+08:00</lastmod>
@@ -64,9 +64,6 @@
   </url><url>
     <loc>https://keae12315.github.io/blog/post/%E4%BD%BF%E7%94%A8%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E7%9A%84%E6%8A%80%E5%B7%A7/</loc>
     <lastmod>2022-08-08T00:50:01+08:00</lastmod>
-  </url><url>
-    <loc>https://keae12315.github.io/blog/tags/configuration/</loc>
-    <lastmod>2022-08-08T00:39:12+08:00</lastmod>
   </url><url>
     <loc>https://keae12315.github.io/blog/tags/vs-code/</loc>
     <lastmod>2022-08-08T00:39:12+08:00</lastmod>
