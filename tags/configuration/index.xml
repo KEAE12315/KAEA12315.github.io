@@ -9,7 +9,19 @@
       <link>https://keae12315.github.io/blog/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 29 Sep 2022 13:54:09 +0800</lastBuildDate><atom:link href="https://keae12315.github.io/blog/tags/configuration/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Nov 2022 11:09:41 +0800</lastBuildDate><atom:link href="https://keae12315.github.io/blog/tags/configuration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用frp进行内网穿透</title>
+      <link>https://keae12315.github.io/blog/post/frp/</link>
+      <pubDate>Thu, 03 Nov 2022 11:09:41 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/post/frp/</guid>
+      <description>官方链接：https://github.com/fatedier/frp/releases
+请按照需要选择合适的版本, 可以直接下载也可以拷贝链接用命令行.
+安装 以0.45版本, linux64位为例.
+ 使用wget下载:  wget https://github.com/fatedier/frp/releases/download/v0.45.0/frp_0.45.0_linux_amd64.tar.gz 解压frp压缩包  tar -zxvf frp_0.45.0_linux_amd64.tar.gz ./frpc -c ./frpc.ini</description>
+    </item>
+    
     <item>
       <title>Python用前需知</title>
       <link>https://keae12315.github.io/blog/post/python%E7%94%A8%E5%89%8D%E9%9C%80%E7%9F%A5/</link>
