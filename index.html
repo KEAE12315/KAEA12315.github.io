@@ -135,9 +135,10 @@ id(): 获取对象的内存地址. type(): 当只有一个参数的时候, 返�
 <p>官方链接：https://github.com/fatedier/frp/releases
 请按照需要选择合适的版本, 可以直接下载也可以拷贝链接用命令行.
 安装 以0.45版本, linux64位为例.
-使用wget下载: wget https://github.com/fatedier/frp/releases/download/v0.45.0/frp_0.45.0_linux_amd64.tar.gz 解压frp压缩包 tar -zxvf frp_0.45.0_linux_amd64.tar.gz ./frpc -c ./frpc.ini</p>
+使用wget下载: wget https://github.com/fatedier/frp/releases/download/v0.45.0/frp_0.45.0_linux_amd64.tar.gz 解压frp压缩包 tar -zxvf frp_0.45.0_linux_amd64.tar.gz 移动至/usr/local mkdir /usr/local/frp mv frp_0.45.0_linux_amd64/* /usr/local/frp/ ./frpc -c ./frpc.ini 文件说明
+frps.ini: 服务端配置文件 frps: 服务端软件 frpc.ini: 客户端配置文件 frpc: 客户端软件 配置systemctl控制 vim新建文件并写入配置内容 vim /usr/lib/systemd/system/frp.service 写入以下内容，注意上文移动放置的路径和此处有关。这里是启动的服务端。 [Unit] Description=The nginx HTTP and reverse proxy server After=network.target remote-fs.target nss-lookup.target [Service] Type=simple ExecStart=/usr/local/frp/frps -c /usr/local/frp/frps.ini KillSignal=SIGQUIT TimeoutStopSec=5 KillMode=process PrivateTmp=true StandardOutput=syslog StandardError=inherit [Install] WantedBy=multi-user....</p>
 </div>
-<footer class=entry-footer><span title="2022-11-03 11:09:41 +0800 +0800">November 3, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;16 words&nbsp;·&nbsp;plw</footer>
+<footer class=entry-footer><span title="2022-11-03 11:09:41 +0800 +0800">November 3, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;128 words&nbsp;·&nbsp;plw</footer>
 <a class=entry-link aria-label="post link to 使用frp进行内网穿透" href=https://keae12315.github.io/blog/post/frp/></a>
 </article>
 <article class=post-entry>
