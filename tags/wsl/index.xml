@@ -12,10 +12,10 @@
     <lastBuildDate>Thu, 04 Aug 2022 12:25:49 +0800</lastBuildDate><atom:link href="https://keae12315.github.io/blog/tags/wsl/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>WSL2使用v2ray代理</title>
-      <link>https://keae12315.github.io/blog/post/wsl2%E4%BD%BF%E7%94%A8v2ray%E4%BB%A3%E7%90%86/wsl2%E4%BD%BF%E7%94%A8v2ray%E4%BB%A3%E7%90%86/</link>
+      <link>https://keae12315.github.io/blog/post/wsl2%E4%BD%BF%E7%94%A8v2ray%E4%BB%A3%E7%90%86/</link>
       <pubDate>Thu, 04 Aug 2022 12:25:49 +0800</pubDate>
       
-      <guid>https://keae12315.github.io/blog/post/wsl2%E4%BD%BF%E7%94%A8v2ray%E4%BB%A3%E7%90%86/wsl2%E4%BD%BF%E7%94%A8v2ray%E4%BB%A3%E7%90%86/</guid>
+      <guid>https://keae12315.github.io/blog/post/wsl2%E4%BD%BF%E7%94%A8v2ray%E4%BB%A3%E7%90%86/</guid>
       <description>主机V2Ray设置 允许局域网连接 获取监听端口 对我而言, 有用的端口是局域网socks:10810
 WSL2设置 配置环境变量 修改.bashrc文件, 添加以下内容(记得source .bashrc)
 # v2ray proxy export windows_host=`cat /etc/resolv.conf|grep nameserver|awk &amp;#39;{print $2}&amp;#39;` export ALL_PROXY=socks5://$windows_host:10810 export HTTP_PROXY=$ALL_PROXY export http_proxy=$ALL_PROXY export HTTPS_PROXY=$ALL_PROXY export https_proxy=$ALL_PROXY 测试连接情况 curl -vv google.com 参考资料
