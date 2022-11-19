@@ -9,7 +9,7 @@
       <link>https://keae12315.github.io/blog/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 19 Nov 2022 14:26:44 +0800</lastBuildDate><atom:link href="https://keae12315.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Nov 2022 11:09:41 +0800</lastBuildDate><atom:link href="https://keae12315.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>一文讲懂函数中的参数问题(更新中</title>
       <link>https://keae12315.github.io/blog/post/%E5%87%BD%E6%95%B0%E4%B8%AD%E7%9A%84%E5%8F%82%E6%95%B0/</link>
@@ -48,15 +48,6 @@ Python类型注解，你需要知道的都在这里了</description>
 id(): 获取对象的内存地址. type(): 当只有一个参数的时候, 返回对象的类型. 当有三个参数的时候返回一个类对象. ==: 值比较. is: 比较两个对象的物理id, 相当于 id(a)==id(b). 作为函数和类的参数 python中向函数传递参数只能是引用传递, 表示把它的地址都传进去了. 所以向函数中传递可变对象时, 会影响全局中的这个变量值. 同样的, 向类传递可变对象也是如此.
 其实这个特性也不能说是一个弊端, 利用这一点可以进行一些很方便的操作, 比如两个线程同时操作一个队列, 我们不用设置一个global队列, 只要将队列这个可变对象传入类之中, 修改就会自动同步.
 &amp;gt;&amp;gt;&amp;gt; def myfunc(l): ... l.append(1) ... print(l) ... &amp;gt;&amp;gt;&amp;gt; l = [1, 2, 3] &amp;gt;&amp;gt;&amp;gt; myfunc(l) [1, 2, 3, 1] &amp;gt;&amp;gt;&amp;gt; l [1, 2, 3, 1] &amp;gt;&amp;gt;&amp;gt; def myfunc(a): .</description>
-    </item>
-    
-    <item>
-      <title>下载</title>
-      <link>https://keae12315.github.io/blog/post/skills/%E4%B8%8B%E8%BD%BD/</link>
-      <pubDate>Sat, 19 Nov 2022 14:26:44 +0800</pubDate>
-      
-      <guid>https://keae12315.github.io/blog/post/skills/%E4%B8%8B%E8%BD%BD/</guid>
-      <description>a</description>
     </item>
     
     <item>
