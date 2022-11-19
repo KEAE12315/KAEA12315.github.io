@@ -19,17 +19,18 @@
       <description>语言之外 对于频繁使用的代码块, 我们一般将其封装成函数. 函数有时需要参数, 例如简单的两数求和函数, 总是需要给出相加的两数.
 为了表示函数需要参数, 我们在函数定义时即定义了形参. 在实际调用时, 再传入具体的参数, 称为实参.
 但是这里还有几个问题需要解决:
- 实参如何与形参对应? 如果需要默认值呢? 为了防止乱传参数导致崩溃, 如何做一些限制?  下面, 我们一一讲解参数有关的问题.
-参数限制 函数调用时, 如果传入不合法的参数, 程序也许能运行, 但可能无法得到结果. 例如, 两数相加函数如果传入了字符&#39;5&amp;rsquo;和&#39;6&#39;, 由于+运算符重载, 会返回字符串&#39;56&#39;. 跟我们想要的结果11大相径庭. 当然, 更多的时候是直接报错.
+实参如何与形参对应? 如果需要默认值呢? 为了防止乱传参数导致崩溃, 如何做一些限制? 下面, 我们一一讲解参数有关的问题.
+参数限制 函数调用时, 如果传入不合法的参数, 程序也许能运行, 但可能无法得到结果. 例如, 两数相加函数如果传入了字符&#39;5&amp;rsquo;和&#39;6&amp;rsquo;, 由于+运算符重载, 会返回字符串&#39;56&amp;rsquo;. 跟我们想要的结果11大相径庭. 当然, 更多的时候是直接报错.
 类型限制 对于静态语言如Java, 由于编译时即进行数据类型检查, 因此一般在定义函数时, 就必须指定参数的类型.
 对于动态语言如Python, 需要自己手动加入判断部分. 不过自Python3.5开始，PEP484引入了类型注解.
 注意, Python的类型注解仅仅提供了编辑器进行类型检测的机会, 但是对程序的运行不会产生任何影响!
 其它限制 有些时候, 尽管类型正确, 但参数只在指定范围内有效, 又或者有别的限制条件. 这时, 需要在函数内部书写对应的参数检查代码. 如果不符合要求就执行对应的操作, 如抛出异常. 这里通常是判断语句如if, switch等.
 断言是一种在许多语言中常见的关键词, 它判断后面语句的布尔值, true则继续运行, false则抛出异常. 也可以用于参数检查.
 位置参数 默认参数 Python中默认参数的坑
-可变参数 关键词参数 参数的组合使用 模块运行的参数  参考资料
+可变参数 关键词参数 参数的组合使用 模块运行的参数 参考资料
 动态语言和静态语言的区别
-函数的参数</description>
+函数的参数
+Python类型注解，你需要知道的都在这里了</description>
     </item>
     
     <item>
@@ -38,13 +39,13 @@
       <pubDate>Sat, 06 Aug 2022 11:50:16 +0800</pubDate>
       
       <guid>https://keae12315.github.io/blog/post/%E5%8F%AF%E5%8F%98%E4%B8%8E%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%A9%B6%E7%AB%9F%E5%9C%A8%E8%AF%B4%E4%BB%80%E4%B9%88/</guid>
-      <description>Python中的数据类型  Numbers String List Tuple Set Dictionary  首先必须明确在python中所有的变量都是一个引用, 引用保存的是对象的地址.
+      <description>Python中的数据类型 Numbers String List Tuple Set Dictionary 首先必须明确在python中所有的变量都是一个引用, 引用保存的是对象的地址.
 所谓可变对象是指, 对象的内容是可变的.
 而不可变对象, 由于无法改变对象的内容, 当修改值时, 会开辟新的内存空间储存新值, 并将变量的对象引用改过去.
 不可变数据类型: numbers, string, tuple
 可变数据类型: list, set, dictionary
 如何判断可变还是不可变 当改变变量值时, 对象内存地址改变的就为不可变类型. 以下是一些工具:
- id(): 获取对象的内存地址. type(): 当只有一个参数的时候, 返回对象的类型. 当有三个参数的时候返回一个类对象. ==: 值比较. is: 比较两个对象的物理id, 相当于 id(a)==id(b).  作为函数和类的参数 python中向函数传递参数只能是引用传递, 表示把它的地址都传进去了. 所以向函数中传递可变对象时, 会影响全局中的这个变量值. 同样的, 向类传递可变对象也是如此.
+id(): 获取对象的内存地址. type(): 当只有一个参数的时候, 返回对象的类型. 当有三个参数的时候返回一个类对象. ==: 值比较. is: 比较两个对象的物理id, 相当于 id(a)==id(b). 作为函数和类的参数 python中向函数传递参数只能是引用传递, 表示把它的地址都传进去了. 所以向函数中传递可变对象时, 会影响全局中的这个变量值. 同样的, 向类传递可变对象也是如此.
 其实这个特性也不能说是一个弊端, 利用这一点可以进行一些很方便的操作, 比如两个线程同时操作一个队列, 我们不用设置一个global队列, 只要将队列这个可变对象传入类之中, 修改就会自动同步.
 &amp;gt;&amp;gt;&amp;gt; def myfunc(l): ... l.append(1) ... print(l) ... &amp;gt;&amp;gt;&amp;gt; l = [1, 2, 3] &amp;gt;&amp;gt;&amp;gt; myfunc(l) [1, 2, 3, 1] &amp;gt;&amp;gt;&amp;gt; l [1, 2, 3, 1] &amp;gt;&amp;gt;&amp;gt; def myfunc(a): .</description>
     </item>
@@ -58,9 +59,8 @@
       <description>pip pip常用命令 pip install pip list pip换源 临时使用 -i 命令指定下载源
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package 命令行全局切换 要求pip版本&amp;gt;=10.0.0
 python -m pip install --upgrade pip pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple 如果升级pip时默认源的网络连接较差，可以利用刚才的-i临时指定下载源
-python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade pip 国内镜像库列表 https://pypi.tuna.tsinghua.edu.cn/simple https://mirrors.aliyun.com/pypi/simple/ https://pypi.mirrors.ustc.edu.cn/simple http://pypi.douban.com/simple/ http://mirrors.aliyun.com/pypi/simple/ 虚拟环境   参考资料:
-PyPI 镜像使用帮助
- </description>
+python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade pip 国内镜像库列表 https://pypi.tuna.tsinghua.edu.cn/simple https://mirrors.aliyun.com/pypi/simple/ https://pypi.mirrors.ustc.edu.cn/simple http://pypi.douban.com/simple/ http://mirrors.aliyun.com/pypi/simple/ 虚拟环境 参考资料:
+PyPI 镜像使用帮助</description>
     </item>
     
     <item>
@@ -76,11 +76,10 @@ PyPI 镜像使用帮助
 弱类型 是一种弱类型定义的语言，某一个变量被定义类型，该变量可以根据环境变化自动进行转换，不需要经过现行强制转换。
 动态型or静态型 动态型 运行时才进行数据类型检查 即在变量赋值时，才确定变量的数据类型，不用事先给变量指定数据类型 。
 静态型 静态类型语言与动态类型语言刚好相反，需要事先给变量进行数据类型定义 。
-这种分类为什么不行了? 我们应当关注什么  参考资料
+这种分类为什么不行了? 我们应当关注什么 参考资料
 谁告诉的你们Python是强类型语言！站出来，保证不打你！
 python是解释型的强类型动态语言
-虚拟机随谈（一）：解释器，树遍历解释器，基于栈与基于寄存器，大杂烩
- </description>
+虚拟机随谈（一）：解释器，树遍历解释器，基于栈与基于寄存器，大杂烩</description>
     </item>
     
     <item>
@@ -92,11 +91,10 @@ python是解释型的强类型动态语言
       <description>在循环语法方面，Python 选择了 for 和 while 这两个经典的关键字来表达循环。绝大多数情况下，我们的循环需求都可以用 for in 来满足，while 相比之下则用的更少些。
 Python 的 for 循环只有 for in 这一种结构，而结构里的前半部分 - 赋值给 item - 没有太多花样可玩。所以后半部分的 可迭代对象 是我们唯一能够大做文章的东西。而以 enumerate() 函数为代表的“修饰函数”，刚好提供了一种思路：通过修饰可迭代对象来优化循环本身。
 使用函数修饰被迭代对象来优化循环 内置模块 itertools 是一个包含很多面向可迭代对象的工具函数集。 Python 官方文档是学习的首选，里面有非常详细的模块相关资料。下面给出一些常用的函数。
- enumerate(iterable)：返回元素和下标 product(A, B)：返回A, B的笛卡儿积 islice(seq, start, end, step)：循环内隔行处理 takewhile(predicate, iterable)：替代 break 语句 zip(A, B)：按顺序同时迭代A，B  按职责拆解循环体内复杂代码块 写循环时，我们很容易往循环体塞入越来越多的代码，包括过滤掉无效元素、预处理数据、打印日志等等，甚至一些原本不属于同一抽象的内容，导致各部分功能耦合。
+enumerate(iterable)：返回元素和下标 product(A, B)：返回A, B的笛卡儿积 islice(seq, start, end, step)：循环内隔行处理 takewhile(predicate, iterable)：替代 break 语句 zip(A, B)：按顺序同时迭代A，B 按职责拆解循环体内复杂代码块 写循环时，我们很容易往循环体塞入越来越多的代码，包括过滤掉无效元素、预处理数据、打印日志等等，甚至一些原本不属于同一抽象的内容，导致各部分功能耦合。
 这样一个复杂循环体在面对新需求时难以解耦复用。考虑使用生成器函数解耦循环体。
- 参考资料:
-Python 工匠：编写地道循环的两个建议
- </description>
+参考资料:
+Python 工匠：编写地道循环的两个建议</description>
     </item>
     
     <item>
@@ -107,7 +105,7 @@ Python 工匠：编写地道循环的两个建议
       <guid>https://keae12315.github.io/blog/post/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3python%E4%B8%AD%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8/</guid>
       <description>装饰器来自 Decorator 的直译，就是装点、提供一些额外的点缀。 在 Python 中的装饰器则是提供了一些额外的功能，可以让你的函数在不改变代码的情况下拥有新的功能。
 首先，Python中的函数也是一个对象，这意味着函数：
- 能在函数中定义一个函数 能作为参数传递 能作为返回值  def decorator(func): def wrapper(*args, **kwargs): print(&#39;123&#39;) return func(*args, **kwargs) return wrapper def say_hello(): print(&#39;同学你好&#39;) say_hello_super = decorator(say_hello) say_hello_super() 123 同学你好 在以上这段代码中，我们将一个函数 say_hello 作为参数传入函数 decorator，返回一个 wrapper 函数并赋值到 say_hello_super，此时执行 say_hello_super 相当于执行 wrapper 函数。当我们执行 wrapper 函数时会先打印 123 再执行先前传入的 func 参数也就是 say_hello 函数。
+能在函数中定义一个函数 能作为参数传递 能作为返回值 def decorator(func): def wrapper(*args, **kwargs): print(&amp;#39;123&amp;#39;) return func(*args, **kwargs) return wrapper def say_hello(): print(&amp;#39;同学你好&amp;#39;) say_hello_super = decorator(say_hello) say_hello_super() 123 同学你好 在以上这段代码中，我们将一个函数 say_hello 作为参数传入函数 decorator，返回一个 wrapper 函数并赋值到 say_hello_super，此时执行 say_hello_super 相当于执行 wrapper 函数。当我们执行 wrapper 函数时会先打印 123 再执行先前传入的 func 参数也就是 say_hello 函数。
 注意 wrapper 的 *args 与 **kwargs 参数，这是必须的， *args 表示所有的位置参数，**kwargs 表示所有的关键字参数。之后再将其传到 func函数中， 这样保证了能完全传递所有参数。
 在这里，decorator 这个函数就是一个装饰器，功能是在执行被装饰的函数之前打印 123。
 在 python 中， 有一种语法糖可以代替 say_hello_super = decorator(say_hello) 这一步的操作，以上的代码可以改写成。</description>
@@ -121,8 +119,8 @@ Python 工匠：编写地道循环的两个建议
       <guid>https://keae12315.github.io/blog/post/python%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
       <description>遍历文件或目录 我们常常需要对数据集文件夹中的数据进行遍历，Python内置的 os 模块有很多有用的方法能被用来列出目录内容和过滤结果。
 常用函数介绍 os.listdir(path) 返回一个list，其中包含path参数所指目录的文件和子目录的名称
-os.walk(top[, topdown=True[, onerror=None[, followlinks=False]]])  top – 返回值，为一个三元组(root,dirs,files)。 root 所指的是当前正在遍历的这个文件夹的本身的地址 dirs 是一个 list ，内容是该文件夹中所有的目录的名字(不包括子目录) files 同样是 list , 内容是该文件夹中所有的文件(不包括子目录) topdown –可选，控制遍历是从上到下，还是反过来。 为True优先遍历上层目录，否则优先遍历最底层目录(默认为True)。 onerror – 可选，需要一个 callable 对象，当 walk 需要异常时，会调用。 followlinks – 可选，如果为 True，则会遍历目录下的快捷方式(linux 下是软连接 symbolic link )实际所指的目录(默认关闭)，如果为 False，则优先遍历 top 的子目录。  示例代码:
-for root,dirs,files in os.walk(mypath): print(root) for dr in dirs: print(dr) for name in files: if name.endswith(&amp;quot;.txt&amp;quot;): print(os.path.join(root, name)) 排序问题
+os.walk(top[, topdown=True[, onerror=None[, followlinks=False]]]) top – 返回值，为一个三元组(root,dirs,files)。 root 所指的是当前正在遍历的这个文件夹的本身的地址 dirs 是一个 list ，内容是该文件夹中所有的目录的名字(不包括子目录) files 同样是 list , 内容是该文件夹中所有的文件(不包括子目录) topdown –可选，控制遍历是从上到下，还是反过来。 为True优先遍历上层目录，否则优先遍历最底层目录(默认为True)。 onerror – 可选，需要一个 callable 对象，当 walk 需要异常时，会调用。 followlinks – 可选，如果为 True，则会遍历目录下的快捷方式(linux 下是软连接 symbolic link )实际所指的目录(默认关闭)，如果为 False，则优先遍历 top 的子目录。 示例代码:
+for root,dirs,files in os.walk(mypath): print(root) for dr in dirs: print(dr) for name in files: if name.endswith(&amp;#34;.txt&amp;#34;): print(os.path.join(root, name)) 排序问题
 需要注意的是os.walk使用os.listdir，两者返回的列表都是任意顺序的，如果想要获得排序，考虑使用sort。例如：
 # 如果要按排序顺序递归目录，则就地修改dirs for root, dirs, files in os.</description>
     </item>
@@ -135,12 +133,12 @@ for root,dirs,files in os.walk(mypath): print(root) for dr in dirs: print(dr) fo
       <guid>https://keae12315.github.io/blog/post/python%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%97%B6/</guid>
       <description>python的time内置模块是一个与时间相关的内置模块，存在不同的模块可以用于程序计时.
 使用time.time() 很多人喜欢用time.time()获取当前时间的时间戳，利用程序前后两个时间戳的差值计算程序的运行时间，如下：
-import time T1 = time.time() #______假设下面是程序部分______ for i in range(100*100): pass T2 = time.time() print(&#39;程序运行时间:%s毫秒&#39; % ((T2 - T1)*1000)) # 程序运行时间:0.0毫秒 不要以为你的处理器很厉害，就忽视了一个问题，一万次遍历，时间为0.0毫秒？
+import time T1 = time.time() #______假设下面是程序部分______ for i in range(100*100): pass T2 = time.time() print(&amp;#39;程序运行时间:%s毫秒&amp;#39; % ((T2 - T1)*1000)) # 程序运行时间:0.0毫秒 不要以为你的处理器很厉害，就忽视了一个问题，一万次遍历，时间为0.0毫秒？
 下面解决上面的质疑，
 使用time.clock() Python time clock() 函数以浮点数计算的秒数返回当前的CPU时间。用来衡量不同程序的耗时，比time.time()更有用。
 这个需要注意，在不同的系统上含义不同。在UNIX系统上，它返回的是”进程时间”，它是用秒表示的浮点数（时间戳）。而在WINDOWS中，第一次调用，返回的是进程运行的实际时间。而第二次之后的调用是自第一次调用以后到现在的运行时间。（实际上是以WIN32上QueryPerformanceCounter()为基础，它比毫秒表示更为精确）
 使用time.clock()更改后的程序查看一下：
-import platform print(&#39;系统:&#39;,platform.system()) import time T1 = time.clock() #______假设下面是程序部分______ for i in range(100*100): pass T2 =time.clock() print(&#39;程序运行时间:%s毫秒&#39; % ((T2 - T1)*1000)) # 程序运行时间:0.27023641716203606毫秒 使用time.perf_counter() 返回性能计数器的值（以微秒为单位,1秒=1000毫秒；1毫秒=1000微秒）作为浮点数，即具有最高可用分辨率的时钟，以测量短持续时间。它包括在睡眠期间和系统范围内流逝的时间。返回值的参考点未定义，因此只有连续调用结果之间的差异有效。
+import platform print(&amp;#39;系统:&amp;#39;,platform.system()) import time T1 = time.clock() #______假设下面是程序部分______ for i in range(100*100): pass T2 =time.clock() print(&amp;#39;程序运行时间:%s毫秒&amp;#39; % ((T2 - T1)*1000)) # 程序运行时间:0.27023641716203606毫秒 使用time.perf_counter() 返回性能计数器的值（以微秒为单位,1秒=1000毫秒；1毫秒=1000微秒）作为浮点数，即具有最高可用分辨率的时钟，以测量短持续时间。它包括在睡眠期间和系统范围内流逝的时间。返回值的参考点未定义，因此只有连续调用结果之间的差异有效。
 1秒 = 1000毫秒
 1毫秒 = 1000微秒
 1微秒 = 1000纳秒

@@ -16,7 +16,7 @@
       <pubDate>Sat, 06 Aug 2022 11:49:50 +0800</pubDate>
       
       <guid>https://keae12315.github.io/blog/post/mysql%E5%85%A5%E9%97%A8/</guid>
-      <description>基本概念  数据库(Database, DB): 将大量数据保存起来, 通过计算机加工而成的可以进行高效访问的数据集合. 数据库管理系统(Database Management System, DBMS): 管理数据库的计算机系统. 表(Table): 包含数据库中所有数据的数据库对象, 定义为列的集合. 与电子表格相似, 数据在表中式按行和列的格式组织排列的. 列(Column): 又称字段(Field), 存储某种类型的信息. 每列只能指定一种数据类型. 行: 又称记录或元组, 一组相关的数据. 主键: 记录的唯一标识, 通常指定一个字段担任, 但也可以通过复合不同字段构成唯一标识, 此时称为复合键. 外键:  创建  数据库: CREATE DATABASE dbname; 表: CREATE TABLE table_name; 字段: 创建/新增字段时, 也要对数据类型和值的限制进行设置.  数据类型  数值  TINYINT SMALLINT MEDIUMINT INT / INTEGER BIGINT FLOAT DOUBLE DECIMAL   日期  DATE TIME YEAR DATETIME TIMESTAMP   字符  CHAR VARCHAR TINYBLOB TINYTEXT BLOB TEXT MEDIUMBLOB MEDIUMTEXT LONGBLOB LONGTEXT   特殊值  NULL</description>
+      <description>基本概念 数据库(Database, DB): 将大量数据保存起来, 通过计算机加工而成的可以进行高效访问的数据集合. 数据库管理系统(Database Management System, DBMS): 管理数据库的计算机系统. 表(Table): 包含数据库中所有数据的数据库对象, 定义为列的集合. 与电子表格相似, 数据在表中式按行和列的格式组织排列的. 列(Column): 又称字段(Field), 存储某种类型的信息. 每列只能指定一种数据类型. 行: 又称记录或元组, 一组相关的数据. 主键: 记录的唯一标识, 通常指定一个字段担任, 但也可以通过复合不同字段构成唯一标识, 此时称为复合键. 外键: 创建 数据库: CREATE DATABASE dbname; 表: CREATE TABLE table_name; 字段: 创建/新增字段时, 也要对数据类型和值的限制进行设置. 数据类型 数值 TINYINT SMALLINT MEDIUMINT INT / INTEGER BIGINT FLOAT DOUBLE DECIMAL 日期 DATE TIME YEAR DATETIME TIMESTAMP 字符 CHAR VARCHAR TINYBLOB TINYTEXT BLOB TEXT MEDIUMBLOB MEDIUMTEXT LONGBLOB LONGTEXT 特殊值 NULL</description>
     </item>
     
   </channel>

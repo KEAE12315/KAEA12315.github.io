@@ -19,17 +19,18 @@
       <description>语言之外 对于频繁使用的代码块, 我们一般将其封装成函数. 函数有时需要参数, 例如简单的两数求和函数, 总是需要给出相加的两数.
 为了表示函数需要参数, 我们在函数定义时即定义了形参. 在实际调用时, 再传入具体的参数, 称为实参.
 但是这里还有几个问题需要解决:
- 实参如何与形参对应? 如果需要默认值呢? 为了防止乱传参数导致崩溃, 如何做一些限制?  下面, 我们一一讲解参数有关的问题.
-参数限制 函数调用时, 如果传入不合法的参数, 程序也许能运行, 但可能无法得到结果. 例如, 两数相加函数如果传入了字符&#39;5&amp;rsquo;和&#39;6&#39;, 由于+运算符重载, 会返回字符串&#39;56&#39;. 跟我们想要的结果11大相径庭. 当然, 更多的时候是直接报错.
+实参如何与形参对应? 如果需要默认值呢? 为了防止乱传参数导致崩溃, 如何做一些限制? 下面, 我们一一讲解参数有关的问题.
+参数限制 函数调用时, 如果传入不合法的参数, 程序也许能运行, 但可能无法得到结果. 例如, 两数相加函数如果传入了字符&#39;5&amp;rsquo;和&#39;6&amp;rsquo;, 由于+运算符重载, 会返回字符串&#39;56&amp;rsquo;. 跟我们想要的结果11大相径庭. 当然, 更多的时候是直接报错.
 类型限制 对于静态语言如Java, 由于编译时即进行数据类型检查, 因此一般在定义函数时, 就必须指定参数的类型.
 对于动态语言如Python, 需要自己手动加入判断部分. 不过自Python3.5开始，PEP484引入了类型注解.
 注意, Python的类型注解仅仅提供了编辑器进行类型检测的机会, 但是对程序的运行不会产生任何影响!
 其它限制 有些时候, 尽管类型正确, 但参数只在指定范围内有效, 又或者有别的限制条件. 这时, 需要在函数内部书写对应的参数检查代码. 如果不符合要求就执行对应的操作, 如抛出异常. 这里通常是判断语句如if, switch等.
 断言是一种在许多语言中常见的关键词, 它判断后面语句的布尔值, true则继续运行, false则抛出异常. 也可以用于参数检查.
 位置参数 默认参数 Python中默认参数的坑
-可变参数 关键词参数 参数的组合使用 模块运行的参数  参考资料
+可变参数 关键词参数 参数的组合使用 模块运行的参数 参考资料
 动态语言和静态语言的区别
-函数的参数</description>
+函数的参数
+Python类型注解，你需要知道的都在这里了</description>
     </item>
     
     <item>
@@ -43,7 +44,7 @@
 特别地, 对于private修饰的父类方法, 由于子类接触不到, 可以写同名同参的方法. 此时相当于在子类中重新定义了新的方法.
 private方法会被隐式地指定为final
 修饰变量 final修饰变量时, 变量内容只能被赋值一次, 赋值后不再改变.
- 对基本数据类型: 值在初始化后不再改变. 对引用类型: 值即地址, 所以只能引用该对象. 但仅限地址不改变, 所以对象的内容可以发生变化.  final变量的编译器优化 public class Test { public static void main(String[] args) { String a = &amp;quot;helloworld&amp;quot;; final String b = &amp;quot;hello&amp;quot;; String c = &amp;quot;hello&amp;quot;; String x = b + &amp;quot;world&amp;quot;; String y = c + &amp;quot;world&amp;quot;; System.out.println(a == x); System.out.println(a == y); } } &amp;gt;&amp;gt;&amp;gt; true &amp;gt;&amp;gt;&amp;gt; false 修饰参数时的情况  参考文献</description>
+对基本数据类型: 值在初始化后不再改变. 对引用类型: 值即地址, 所以只能引用该对象. 但仅限地址不改变, 所以对象的内容可以发生变化. final变量的编译器优化 public class Test { public static void main(String[] args) { String a = &amp;#34;helloworld&amp;#34;; final String b = &amp;#34;hello&amp;#34;; String c = &amp;#34;hello&amp;#34;; String x = b + &amp;#34;world&amp;#34;; String y = c + &amp;#34;world&amp;#34;; System.out.println(a == x); System.out.println(a == y); } } &amp;gt;&amp;gt;&amp;gt; true &amp;gt;&amp;gt;&amp;gt; false 修饰参数时的情况 参考文献</description>
     </item>
     
     <item>
@@ -55,11 +56,11 @@ private方法会被隐式地指定为final
       <description>Process Thread
 多任务 多进程 Multithreading
 The state of the thread
- New：新创建的线程，尚未执行； Runnable：运行中的线程，正在执行run()方法的Java代码； Blocked：运行中的线程，因为某些操作被阻塞而挂起； Waiting：运行中的线程，因为某些操作在等待中； Timed Waiting：运行中的线程，因为执行sleep()方法正在计时等待； Terminated：线程已终止，因为run()方法执行完毕.  线程操作
- run join interrupt: isInterrupted setDaemon synchronized: 多线程竞争 wait和notify(All): 多线程协调(当条件不满足时，线程进入等待状态；当条件满足时，线程被唤醒，继续执行任务。)  线程同步 保证一段代码的原子性就是通过加锁和解锁实现的. Java程序使用synchronized关键字对一个对象进行加锁.
+New：新创建的线程，尚未执行； Runnable：运行中的线程，正在执行run()方法的Java代码； Blocked：运行中的线程，因为某些操作被阻塞而挂起； Waiting：运行中的线程，因为某些操作在等待中； Timed Waiting：运行中的线程，因为执行sleep()方法正在计时等待； Terminated：线程已终止，因为run()方法执行完毕. 线程操作
+run join interrupt: isInterrupted setDaemon synchronized: 多线程竞争 wait和notify(All): 多线程协调(当条件不满足时，线程进入等待状态；当条件满足时，线程被唤醒，继续执行任务。) 线程同步 保证一段代码的原子性就是通过加锁和解锁实现的. Java程序使用synchronized关键字对一个对象进行加锁.
 注意加锁对象必须是同一个实例
 JVM规范定义了几种原子操作：
- 基本类型（long和double除外）赋值，例如：int n = m； 引用类型赋值，例如：Listlist = anotherList。  如果一个类被设计为允许多线程正确访问，我们就说这个类就是“线程安全”的（thread-safe）
+基本类型（long和double除外）赋值，例如：int n = m； 引用类型赋值，例如：List list = anotherList。 如果一个类被设计为允许多线程正确访问，我们就说这个类就是“线程安全”的（thread-safe）
 线程死锁 形成死锁必须同时满足互斥、请求保持、不可抢占、循环等待。死锁发生后，没有任何机制能解除死锁，只能强制结束JVM进程。
 线程顺序访问资源，是破坏了循环等待条件，属于死锁预防的策略。
 线程间通信 线程控制：挂起、停止和恢复</description>
