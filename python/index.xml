@@ -18,10 +18,10 @@
       <guid>https://keae12315.github.io/blog/python/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</guid>
       <description>一些概念与原理 Python解释器版本 Python软件源/软件包库 包管理器 包 dependency hell 依赖地狱, 为什么要有虚拟环境
 工具介绍 virtualenv 第三方库, 在python3.3之前, 只能通过virtualenv创建虚拟环境.
-venv Python3.3之后, 可以用模块venv代替virtualenv工具, 好处是不用单独安装, 3.3及之后的版本, 都可以通过安装好的Python来创建虚拟环境:
+创建 virtualenv .venv 激活 source bin/activate venv Python3.3之后, 可以用模块venv代替virtualenv工具, 好处是不用单独安装, 3.3及之后的版本, 都可以通过安装好的Python来创建虚拟环境:
 python -m venv .venv 因为venv是依附于一个Python解析器创建的, 所以不需要指定Python解释器版本
 其它工具 virtualenvwrapper: 是对 virtualenv 的一个封装, 还有针对 vim 用户和 emacs 用户的 扩展, 能支持 bash/ksh/zsh virtualenvwrapper-win: 针对 Windows batch shell 的 virtualenvwrapper pyenv: 用来解决这类问题. 它可以安装, 卸载, 编译, 管理多个 python 版本, 并随时将其中一个设置为工作环境 pyenv-win: 针对 Windows 的 pyenv
-推荐流程 pip freeze &amp;gt; requirements.txt pip install -r requirements.txt 参考文章 Python 虚拟环境 看这一篇就够了 不要用 Pipenv Creation of virtual environments </description>
+推荐流程 pip freeze &amp;gt; requirements.</description>
     </item>
     
     <item>

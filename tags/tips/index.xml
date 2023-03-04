@@ -38,11 +38,11 @@ index of 可以突破网站入口下载。
     
     <item>
       <title>Git常用</title>
-      <link>https://keae12315.github.io/blog/post/git%E5%B8%B8%E7%94%A8/</link>
+      <link>https://keae12315.github.io/blog/git/git%E5%B8%B8%E7%94%A8/</link>
       <pubDate>Fri, 05 Aug 2022 16:50:39 +0800</pubDate>
       
-      <guid>https://keae12315.github.io/blog/post/git%E5%B8%B8%E7%94%A8/</guid>
-      <description>git checkout &amp;lt;branch&amp;gt; </description>
+      <guid>https://keae12315.github.io/blog/git/git%E5%B8%B8%E7%94%A8/</guid>
+      <description>git checkout &amp;lt;branch&amp;gt; git checkout master git checkout -b cleaned_up_branch git merge --squash private_feature_branch git reset 参考 理解Git的工作流程 </description>
     </item>
     
   </channel>
