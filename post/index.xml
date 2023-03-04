@@ -369,22 +369,5 @@ WSL2中使用windows的代理
 记录一次WSL2的网络代理配置</description>
     </item>
     
-    <item>
-      <title>Hugo搭建博客</title>
-      <link>https://keae12315.github.io/blog/post/hugo%E5%85%A5%E9%97%A8/</link>
-      <pubDate>Thu, 04 Aug 2022 00:58:00 +0800</pubDate>
-      
-      <guid>https://keae12315.github.io/blog/post/hugo%E5%85%A5%E9%97%A8/</guid>
-      <description>安装 以Ubuntu20.04为例
-sudo apt-get install hugo 但是apt仓库版本一般不是最新的. 如果想安装最新版本, 可以从hugo的GitHub发行仓库上获取deb包并安装. 例如:
-# 进入用户目录, 随意. cd ~ # 获取deb文件, 自行选择合适的版本. wget https://github.com/gohugoio/hugo/releases/download/v0.92.2/hugo_0.92.2_Linux-64bit.deb # 安装 sudo dpkg -i hugo*.deb # 查看hugo版本 hugo version 配置 主题 安装主题 git submodule add git@github.com:adityatelange/hugo-PaperMod.git themes/hugo-PaperMod git submodule命令详解
-使用主题 在配置文件config.yaml中使用如下配置项
-theme: hugo-PaperMod 注意:
-如果重新git clone项目, 通过git submodule安装的主题, 并不会第一时间安装. 需要执行以下两条命令以安装主题.
-git submodule init git submodule update 基本操作 生成新文章
-hugo new post/&amp;lt;filename&amp;gt;.md 为了简化操作, 在.bashrc文件里设置h函数
-h(){ hugo new post/$1.md } 部署到GitHub Page 生成token 我自己笔记的源码和github.</description>
-    </item>
-    
   </channel>
 </rss>
