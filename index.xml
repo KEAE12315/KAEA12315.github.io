@@ -151,10 +151,10 @@ python是解释型的强类型动态语言
     
     <item>
       <title>地道的Python循环</title>
-      <link>https://keae12315.github.io/blog/post/%E5%9C%B0%E9%81%93%E7%9A%84python%E5%BE%AA%E7%8E%AF/</link>
+      <link>https://keae12315.github.io/blog/python/%E5%9C%B0%E9%81%93%E7%9A%84python%E5%BE%AA%E7%8E%AF/</link>
       <pubDate>Mon, 08 Aug 2022 01:05:13 +0800</pubDate>
       
-      <guid>https://keae12315.github.io/blog/post/%E5%9C%B0%E9%81%93%E7%9A%84python%E5%BE%AA%E7%8E%AF/</guid>
+      <guid>https://keae12315.github.io/blog/python/%E5%9C%B0%E9%81%93%E7%9A%84python%E5%BE%AA%E7%8E%AF/</guid>
       <description>在循环语法方面，Python 选择了 for 和 while 这两个经典的关键字来表达循环。绝大多数情况下，我们的循环需求都可以用 for in 来满足，while 相比之下则用的更少些。
 Python 的 for 循环只有 for in 这一种结构，而结构里的前半部分 - 赋值给 item - 没有太多花样可玩。所以后半部分的 可迭代对象 是我们唯一能够大做文章的东西。而以 enumerate() 函数为代表的“修饰函数”，刚好提供了一种思路：通过修饰可迭代对象来优化循环本身。
 使用函数修饰被迭代对象来优化循环 内置模块 itertools 是一个包含很多面向可迭代对象的工具函数集。 Python 官方文档是学习的首选，里面有非常详细的模块相关资料。下面给出一些常用的函数。
@@ -166,10 +166,10 @@ Python 工匠：编写地道循环的两个建议</description>
     
     <item>
       <title>如何理解Python中的装饰器</title>
-      <link>https://keae12315.github.io/blog/post/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3python%E4%B8%AD%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8/</link>
+      <link>https://keae12315.github.io/blog/python/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3python%E4%B8%AD%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8/</link>
       <pubDate>Mon, 08 Aug 2022 01:01:02 +0800</pubDate>
       
-      <guid>https://keae12315.github.io/blog/post/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3python%E4%B8%AD%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8/</guid>
+      <guid>https://keae12315.github.io/blog/python/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3python%E4%B8%AD%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8/</guid>
       <description>装饰器来自 Decorator 的直译，就是装点、提供一些额外的点缀。 在 Python 中的装饰器则是提供了一些额外的功能，可以让你的函数在不改变代码的情况下拥有新的功能。
 首先，Python中的函数也是一个对象，这意味着函数：
 能在函数中定义一个函数 能作为参数传递 能作为返回值 def decorator(func): def wrapper(*args, **kwargs): print(&amp;#39;123&amp;#39;) return func(*args, **kwargs) return wrapper def say_hello(): print(&amp;#39;同学你好&amp;#39;) say_hello_super = decorator(say_hello) say_hello_super() 123 同学你好 在以上这段代码中，我们将一个函数 say_hello 作为参数传入函数 decorator，返回一个 wrapper 函数并赋值到 say_hello_super，此时执行 say_hello_super 相当于执行 wrapper 函数。当我们执行 wrapper 函数时会先打印 123 再执行先前传入的 func 参数也就是 say_hello 函数。
@@ -406,10 +406,10 @@ key value Hash function 散列表 Collision Java中的Hash Table 在Java中, 用
     
     <item>
       <title>Ubuntu安装后配置</title>
-      <link>https://keae12315.github.io/blog/post/ubuntu%E5%AE%89%E8%A3%85%E5%90%8E%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/</link>
+      <link>https://keae12315.github.io/blog/ubuntu/ubuntu%E5%AE%89%E8%A3%85%E5%90%8E%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Fri, 05 Aug 2022 03:19:27 +0800</pubDate>
       
-      <guid>https://keae12315.github.io/blog/post/ubuntu%E5%AE%89%E8%A3%85%E5%90%8E%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://keae12315.github.io/blog/ubuntu/ubuntu%E5%AE%89%E8%A3%85%E5%90%8E%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/</guid>
       <description>查看系统版本 # 操作系统内核信息 uname －a # 操作系统版本信息 cat /proc/version # 操作系统发行版信息 cat /etc/issue # cpu相关信息 cat /proc/cpuinfo # 版本多少位 getconf LONG_BIT lsb_release -a 设置Git 本地Git用户邮箱设置 # 查看git配置信息 git config --list # 查看用户名 git config user.name # 查看邮箱 git config user.email # 设置全局用户名 git config --global user.name &amp;#34;&amp;#34; # 设置全局邮箱 git config --global user.email &amp;#34;&amp;#34; 生成SSH key ssh-keygen -t ed25519 -C &amp;#34;&amp;#34; 一路回车, 默认生成到~/.ssh目录下.
 将后缀为.pub文件的内容添加到GitHub账户里.
 换源 Ubuntu 的软件源配置文件是 /etc/apt/sources.list

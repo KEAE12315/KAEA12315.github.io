@@ -73,10 +73,10 @@ Ubuntu Windows MacOS 配置 官方原文过长，摘取了常用的两个步骤�
     
     <item>
       <title>Ubuntu安装后配置</title>
-      <link>https://keae12315.github.io/blog/post/ubuntu%E5%AE%89%E8%A3%85%E5%90%8E%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/</link>
+      <link>https://keae12315.github.io/blog/ubuntu/ubuntu%E5%AE%89%E8%A3%85%E5%90%8E%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Fri, 05 Aug 2022 03:19:27 +0800</pubDate>
       
-      <guid>https://keae12315.github.io/blog/post/ubuntu%E5%AE%89%E8%A3%85%E5%90%8E%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://keae12315.github.io/blog/ubuntu/ubuntu%E5%AE%89%E8%A3%85%E5%90%8E%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/</guid>
       <description>查看系统版本 # 操作系统内核信息 uname －a # 操作系统版本信息 cat /proc/version # 操作系统发行版信息 cat /etc/issue # cpu相关信息 cat /proc/cpuinfo # 版本多少位 getconf LONG_BIT lsb_release -a 设置Git 本地Git用户邮箱设置 # 查看git配置信息 git config --list # 查看用户名 git config user.name # 查看邮箱 git config user.email # 设置全局用户名 git config --global user.name &amp;#34;&amp;#34; # 设置全局邮箱 git config --global user.email &amp;#34;&amp;#34; 生成SSH key ssh-keygen -t ed25519 -C &amp;#34;&amp;#34; 一路回车, 默认生成到~/.ssh目录下.
 将后缀为.pub文件的内容添加到GitHub账户里.
 换源 Ubuntu 的软件源配置文件是 /etc/apt/sources.list
