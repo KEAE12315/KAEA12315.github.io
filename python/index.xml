@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Pythons on KEAE的编程笔记</title>
+    <link>https://keae12315.github.io/blog/python/</link>
+    <description>Recent content in Pythons on KEAE的编程笔记</description>
+    <image>
+      <url>https://keae12315.github.io/blog/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://keae12315.github.io/blog/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 04 Mar 2023 15:12:39 +0800</lastBuildDate><atom:link href="https://keae12315.github.io/blog/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python虚拟环境</title>
+      <link>https://keae12315.github.io/blog/python/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Sat, 04 Mar 2023 15:12:39 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/python/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</guid>
+      <description>一些概念与原理 Python解释器版本 Python软件源/软件包库 包管理器 包 dependency hell 依赖地狱, 为什么要有虚拟环境
+工具介绍 virtualenv 第三方库, 在python3.3之前, 只能通过virtualenv创建虚拟环境.
+venv Python3.3之后, 可以用模块venv代替virtualenv工具, 好处是不用单独安装, 3.3及之后的版本, 都可以通过安装好的Python来创建虚拟环境:
+python -m venv .venv 因为venv是依附于一个Python解析器创建的, 所以不需要指定Python解释器版本
+其它工具 virtualenvwrapper: 是对 virtualenv 的一个封装, 还有针对 vim 用户和 emacs 用户的 扩展, 能支持 bash/ksh/zsh virtualenvwrapper-win: 针对 Windows batch shell 的 virtualenvwrapper pyenv: 用来解决这类问题. 它可以安装, 卸载, 编译, 管理多个 python 版本, 并随时将其中一个设置为工作环境 pyenv-win: 针对 Windows 的 pyenv
+推荐流程 pip freeze &amp;gt; requirements.txt pip install -r requirements.txt 参考文章 Python 虚拟环境 看这一篇就够了 不要用 Pipenv Creation of virtual environments </description>
+    </item>
+    
+    <item>
+      <title>Python用前需知</title>
+      <link>https://keae12315.github.io/blog/python/python%E7%94%A8%E5%89%8D%E9%9C%80%E7%9F%A5/</link>
+      <pubDate>Thu, 29 Sep 2022 13:54:09 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/python/python%E7%94%A8%E5%89%8D%E9%9C%80%E7%9F%A5/</guid>
+      <description>pip pip常用命令 pip install pip list pip换源 临时使用 -i 命令指定下载源
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package 命令行全局切换 要求pip版本&amp;gt;=10.0.0
+python -m pip install --upgrade pip pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple 如果升级pip时默认源的网络连接较差，可以利用刚才的-i临时指定下载源
+python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade pip 国内镜像库列表 https://pypi.tuna.tsinghua.edu.cn/simple https://mirrors.aliyun.com/pypi/simple/ https://pypi.mirrors.ustc.edu.cn/simple http://pypi.douban.com/simple/ http://mirrors.aliyun.com/pypi/simple/ 虚拟环境 参考资料:
+PyPI 镜像使用帮助</description>
+    </item>
+    
+    <item>
+      <title>Python文件处理的常用方法</title>
+      <link>https://keae12315.github.io/blog/python/python%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Mon, 08 Aug 2022 00:56:36 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/python/python%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
+      <description>遍历文件或目录 我们常常需要对数据集文件夹中的数据进行遍历，Python内置的 os 模块有很多有用的方法能被用来列出目录内容和过滤结果。
+常用函数介绍 os.listdir(path) 返回一个list，其中包含path参数所指目录的文件和子目录的名称
+os.walk(top[, topdown=True[, onerror=None[, followlinks=False]]]) top – 返回值，为一个三元组(root,dirs,files)。 root 所指的是当前正在遍历的这个文件夹的本身的地址 dirs 是一个 list ，内容是该文件夹中所有的目录的名字(不包括子目录) files 同样是 list , 内容是该文件夹中所有的文件(不包括子目录) topdown –可选，控制遍历是从上到下，还是反过来。 为True优先遍历上层目录，否则优先遍历最底层目录(默认为True)。 onerror – 可选，需要一个 callable 对象，当 walk 需要异常时，会调用。 followlinks – 可选，如果为 True，则会遍历目录下的快捷方式(linux 下是软连接 symbolic link )实际所指的目录(默认关闭)，如果为 False，则优先遍历 top 的子目录。 示例代码:
+for root,dirs,files in os.walk(mypath): print(root) for dr in dirs: print(dr) for name in files: if name.endswith(&amp;#34;.txt&amp;#34;): print(os.path.join(root, name)) 排序问题
+需要注意的是os.walk使用os.listdir，两者返回的列表都是任意顺序的，如果想要获得排序，考虑使用sort。例如：
+# 如果要按排序顺序递归目录，则就地修改dirs for root, dirs, files in os.</description>
+    </item>
+    
+    <item>
+      <title>Python程序计时</title>
+      <link>https://keae12315.github.io/blog/python/python%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%97%B6/</link>
+      <pubDate>Mon, 08 Aug 2022 00:51:32 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/python/python%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%97%B6/</guid>
+      <description>python的time内置模块是一个与时间相关的内置模块，存在不同的模块可以用于程序计时.
+使用time.time() 很多人喜欢用time.time()获取当前时间的时间戳，利用程序前后两个时间戳的差值计算程序的运行时间，如下：
+import time T1 = time.time() #______假设下面是程序部分______ for i in range(100*100): pass T2 = time.time() print(&amp;#39;程序运行时间:%s毫秒&amp;#39; % ((T2 - T1)*1000)) # 程序运行时间:0.0毫秒 不要以为你的处理器很厉害，就忽视了一个问题，一万次遍历，时间为0.0毫秒？
+下面解决上面的质疑，
+使用time.clock() Python time clock() 函数以浮点数计算的秒数返回当前的CPU时间。用来衡量不同程序的耗时，比time.time()更有用。
+这个需要注意，在不同的系统上含义不同。在UNIX系统上，它返回的是”进程时间”，它是用秒表示的浮点数（时间戳）。而在WINDOWS中，第一次调用，返回的是进程运行的实际时间。而第二次之后的调用是自第一次调用以后到现在的运行时间。（实际上是以WIN32上QueryPerformanceCounter()为基础，它比毫秒表示更为精确）
+使用time.clock()更改后的程序查看一下：
+import platform print(&amp;#39;系统:&amp;#39;,platform.system()) import time T1 = time.clock() #______假设下面是程序部分______ for i in range(100*100): pass T2 =time.clock() print(&amp;#39;程序运行时间:%s毫秒&amp;#39; % ((T2 - T1)*1000)) # 程序运行时间:0.27023641716203606毫秒 使用time.perf_counter() 返回性能计数器的值（以微秒为单位,1秒=1000毫秒；1毫秒=1000微秒）作为浮点数，即具有最高可用分辨率的时钟，以测量短持续时间。它包括在睡眠期间和系统范围内流逝的时间。返回值的参考点未定义，因此只有连续调用结果之间的差异有效。
+1秒 = 1000毫秒
+1毫秒 = 1000微秒
+1微秒 = 1000纳秒
+1纳秒 = 1000皮秒</description>
+    </item>
+    
+  </channel>
+</rss>
