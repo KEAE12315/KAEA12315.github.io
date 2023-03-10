@@ -9,7 +9,7 @@
       <link>https://keae12315.github.io/blog/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 05 Mar 2023 00:24:36 +0800</lastBuildDate><atom:link href="https://keae12315.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Mar 2023 19:45:34 +0800</lastBuildDate><atom:link href="https://keae12315.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>一文讲懂函数中的参数问题(更新中</title>
       <link>https://keae12315.github.io/blog/post/%E5%87%BD%E6%95%B0%E4%B8%AD%E7%9A%84%E5%8F%82%E6%95%B0/</link>
@@ -27,10 +27,8 @@
 其它限制 有些时候, 尽管类型正确, 但参数只在指定范围内有效, 又或者有别的限制条件. 这时, 需要在函数内部书写对应的参数检查代码. 如果不符合要求就执行对应的操作, 如抛出异常. 这里通常是判断语句如if, switch等.
 断言是一种在许多语言中常见的关键词, 它判断后面语句的布尔值, true则继续运行, false则抛出异常. 也可以用于参数检查.
 位置参数 默认参数 Python中默认参数的坑
-可变参数 关键词参数 参数的组合使用 模块运行的参数 参考资料
-动态语言和静态语言的区别
-函数的参数
-Python类型注解，你需要知道的都在这里了</description>
+可变参数 关键词参数 参数的组合使用 不同编程语言的情况 Python 关键字参数分隔: * 模块运行的参数 参考资料
+动态语言和静态语言的区别</description>
     </item>
     
     <item>
@@ -48,6 +46,16 @@ Python类型注解，你需要知道的都在这里了</description>
 id(): 获取对象的内存地址. type(): 当只有一个参数的时候, 返回对象的类型. 当有三个参数的时候返回一个类对象. ==: 值比较. is: 比较两个对象的物理id, 相当于 id(a)==id(b). 作为函数和类的参数 python中向函数传递参数只能是引用传递, 表示把它的地址都传进去了. 所以向函数中传递可变对象时, 会影响全局中的这个变量值. 同样的, 向类传递可变对象也是如此.
 其实这个特性也不能说是一个弊端, 利用这一点可以进行一些很方便的操作, 比如两个线程同时操作一个队列, 我们不用设置一个global队列, 只要将队列这个可变对象传入类之中, 修改就会自动同步.
 &amp;gt;&amp;gt;&amp;gt; def myfunc(l): ... l.append(1) ... print(l) ... &amp;gt;&amp;gt;&amp;gt; l = [1, 2, 3] &amp;gt;&amp;gt;&amp;gt; myfunc(l) [1, 2, 3, 1] &amp;gt;&amp;gt;&amp;gt; l [1, 2, 3, 1] &amp;gt;&amp;gt;&amp;gt; def myfunc(a): .</description>
+    </item>
+    
+    <item>
+      <title>基础</title>
+      <link>https://keae12315.github.io/blog/ffmpeg/%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Wed, 08 Mar 2023 19:45:34 +0800</pubDate>
+      
+      <guid>https://keae12315.github.io/blog/ffmpeg/%E5%9F%BA%E7%A1%80/</guid>
+      <description>ffprobe -hide_banner hide_banner参数可以隐藏版本信息等
+参考 </description>
     </item>
     
     <item>
