@@ -418,7 +418,9 @@ key value Hash function 散列表 Collision Java中的Hash Table 在Java中, 用
       <pubDate>Fri, 05 Aug 2022 16:50:39 +0800</pubDate>
       
       <guid>https://keae12315.github.io/blog/git/git%E5%B8%B8%E7%94%A8/</guid>
-      <description>git checkout &amp;lt;branch&amp;gt; git checkout master git checkout -b cleaned_up_branch git merge --squash private_feature_branch git reset 参考 理解Git的工作流程 </description>
+      <description>git checkout &amp;lt;branch&amp;gt; git checkout master git checkout -b cleaned_up_branch git merge --squash private_feature_branch git reset 将本地分支推送到远程分支
+git push -u &amp;lt;remote&amp;gt; &amp;lt;local_branch&amp;gt;:&amp;lt;remote_branch&amp;gt; 在 git push 命令中，-u 参数是用来将本地分支与远程分支关联起来的。使用 -u 参数后，git 会将本地分支推送到远程分支，并在本地分支和远程分支之间建立一个跟踪关系，这样在以后的 push 和 pull 操作中就可以直接使用 git push 和 git pull 命令，而不需要再指定远程分支名和本地分支名。
+参考 理解Git的工作流程 </description>
     </item>
     
     <item>
